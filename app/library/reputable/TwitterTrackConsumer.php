@@ -7,7 +7,7 @@ class FilterTrackConsumer extends OauthPhirehose
    */
 //  protected $myTrackWords = array('morning', 'goodnight', 'hello', 'the');
 
-    protected $myTrackWords = array('honeymoon', 'billionare', 'brian gouws', 'brian gouws');
+    protected $myTrackWords = array('honeymoon', 'billionare', 'sex', 'brian gouws');
 
   /**
    * Enqueue each status
@@ -26,8 +26,9 @@ class FilterTrackConsumer extends OauthPhirehose
 
 
 //      echo 'status';
-      var_dump($status);
-//    $data = json_decode($status, true);
+//      var_dump($status);
+    $data = json_decode($status, true);
+    var_dump($data);
 //    if (is_array($data) && isset($data['user']['screen_name'])) {
 //      echo $data['user']['screen_name'] . ': ' . urldecode($data['text']) . "\n";
 //    }

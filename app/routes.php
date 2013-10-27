@@ -16,4 +16,4 @@ Route::get('/', 'HomeController@showWelcome');
 Route::post('/showSnapShot', 'HomeController@showSnapShot');
 
 // rest api controller
-Route::controller('reputes', 'ApiController');
+Route::controller('disruptions', 'ApiController');
