@@ -867,64 +867,6 @@
         "homepage": "http://symfony.com"
     },
     {
-        "name": "symfony/debug",
-        "version": "2.3.x-dev",
-        "version_normalized": "2.3.9999999.9999999-dev",
-        "target-dir": "Symfony/Component/Debug",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/symfony/Debug.git",
-            "reference": "7f671456b9617d0a54f04597ae1c1ed3a1e858fd"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/symfony/Debug/zipball/7f671456b9617d0a54f04597ae1c1ed3a1e858fd",
-            "reference": "7f671456b9617d0a54f04597ae1c1ed3a1e858fd",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.3.3"
-        },
-        "require-dev": {
-            "symfony/http-foundation": "~2.1",
-            "symfony/http-kernel": "~2.1"
-        },
-        "suggest": {
-            "symfony/class-loader": "",
-            "symfony/http-foundation": "",
-            "symfony/http-kernel": ""
-        },
-        "time": "2013-09-19 09:47:13",
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "2.3-dev"
-            }
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "psr-0": {
-                "Symfony\\Component\\Debug\\": ""
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Fabien Potencier",
-                "email": "fabien@symfony.com"
-            },
-            {
-                "name": "Symfony Community",
-                "homepage": "http://symfony.com/contributors"
-            }
-        ],
-        "description": "Symfony Debug Component",
-        "homepage": "http://symfony.com"
-    },
-    {
         "name": "symfony/finder",
         "version": "2.3.x-dev",
         "version_normalized": "2.3.9999999.9999999-dev",
@@ -971,114 +913,6 @@
             }
         ],
         "description": "Symfony Finder Component",
-        "homepage": "http://symfony.com"
-    },
-    {
-        "name": "symfony/dom-crawler",
-        "version": "2.3.x-dev",
-        "version_normalized": "2.3.9999999.9999999-dev",
-        "target-dir": "Symfony/Component/DomCrawler",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/symfony/DomCrawler.git",
-            "reference": "f3c321861994f5a1882b4045ea1f8759be47601a"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/symfony/DomCrawler/zipball/f3c321861994f5a1882b4045ea1f8759be47601a",
-            "reference": "f3c321861994f5a1882b4045ea1f8759be47601a",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.3.3"
-        },
-        "require-dev": {
-            "symfony/css-selector": "~2.0"
-        },
-        "suggest": {
-            "symfony/css-selector": ""
-        },
-        "time": "2013-09-25 09:22:53",
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "2.3-dev"
-            }
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "psr-0": {
-                "Symfony\\Component\\DomCrawler\\": ""
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Fabien Potencier",
-                "email": "fabien@symfony.com"
-            },
-            {
-                "name": "Symfony Community",
-                "homepage": "http://symfony.com/contributors"
-            }
-        ],
-        "description": "Symfony DomCrawler Component",
-        "homepage": "http://symfony.com"
-    },
-    {
-        "name": "symfony/css-selector",
-        "version": "2.3.x-dev",
-        "version_normalized": "2.3.9999999.9999999-dev",
-        "target-dir": "Symfony/Component/CssSelector",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/symfony/CssSelector.git",
-            "reference": "4e01c74f19ea049773fa3ee9fb2bb5bf5e14f7eb"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/symfony/CssSelector/zipball/4e01c74f19ea049773fa3ee9fb2bb5bf5e14f7eb",
-            "reference": "4e01c74f19ea049773fa3ee9fb2bb5bf5e14f7eb",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.3.3"
-        },
-        "time": "2013-09-19 09:45:20",
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "2.3-dev"
-            }
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "psr-0": {
-                "Symfony\\Component\\CssSelector\\": ""
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Fabien Potencier",
-                "email": "fabien@symfony.com"
-            },
-            {
-                "name": "Symfony Community",
-                "homepage": "http://symfony.com/contributors"
-            },
-            {
-                "name": "Jean-François Simon",
-                "email": "jeanfrancois.simon@sensiolabs.com"
-            }
-        ],
-        "description": "Symfony CssSelector Component",
         "homepage": "http://symfony.com"
     },
     {
@@ -1514,59 +1348,6 @@
         ]
     },
     {
-        "name": "jenssegers/mongodb",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/jenssegers/Laravel-MongoDB.git",
-            "reference": "c9333002de4722975e75d3fbc4051048a4622dbf"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/jenssegers/Laravel-MongoDB/zipball/c9333002de4722975e75d3fbc4051048a4622dbf",
-            "reference": "c9333002de4722975e75d3fbc4051048a4622dbf",
-            "shasum": ""
-        },
-        "require": {
-            "illuminate/database": "4.0.x",
-            "illuminate/events": "4.0.x",
-            "illuminate/support": "4.0.x",
-            "php": ">=5.3.0"
-        },
-        "require-dev": {
-            "illuminate/auth": "4.0.x",
-            "illuminate/cache": "4.0.x"
-        },
-        "time": "2013-10-29 09:18:10",
-        "type": "library",
-        "installation-source": "dist",
-        "autoload": {
-            "psr-0": {
-                "Jenssegers\\Mongodb": "src/"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Jens Segers",
-                "email": "hello@jenssegers.be"
-            }
-        ],
-        "description": "A MongoDB based Eloquent model and Query builder for Laravel 4",
-        "keywords": [
-            "database",
-            "eloquent",
-            "laravel",
-            "model",
-            "mongo",
-            "mongodb"
-        ]
-    },
-    {
         "name": "symfony/translation",
         "version": "2.3.x-dev",
         "version_normalized": "2.3.9999999.9999999-dev",
@@ -1621,107 +1402,6 @@
             }
         ],
         "description": "Symfony Translation Component",
-        "homepage": "http://symfony.com"
-    },
-    {
-        "name": "symfony/process",
-        "version": "2.3.x-dev",
-        "version_normalized": "2.3.9999999.9999999-dev",
-        "target-dir": "Symfony/Component/Process",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/symfony/Process.git",
-            "reference": "c1c6c1f668b1255c5936e6596d3c5e50a3d8ed13"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/symfony/Process/zipball/c1c6c1f668b1255c5936e6596d3c5e50a3d8ed13",
-            "reference": "c1c6c1f668b1255c5936e6596d3c5e50a3d8ed13",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.3.3"
-        },
-        "time": "2013-10-26 07:52:48",
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "2.3-dev"
-            }
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "psr-0": {
-                "Symfony\\Component\\Process\\": ""
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Fabien Potencier",
-                "email": "fabien@symfony.com"
-            },
-            {
-                "name": "Symfony Community",
-                "homepage": "http://symfony.com/contributors"
-            }
-        ],
-        "description": "Symfony Process Component",
-        "homepage": "http://symfony.com"
-    },
-    {
-        "name": "symfony/http-foundation",
-        "version": "2.3.x-dev",
-        "version_normalized": "2.3.9999999.9999999-dev",
-        "target-dir": "Symfony/Component/HttpFoundation",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/symfony/HttpFoundation.git",
-            "reference": "8f383fa5e4b66b66ba2d09e502e8bf73bdd04901"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/symfony/HttpFoundation/zipball/8f383fa5e4b66b66ba2d09e502e8bf73bdd04901",
-            "reference": "8f383fa5e4b66b66ba2d09e502e8bf73bdd04901",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.3.3"
-        },
-        "time": "2013-10-17 11:48:01",
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "2.3-dev"
-            }
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "psr-0": {
-                "Symfony\\Component\\HttpFoundation\\": ""
-            },
-            "classmap": [
-                "Symfony/Component/HttpFoundation/Resources/stubs"
-            ]
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Fabien Potencier",
-                "email": "fabien@symfony.com"
-            },
-            {
-                "name": "Symfony Community",
-                "homepage": "http://symfony.com/contributors"
-            }
-        ],
-        "description": "Symfony HttpFoundation Component",
         "homepage": "http://symfony.com"
     },
     {
@@ -1781,6 +1461,370 @@
         "homepage": "http://symfony.com"
     },
     {
+        "name": "pda/pheanstalk",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/pda/pheanstalk.git",
+            "reference": "5028537601caba22a85d20a3168443920538baac"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/pda/pheanstalk/zipball/5028537601caba22a85d20a3168443920538baac",
+            "reference": "5028537601caba22a85d20a3168443920538baac",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.0"
+        },
+        "time": "2013-04-03 09:09:52",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Pheanstalk": "classes/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Paul Annesley",
+                "email": "paul@annesley.cc",
+                "homepage": "http://paul.annesley.cc/",
+                "role": "Developer"
+            }
+        ],
+        "description": "PHP client for beanstalkd queue",
+        "homepage": "https://github.com/pda/pheanstalk",
+        "keywords": [
+            "beanstalkd"
+        ]
+    },
+    {
+        "name": "symfony/debug",
+        "version": "2.3.x-dev",
+        "version_normalized": "2.3.9999999.9999999-dev",
+        "target-dir": "Symfony/Component/Debug",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/symfony/Debug.git",
+            "reference": "085d4fd990493a47c1d542a98fac5475326e237f"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/symfony/Debug/zipball/085d4fd990493a47c1d542a98fac5475326e237f",
+            "reference": "085d4fd990493a47c1d542a98fac5475326e237f",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.3"
+        },
+        "require-dev": {
+            "symfony/http-foundation": "~2.1",
+            "symfony/http-kernel": "~2.1"
+        },
+        "suggest": {
+            "symfony/class-loader": "",
+            "symfony/http-foundation": "",
+            "symfony/http-kernel": ""
+        },
+        "time": "2013-10-30 08:30:20",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.3-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Symfony\\Component\\Debug\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Fabien Potencier",
+                "email": "fabien@symfony.com"
+            },
+            {
+                "name": "Symfony Community",
+                "homepage": "http://symfony.com/contributors"
+            }
+        ],
+        "description": "Symfony Debug Component",
+        "homepage": "http://symfony.com"
+    },
+    {
+        "name": "symfony/dom-crawler",
+        "version": "2.3.x-dev",
+        "version_normalized": "2.3.9999999.9999999-dev",
+        "target-dir": "Symfony/Component/DomCrawler",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/symfony/DomCrawler.git",
+            "reference": "4dc2c596b28884892da24729d9b32d01d89c1a59"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/symfony/DomCrawler/zipball/4dc2c596b28884892da24729d9b32d01d89c1a59",
+            "reference": "4dc2c596b28884892da24729d9b32d01d89c1a59",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.3"
+        },
+        "require-dev": {
+            "symfony/css-selector": "~2.0"
+        },
+        "suggest": {
+            "symfony/css-selector": ""
+        },
+        "time": "2013-10-30 08:30:20",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.3-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Symfony\\Component\\DomCrawler\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Fabien Potencier",
+                "email": "fabien@symfony.com"
+            },
+            {
+                "name": "Symfony Community",
+                "homepage": "http://symfony.com/contributors"
+            }
+        ],
+        "description": "Symfony DomCrawler Component",
+        "homepage": "http://symfony.com"
+    },
+    {
+        "name": "symfony/css-selector",
+        "version": "2.3.x-dev",
+        "version_normalized": "2.3.9999999.9999999-dev",
+        "target-dir": "Symfony/Component/CssSelector",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/symfony/CssSelector.git",
+            "reference": "8df20c54ffa650df860a3e42dbcd1fbd25a24977"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/symfony/CssSelector/zipball/8df20c54ffa650df860a3e42dbcd1fbd25a24977",
+            "reference": "8df20c54ffa650df860a3e42dbcd1fbd25a24977",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.3"
+        },
+        "time": "2013-10-30 08:30:20",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.3-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Symfony\\Component\\CssSelector\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Fabien Potencier",
+                "email": "fabien@symfony.com"
+            },
+            {
+                "name": "Symfony Community",
+                "homepage": "http://symfony.com/contributors"
+            },
+            {
+                "name": "Jean-François Simon",
+                "email": "jeanfrancois.simon@sensiolabs.com"
+            }
+        ],
+        "description": "Symfony CssSelector Component",
+        "homepage": "http://symfony.com"
+    },
+    {
+        "name": "jenssegers/mongodb",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/jenssegers/Laravel-MongoDB.git",
+            "reference": "bc4ae52d1b2b92f75b4e70a625545fbb4319f402"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/jenssegers/Laravel-MongoDB/zipball/bc4ae52d1b2b92f75b4e70a625545fbb4319f402",
+            "reference": "bc4ae52d1b2b92f75b4e70a625545fbb4319f402",
+            "shasum": ""
+        },
+        "require": {
+            "illuminate/database": "4.0.x",
+            "illuminate/events": "4.0.x",
+            "illuminate/support": "4.0.x",
+            "php": ">=5.3.0"
+        },
+        "require-dev": {
+            "illuminate/auth": "4.0.x",
+            "illuminate/cache": "4.0.x"
+        },
+        "time": "2013-10-29 19:49:29",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Jenssegers\\Mongodb": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Jens Segers",
+                "email": "hello@jenssegers.be"
+            }
+        ],
+        "description": "A MongoDB based Eloquent model and Query builder for Laravel 4",
+        "keywords": [
+            "database",
+            "eloquent",
+            "laravel",
+            "model",
+            "mongo",
+            "mongodb"
+        ]
+    },
+    {
+        "name": "symfony/process",
+        "version": "2.3.x-dev",
+        "version_normalized": "2.3.9999999.9999999-dev",
+        "target-dir": "Symfony/Component/Process",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/symfony/Process.git",
+            "reference": "82898108f79040314a7b3ba430a72c32c7f61d14"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/symfony/Process/zipball/82898108f79040314a7b3ba430a72c32c7f61d14",
+            "reference": "82898108f79040314a7b3ba430a72c32c7f61d14",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.3"
+        },
+        "time": "2013-10-30 08:30:20",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.3-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Symfony\\Component\\Process\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Fabien Potencier",
+                "email": "fabien@symfony.com"
+            },
+            {
+                "name": "Symfony Community",
+                "homepage": "http://symfony.com/contributors"
+            }
+        ],
+        "description": "Symfony Process Component",
+        "homepage": "http://symfony.com"
+    },
+    {
+        "name": "symfony/http-foundation",
+        "version": "2.3.x-dev",
+        "version_normalized": "2.3.9999999.9999999-dev",
+        "target-dir": "Symfony/Component/HttpFoundation",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/symfony/HttpFoundation.git",
+            "reference": "1bee3412d9ff603a9ed1cce305c0becbd735c307"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/symfony/HttpFoundation/zipball/1bee3412d9ff603a9ed1cce305c0becbd735c307",
+            "reference": "1bee3412d9ff603a9ed1cce305c0becbd735c307",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.3"
+        },
+        "time": "2013-10-30 08:28:22",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.3-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Symfony\\Component\\HttpFoundation\\": ""
+            },
+            "classmap": [
+                "Symfony/Component/HttpFoundation/Resources/stubs"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Fabien Potencier",
+                "email": "fabien@symfony.com"
+            },
+            {
+                "name": "Symfony Community",
+                "homepage": "http://symfony.com/contributors"
+            }
+        ],
+        "description": "Symfony HttpFoundation Component",
+        "homepage": "http://symfony.com"
+    },
+    {
         "name": "symfony/http-kernel",
         "version": "2.3.x-dev",
         "version_normalized": "2.3.9999999.9999999-dev",
@@ -1788,12 +1832,12 @@
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/HttpKernel.git",
-            "reference": "dce9c5096d8f1460af901e3899f88e9d3c1cec1b"
+            "reference": "9795c9f67c72a96be0535f6987a94a07e5ff2432"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/symfony/HttpKernel/zipball/dce9c5096d8f1460af901e3899f88e9d3c1cec1b",
-            "reference": "dce9c5096d8f1460af901e3899f88e9d3c1cec1b",
+            "url": "https://api.github.com/repos/symfony/HttpKernel/zipball/9795c9f67c72a96be0535f6987a94a07e5ff2432",
+            "reference": "9795c9f67c72a96be0535f6987a94a07e5ff2432",
             "shasum": ""
         },
         "require": {
@@ -1823,7 +1867,7 @@
             "symfony/dependency-injection": "",
             "symfony/finder": ""
         },
-        "time": "2013-10-28 14:46:04",
+        "time": "2013-10-30 08:30:20",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -1860,12 +1904,12 @@
         "source": {
             "type": "git",
             "url": "https://github.com/laravel/framework.git",
-            "reference": "e224e394627f7994be32b19a4ac09822a878ac4f"
+            "reference": "dfd88c5078dc9cbc846a7f8d40f6b083a3f00e2a"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/laravel/framework/zipball/e224e394627f7994be32b19a4ac09822a878ac4f",
-            "reference": "e224e394627f7994be32b19a4ac09822a878ac4f",
+            "url": "https://api.github.com/repos/laravel/framework/zipball/dfd88c5078dc9cbc846a7f8d40f6b083a3f00e2a",
+            "reference": "dfd88c5078dc9cbc846a7f8d40f6b083a3f00e2a",
             "shasum": ""
         },
         "require": {
@@ -1929,7 +1973,7 @@
             "pda/pheanstalk": "2.1.*",
             "phpunit/phpunit": "3.7.*"
         },
-        "time": "2013-10-29 13:33:48",
+        "time": "2013-10-29 20:05:47",
         "type": "library",
         "extra": {
             "branch-alias": {

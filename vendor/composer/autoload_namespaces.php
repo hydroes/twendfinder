@@ -22,6 +22,7 @@ return array(
     'Symfony\\Component\\BrowserKit\\' => array($vendorDir . '/symfony/browser-kit'),
     'Psr\\Log\\' => array($vendorDir . '/psr/log'),
     'Predis' => array($vendorDir . '/predis/predis/lib'),
+    'Pheanstalk' => array($vendorDir . '/pda/pheanstalk/classes'),
     'Patchwork' => array($vendorDir . '/patchwork/utf8/class'),
     'PHPParser' => array($vendorDir . '/nikic/php-parser/lib'),
     'Normalizer' => array($vendorDir . '/patchwork/utf8/class'),
