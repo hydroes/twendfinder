@@ -27,7 +27,7 @@ class FilterTrackConsumer extends OauthPhirehose
 
 //      echo 'status';
 //      var_dump($status);
-    $data = json_decode($status, true);
+//    $data = json_decode($status, true);
 
     // queue status
     Queue::push('App\Queues\QueueTwitterStatus', $status);
