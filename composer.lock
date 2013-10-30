@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "6db8b15c5a2db5177a2047f368f770b1",
+    "hash": "fb45091b9205f30bab5318d95b1262d1",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -660,57 +660,6 @@
                 "password"
             ],
             "time": "2013-04-30 19:58:08"
-        },
-        {
-            "name": "jenssegers/mongodb",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/jenssegers/Laravel-MongoDB.git",
-                "reference": "bc4ae52d1b2b92f75b4e70a625545fbb4319f402"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/jenssegers/Laravel-MongoDB/zipball/bc4ae52d1b2b92f75b4e70a625545fbb4319f402",
-                "reference": "bc4ae52d1b2b92f75b4e70a625545fbb4319f402",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/database": "4.0.x",
-                "illuminate/events": "4.0.x",
-                "illuminate/support": "4.0.x",
-                "php": ">=5.3.0"
-            },
-            "require-dev": {
-                "illuminate/auth": "4.0.x",
-                "illuminate/cache": "4.0.x"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "Jenssegers\\Mongodb": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Jens Segers",
-                    "email": "hello@jenssegers.be"
-                }
-            ],
-            "description": "A MongoDB based Eloquent model and Query builder for Laravel 4",
-            "keywords": [
-                "database",
-                "eloquent",
-                "laravel",
-                "model",
-                "mongo",
-                "mongodb"
-            ],
-            "time": "2013-10-29 19:49:29"
         },
         {
             "name": "jeremeamia/SuperClosure",

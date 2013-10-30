@@ -1671,59 +1671,6 @@
         "homepage": "http://symfony.com"
     },
     {
-        "name": "jenssegers/mongodb",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/jenssegers/Laravel-MongoDB.git",
-            "reference": "bc4ae52d1b2b92f75b4e70a625545fbb4319f402"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/jenssegers/Laravel-MongoDB/zipball/bc4ae52d1b2b92f75b4e70a625545fbb4319f402",
-            "reference": "bc4ae52d1b2b92f75b4e70a625545fbb4319f402",
-            "shasum": ""
-        },
-        "require": {
-            "illuminate/database": "4.0.x",
-            "illuminate/events": "4.0.x",
-            "illuminate/support": "4.0.x",
-            "php": ">=5.3.0"
-        },
-        "require-dev": {
-            "illuminate/auth": "4.0.x",
-            "illuminate/cache": "4.0.x"
-        },
-        "time": "2013-10-29 19:49:29",
-        "type": "library",
-        "installation-source": "dist",
-        "autoload": {
-            "psr-0": {
-                "Jenssegers\\Mongodb": "src/"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Jens Segers",
-                "email": "hello@jenssegers.be"
-            }
-        ],
-        "description": "A MongoDB based Eloquent model and Query builder for Laravel 4",
-        "keywords": [
-            "database",
-            "eloquent",
-            "laravel",
-            "model",
-            "mongo",
-            "mongodb"
-        ]
-    },
-    {
         "name": "symfony/process",
         "version": "2.3.x-dev",
         "version_normalized": "2.3.9999999.9999999-dev",
