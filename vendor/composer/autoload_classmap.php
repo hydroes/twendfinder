@@ -7,6 +7,7 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'ApiController' => $baseDir . '/app/controllers/ApiController.php',
+    'App\\Queues\\QueueTwitterStatus' => $baseDir . '/app/library/App/Queues/QueueTwitterStatus.php',
     'BaseController' => $baseDir . '/app/controllers/BaseController.php',
     'Carbon\\Carbon' => $vendorDir . '/nesbot/carbon/src/Carbon/Carbon.php',
     'ClassPreloader\\Application' => $vendorDir . '/classpreloader/classpreloader/src/ClassPreloader/Application.php',
@@ -298,7 +299,7 @@ return array(
     'Doctrine\\DBAL\\Types\\Type' => $vendorDir . '/doctrine/dbal/lib/Doctrine/DBAL/Types/Type.php',
     'Doctrine\\DBAL\\Types\\VarDateTimeType' => $vendorDir . '/doctrine/dbal/lib/Doctrine/DBAL/Types/VarDateTimeType.php',
     'Doctrine\\DBAL\\Version' => $vendorDir . '/doctrine/dbal/lib/Doctrine/DBAL/Version.php',
-    'FilterTrackConsumer' => $baseDir . '/app/library/reputable/TwitterTrackConsumer.php',
+    'FilterTrackConsumer' => $baseDir . '/app/library/App/TwitterTrackConsumer.php',
     'HomeController' => $baseDir . '/app/controllers/HomeController.php',
     'IlluminateQueueClosure' => $vendorDir . '/laravel/framework/src/Illuminate/Queue/IlluminateQueueClosure.php',
     'Illuminate\\Auth\\AuthManager' => $vendorDir . '/laravel/framework/src/Illuminate/Auth/AuthManager.php',
@@ -1610,7 +1611,7 @@ return array(
     'Symfony\\Component\\Translation\\TranslatorInterface' => $vendorDir . '/symfony/translation/Symfony/Component/Translation/TranslatorInterface.php',
     'Symfony\\Component\\Translation\\Writer\\TranslationWriter' => $vendorDir . '/symfony/translation/Symfony/Component/Translation/Writer/TranslationWriter.php',
     'TestCase' => $baseDir . '/app/tests/TestCase.php',
-    'TestMe' => $baseDir . '/app/library/reputable/TestMe.php',
+    'TestMe' => $baseDir . '/app/library/App/TestMe.php',
     'TwitterClient' => $baseDir . '/app/library/Vendors/Twitter/Client/TwitterClient.php',
     'TwitterStreamCommand' => $baseDir . '/app/commands/TwitterStreamCommand.php',
     'User' => $baseDir . '/app/models/User.php',

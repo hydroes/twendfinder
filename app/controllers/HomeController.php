@@ -17,17 +17,18 @@ class HomeController extends BaseController {
 
 	public function showWelcome()
 	{
+            $q = new App\Queues\QueueTwitterStatus();
             return View::make('demo.page');
 	}
-        
+
         public function showSnapShot()
         {
             $twitterClient = App::make('twitterClient');
-            
-            // tweets 
+
+            // tweets
             $search = array('q' => $_POST['search_term']);
             $tweets = $twitterClient->get('search/tweets.json', $search);
-            
+
             die('<pre>'.var_dump($tweets));
         }
 
