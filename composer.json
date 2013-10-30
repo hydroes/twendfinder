@@ -6,7 +6,8 @@
 	"require": {
 		"laravel/framework": "4.0.*",
         "fennb/phirehose": "dev-master",
-		"jenssegers/mongodb": "*"
+		"jenssegers/mongodb": "*",
+		"pda/pheanstalk": "dev-master"
 	},
 	"autoload": {
 		"classmap": [
