@@ -17,5 +17,3 @@ class TestMe
 		die('TestMe contructed');
 	}
 }
-
-?>

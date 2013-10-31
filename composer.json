@@ -16,8 +16,8 @@
 			"app/database/migrations",
 			"app/database/seeds",
 			"app/tests/TestCase.php",
-			"app/library/reputable",
-			"app/library/vendors"
+			"app/library/App",
+			"app/library/Vendors"
 		]
 	},
 	"scripts": {
