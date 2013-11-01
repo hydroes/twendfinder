@@ -6,6 +6,8 @@ class QueueTwitterStatus
     public function fire($job, $data)
     {
         var_dump($data);
-        // Minify, crop, shrink, apply filters or otherwise manipulate the image
+
+		// NB: be sure to release job else it never leaves
+		$job->release();
     }
 }

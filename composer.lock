@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "fb45091b9205f30bab5318d95b1262d1",
+    "hash": "bfcfc0fc5f2afbfdc9858f60fa19a3ca",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -715,12 +715,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "dfd88c5078dc9cbc846a7f8d40f6b083a3f00e2a"
+                "reference": "7afae9546a7600f4b910e93e4f0213da3deece4c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/dfd88c5078dc9cbc846a7f8d40f6b083a3f00e2a",
-                "reference": "dfd88c5078dc9cbc846a7f8d40f6b083a3f00e2a",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/7afae9546a7600f4b910e93e4f0213da3deece4c",
+                "reference": "7afae9546a7600f4b910e93e4f0213da3deece4c",
                 "shasum": ""
             },
             "require": {
@@ -820,7 +820,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2013-10-29 20:05:47"
+            "time": "2013-10-31 21:15:49"
         },
         {
             "name": "monolog/monolog",
@@ -828,12 +828,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seldaek/monolog.git",
-                "reference": "0f3c054dff866aa687ab07572b731fb2ba32e703"
+                "reference": "7f99ac07d38fd367d1f5f85693ae8433738f7f94"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/0f3c054dff866aa687ab07572b731fb2ba32e703",
-                "reference": "0f3c054dff866aa687ab07572b731fb2ba32e703",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/7f99ac07d38fd367d1f5f85693ae8433738f7f94",
+                "reference": "7f99ac07d38fd367d1f5f85693ae8433738f7f94",
                 "shasum": ""
             },
             "require": {
@@ -883,7 +883,7 @@
                 "logging",
                 "psr-3"
             ],
-            "time": "2013-10-28 09:41:17"
+            "time": "2013-10-31 21:38:39"
         },
         {
             "name": "nesbot/carbon",
