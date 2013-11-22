@@ -38,5 +38,5 @@ return array(
     'Doctrine\\Common\\' => array($vendorDir . '/doctrine/common/lib'),
     'ClassPreloader' => array($vendorDir . '/classpreloader/classpreloader/src'),
     'Carbon' => array($vendorDir . '/nesbot/carbon/src'),
-    'Acme' => array($baseDir . '/app/library/App'),
+    'App' => array($baseDir . '/app/library'),
 );

@@ -19,7 +19,7 @@
 			"app/library/Vendors"
 		],
                 "psr-0": {
-                    "Acme": "app/library/App"
+                    "App": "app/library/"
                 }
 	},
 	"scripts": {
