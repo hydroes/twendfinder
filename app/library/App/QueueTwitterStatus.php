@@ -5,7 +5,7 @@ class QueueTwitterStatus
 {
     public function fire($job, $data)
     {
-
+        use 'Illuminate';
 //        var_dump('Job ID: '.$job->getJobId());
 //        var_dump($data);
         Log::info('This is some useful information about job: ' . $job->getJobId());
