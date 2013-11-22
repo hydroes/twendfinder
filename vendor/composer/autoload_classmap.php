@@ -7,9 +7,11 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'ApiController' => $baseDir . '/app/controllers/ApiController.php',
+    'App\\Queues\\QueueTwitterStatus' => $baseDir . '/app/library/App/QueueTwitterStatus.php',
     'BaseController' => $baseDir . '/app/controllers/BaseController.php',
     'CreateUsersTable' => $baseDir . '/app/database/migrations/2013_09_15_114343_create_users_table.php',
     'DatabaseSeeder' => $baseDir . '/app/database/seeds/DatabaseSeeder.php',
+    'FilterTrackConsumer' => $baseDir . '/app/library/App/TwitterTrackConsumer.php',
     'HomeController' => $baseDir . '/app/controllers/HomeController.php',
     'IlluminateQueueClosure' => $vendorDir . '/laravel/framework/src/Illuminate/Queue/IlluminateQueueClosure.php',
     'OauthPhirehose' => $vendorDir . '/fennb/phirehose/lib/OauthPhirehose.php',
@@ -19,6 +21,8 @@ return array(
     'PhirehoseNetworkException' => $vendorDir . '/fennb/phirehose/lib/Phirehose.php',
     'SessionHandlerInterface' => $vendorDir . '/symfony/http-foundation/Symfony/Component/HttpFoundation/Resources/stubs/SessionHandlerInterface.php',
     'TestCase' => $baseDir . '/app/tests/TestCase.php',
+    'TestMe' => $baseDir . '/app/library/App/TestMe.php',
+    'TwitterClient' => $baseDir . '/app/library/Vendors/Twitter/Client/TwitterClient.php',
     'TwitterStreamCommand' => $baseDir . '/app/commands/TwitterStreamCommand.php',
     'User' => $baseDir . '/app/models/User.php',
     'UserstreamPhirehose' => $vendorDir . '/fennb/phirehose/lib/UserstreamPhirehose.php',
