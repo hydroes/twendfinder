@@ -30,7 +30,8 @@ class FilterTrackConsumer extends OauthPhirehose
     $data = json_decode($status, true);
 
     // queue status
-    Queue::push('App\Queues\QueueTwitterStatus', $data);
+    $statusQueue = new App\Queues\QueueTwitterStatus();
+    Queue::push($statusQueue, $data);
 
 //    var_dump($data);
 //    if (is_array($data) && isset($data['user']['screen_name'])) {
