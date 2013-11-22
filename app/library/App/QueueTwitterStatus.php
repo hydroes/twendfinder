@@ -1,5 +1,5 @@
 <?php
-//namespace App\Queues;
+namespace App\Queues;
 
 class QueueTwitterStatus
 {
