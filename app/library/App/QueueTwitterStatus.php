@@ -18,20 +18,24 @@ class QueueTwitterStatus
 
     function namespaceExists($namespace)
     {
-        $namespaces=array();
-        foreach(get_declared_classes() as $name) {
-            if(preg_match_all("@[^\\\]+(?=\\\)@iU", $name, $matches)) {
-                $matches = $matches[0];
-                $parent =&$namespaces;
-                while(count($matches)) {
-                    $match = array_shift($matches);
-                    if(!isset($parent[$match]) && count($matches))
-                        $parent[$match] = array();
-                    $parent =&$parent[$match];
 
-                }
-            }
+        $namespaces=array();
+foreach(get_declared_classes() as $name) {
+    if(preg_match_all("@[^\\\]+(?=\\\)@iU", $name, $matches)) {
+        $matches = $matches[0];
+        $parent =&$namespaces;
+        while(count($matches)) {
+            $match = array_shift($matches);
+            if(!isset($parent[$match]) && count($matches))
+                $parent[$match] = array();
+            $parent =&$parent[$match];
+
         }
+    }
+}
+
+print_r($namespaces);
+
     }
 
 }
