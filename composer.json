@@ -16,9 +16,11 @@
 			"app/database/migrations",
 			"app/database/seeds",
 			"app/tests/TestCase.php",
-			"app/library/App",
 			"app/library/Vendors"
-		]
+		],
+                "psr-0": {
+                    "Acme": "app/library/App"
+                }
 	},
 	"scripts": {
 		"post-install-cmd": [
