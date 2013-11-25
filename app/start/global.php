@@ -104,10 +104,10 @@ App::bind('twitterClient', function($app)
 });
 
 
-App::singleton('mongoClient', function()
+App::singleton('mongoDb', function()
 {
     // Create mongo connection
     $mongoClient = new MongoClient();
-
-    return $mongoClient;
+    $db = $mongoClient->selectDB(Config::get('database.mongo_db_name'));
+    return $db;
 });

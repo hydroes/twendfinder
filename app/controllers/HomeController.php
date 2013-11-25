@@ -19,7 +19,7 @@ class HomeController extends BaseController {
 	{
 //            $mongodb = new MongoClient();
 
-            $mongo = App::make('mongoClient');
+            $mongo = App::make('mongoDb');
             $q = new App\Queues\QueueTwitterStatus();
             return View::make('demo.page');
 	}
