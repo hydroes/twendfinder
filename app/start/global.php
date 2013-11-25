@@ -94,11 +94,20 @@ require app_path().'/filters.php';
 App::bind('twitterClient', function($app)
 {
     $twitterClient = new TwitterClient(
-        Config::get('twitter.consumer_key'), 
+        Config::get('twitter.consumer_key'),
         Config::get('twitter.consumer_secret'),
         Config::get('twitter.access_token'),
         Config::get('twitter.access_token_secret')
     );
-    
+
     return $twitterClient;
+});
+
+
+App::singleton('mongoClient', function()
+{
+    // Create mongo connection
+    $mongoClient = new MongoClient();
+
+    return $mongoClient;
 });
