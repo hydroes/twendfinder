@@ -104,7 +104,7 @@ App::bind('twitterClient', function($app)
 });
 
 
-App::singleton('mongoDb', function()
+App::singleton('mongoClient', function()
 {
     // Create mongo connection
     $mongoClient = new MongoClient();

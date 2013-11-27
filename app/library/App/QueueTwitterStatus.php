@@ -5,35 +5,15 @@ class QueueTwitterStatus
 {
     public function fire($job, $data)
     {
+        // \Log::info('This is some useful information about job: ' . $job->getJobId());
 
-//        var_dump('Job ID: '.$job->getJobId());
-//        var_dump($data);
-        \Log::info('This is some useful information about job: ' . $job->getJobId());
-//        sleep(60);
+        $m = App::make('mongoClient');
+        $collection = $m->selectCollection(Config::get('database.mongo_db_name'), 'twitter_statuses');
+
+        $collection->insert($data['status']);
+
         // NB: be sure to release job else it never leaves
         $job->delete();
-    }
-
-    function namespaceExists($namespace)
-    {
-
-        $namespaces=array();
-foreach(get_declared_classes() as $name) {
-    if(preg_match_all("@[^\\\]+(?=\\\)@iU", $name, $matches)) {
-        $matches = $matches[0];
-        $parent =&$namespaces;
-        while(count($matches)) {
-            $match = array_shift($matches);
-            if(!isset($parent[$match]) && count($matches))
-                $parent[$match] = array();
-            $parent =&$parent[$match];
-
-        }
-    }
-}
-
-print_r($namespaces);
-
     }
 
 }
