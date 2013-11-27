@@ -8,7 +8,7 @@ class QueueTwitterStatus
         // \Log::info('This is some useful information about job: ' . $job->getJobId());
 
         $m = \App::make('mongoClient');
-        $collection = $m->selectCollection(Config::get('database.mongo_db_name'), 'twitter_statuses');
+        $collection = $m->selectCollection(\Config::get('database.mongo_db_name'), 'twitter_statuses');
 
         $collection->insert($data['status']);
 
