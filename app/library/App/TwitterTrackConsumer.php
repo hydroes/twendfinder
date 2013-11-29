@@ -49,6 +49,16 @@ class FilterTrackConsumer extends OauthPhirehose
     // This is all that's required, Phirehose will detect the change and reconnect as soon as possible
     $randWord1 = $this->myTrackWords[rand(0, 3)];
     $randWord2 = $this->myTrackWords[rand(0, 3)];
+
+  /**
+   * Specifies keywords to track. Track keywords are case-insensitive logical ORs. Terms are exact-matched, ignoring
+   * punctuation. Phrases, keywords with spaces, are not supported. Queries are subject to Track Limitations.
+   * Applies to: METHOD_FILTER
+   *
+   * See: http://apiwiki.twitter.com/Streaming-API-Documentation#TrackLimiting
+   *
+   * @param array $trackWords
+   */
     $this->setTrack(array($randWord1, $randWord2));
   }
 
