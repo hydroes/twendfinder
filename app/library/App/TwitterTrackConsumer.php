@@ -5,9 +5,16 @@ class FilterTrackConsumer extends OauthPhirehose
    /**
    * Subclass specific attribs
    */
-//  protected $myTrackWords = array('morning', 'goodnight', 'hello', 'the');
-
-    protected $myTrackWords = array('honeymoon', 'billionare', 'sex', 'brian gouws');
+    protected $myTrackWords = array(
+        'i love',
+        'i hate',
+        'i think',
+        'i believe',
+        'i feel',
+        'i wish',
+        'i want',
+        'i will',
+    );
 
   /**
    * Enqueue each status
@@ -21,22 +28,11 @@ class FilterTrackConsumer extends OauthPhirehose
      * NOTE: You should NOT be processing tweets at this point in a real application, instead they should be being
      *       enqueued and processed asyncronously from the collection process.
      */
-
-      // TODO: save statuses to mongo (use status ids as _ids for speed)
-
-
-//      echo 'status';
-//      var_dump($status);
     $data = json_decode($status, true);
 
     // queue status
     Queue::push('App\Queues\QueueTwitterStatus', array('status' => $data));
 
-//    var_dump($data);
-//    if (is_array($data) && isset($data['user']['screen_name'])) {
-//      echo $data['user']['screen_name'] . ': ' . urldecode($data['text']) . "\n";
-//    }
-//		exit;
   }
 
   /**
@@ -47,8 +43,8 @@ class FilterTrackConsumer extends OauthPhirehose
   public function checkFilterPredicates()
   {
     // This is all that's required, Phirehose will detect the change and reconnect as soon as possible
-    $randWord1 = $this->myTrackWords[rand(0, 3)];
-    $randWord2 = $this->myTrackWords[rand(0, 3)];
+//    $randWord1 = $this->myTrackWords[rand(0, 3)];
+//    $randWord2 = $this->myTrackWords[rand(0, 3)];
 
   /**
    * Specifies keywords to track. Track keywords are case-insensitive logical ORs. Terms are exact-matched, ignoring
@@ -59,7 +55,7 @@ class FilterTrackConsumer extends OauthPhirehose
    *
    * @param array $trackWords
    */
-    $this->setTrack(array($randWord1, $randWord2));
+    $this->setTrack($this->myTrackWords);
   }
 
 }
