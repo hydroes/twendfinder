@@ -3,33 +3,33 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "e15e6db1bc4903f4994d3e31716d7566",
+    "hash": "f2d77680752c2f90db4ff24a00d84012",
     "packages": [
         {
             "name": "cboden/ratchet",
-            "version": "v0.3.0",
+            "version": "v0.2.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cboden/Ratchet.git",
-                "reference": "d756e0b507a5f3cdbf8c59dbb7baf68574dc7d58"
+                "reference": "ebd17c6675b51044e711a1089b1534fd8c68c9e0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cboden/Ratchet/zipball/d756e0b507a5f3cdbf8c59dbb7baf68574dc7d58",
-                "reference": "d756e0b507a5f3cdbf8c59dbb7baf68574dc7d58",
+                "url": "https://api.github.com/repos/cboden/Ratchet/zipball/ebd17c6675b51044e711a1089b1534fd8c68c9e0",
+                "reference": "ebd17c6675b51044e711a1089b1534fd8c68c9e0",
                 "shasum": ""
             },
             "require": {
                 "guzzle/http": ">=3.6.0,<3.8.0-dev",
-                "php": ">=5.3.9",
-                "react/socket": "0.3.*",
-                "symfony/http-foundation": "~2.2",
-                "symfony/routing": "~2.2"
+                "php": ">=5.3.3",
+                "react/socket": ">=0.2.0,<0.4.0-dev",
+                "symfony/http-foundation": "~2.1"
             },
             "type": "library",
             "autoload": {
                 "psr-0": {
-                    "Ratchet": "src"
+                    "Ratchet": "src",
+                    "Ratchet\\Tests": "tests"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -52,7 +52,7 @@
                 "server",
                 "sockets"
             ],
-            "time": "2013-10-14 14:38:12"
+            "time": "2013-09-20 00:55:12"
         },
         {
             "name": "classpreloader/classpreloader",
@@ -618,7 +618,7 @@
                     "homepage": "http://wiedler.ch/igor/"
                 }
             ],
-            "description": "Événement is a very simple event dispatching library for PHP 5.3",
+            "description": "\u00c9v\u00e9nement is a very simple event dispatching library for PHP 5.3",
             "keywords": [
                 "event-dispatcher"
             ],
@@ -726,12 +726,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/common.git",
-                "reference": "5126e268446c7e7df961b89128d71878e0652432"
+                "reference": "eb4e34cac1b18583f0ee74bf6a9dda96bd771a1e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/common/zipball/5126e268446c7e7df961b89128d71878e0652432",
-                "reference": "5126e268446c7e7df961b89128d71878e0652432",
+                "url": "https://api.github.com/repos/guzzle/common/zipball/eb4e34cac1b18583f0ee74bf6a9dda96bd771a1e",
+                "reference": "eb4e34cac1b18583f0ee74bf6a9dda96bd771a1e",
                 "shasum": ""
             },
             "require": {
@@ -761,7 +761,7 @@
                 "event",
                 "exception"
             ],
-            "time": "2013-10-02 20:47:00"
+            "time": "2013-12-05 23:39:20"
         },
         {
             "name": "guzzle/http",
@@ -770,12 +770,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/http.git",
-                "reference": "3420035adcf312d62a2e64f3e6b3e3e590121786"
+                "reference": "b497e6b6a5a85751ae0c6858d677f7c4857dd171"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/http/zipball/3420035adcf312d62a2e64f3e6b3e3e590121786",
-                "reference": "3420035adcf312d62a2e64f3e6b3e3e590121786",
+                "url": "https://api.github.com/repos/guzzle/http/zipball/b497e6b6a5a85751ae0c6858d677f7c4857dd171",
+                "reference": "b497e6b6a5a85751ae0c6858d677f7c4857dd171",
                 "shasum": ""
             },
             "require": {
@@ -818,7 +818,7 @@
                 "http",
                 "http client"
             ],
-            "time": "2013-09-20 22:05:53"
+            "time": "2013-12-04 22:21:25"
         },
         {
             "name": "guzzle/parser",
@@ -827,12 +827,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/parser.git",
-                "reference": "a25c2ddda1c52fb69a4ee56eb530b13ddd9573c2"
+                "reference": "77cae6425bc3466e1e47bdf6d2eebc15a092dbcc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/parser/zipball/a25c2ddda1c52fb69a4ee56eb530b13ddd9573c2",
-                "reference": "a25c2ddda1c52fb69a4ee56eb530b13ddd9573c2",
+                "url": "https://api.github.com/repos/guzzle/parser/zipball/77cae6425bc3466e1e47bdf6d2eebc15a092dbcc",
+                "reference": "77cae6425bc3466e1e47bdf6d2eebc15a092dbcc",
                 "shasum": ""
             },
             "require": {
@@ -862,7 +862,7 @@
                 "message",
                 "url"
             ],
-            "time": "2013-07-11 22:46:03"
+            "time": "2013-10-24 00:04:09"
         },
         {
             "name": "guzzle/stream",
@@ -1010,12 +1010,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "1973197d53c9daaf65c54c4c872669e787a408d3"
+                "reference": "426c9e0e39915eedd2861b147ba6701443136e3d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/1973197d53c9daaf65c54c4c872669e787a408d3",
-                "reference": "1973197d53c9daaf65c54c4c872669e787a408d3",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/426c9e0e39915eedd2861b147ba6701443136e3d",
+                "reference": "426c9e0e39915eedd2861b147ba6701443136e3d",
                 "shasum": ""
             },
             "require": {
@@ -1115,7 +1115,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2013-12-03 02:09:00"
+            "time": "2013-12-06 01:42:26"
         },
         {
             "name": "monolog/monolog",
@@ -1186,16 +1186,16 @@
         },
         {
             "name": "nesbot/carbon",
-            "version": "1.6.0",
+            "version": "1.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/briannesbitt/Carbon.git",
-                "reference": "b0450b539d1567b2acee6467b6b323a8547b5559"
+                "reference": "03ede52a1f360441b5826cb8a798e0d0a919731f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/b0450b539d1567b2acee6467b6b323a8547b5559",
-                "reference": "b0450b539d1567b2acee6467b6b323a8547b5559",
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/03ede52a1f360441b5826cb8a798e0d0a919731f",
+                "reference": "03ede52a1f360441b5826cb8a798e0d0a919731f",
                 "shasum": ""
             },
             "require": {
@@ -1228,7 +1228,7 @@
                 "datetime",
                 "time"
             ],
-            "time": "2013-11-23 15:22:05"
+            "time": "2013-12-05 04:13:29"
         },
         {
             "name": "nikic/php-parser",
@@ -1421,12 +1421,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-fig/log.git",
-                "reference": "134145e8d08ddcb9bb8f49a2feb9aa1f2393650c"
+                "reference": "5144da9525d24346bf009ff28f10cbaa1f0f166e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-fig/log/zipball/134145e8d08ddcb9bb8f49a2feb9aa1f2393650c",
-                "reference": "134145e8d08ddcb9bb8f49a2feb9aa1f2393650c",
+                "url": "https://api.github.com/repos/php-fig/log/zipball/5144da9525d24346bf009ff28f10cbaa1f0f166e",
+                "reference": "5144da9525d24346bf009ff28f10cbaa1f0f166e",
                 "shasum": ""
             },
             "type": "library",
@@ -1456,7 +1456,7 @@
                 "psr",
                 "psr-3"
             ],
-            "time": "2013-11-19 10:21:35"
+            "time": "2013-12-05 15:25:07"
         },
         {
             "name": "react/event-loop",
@@ -1587,6 +1587,51 @@
                 "stream"
             ],
             "time": "2013-07-09 00:44:12"
+        },
+        {
+            "name": "react/zmq",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/reactphp/zmq.git",
+                "reference": "b69d97f99f2127e27d130d7fe3b2cec2a63b2c4e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/reactphp/zmq/zipball/b69d97f99f2127e27d130d7fe3b2cec2a63b2c4e",
+                "reference": "b69d97f99f2127e27d130d7fe3b2cec2a63b2c4e",
+                "shasum": ""
+            },
+            "require": {
+                "evenement/evenement": "~1.0",
+                "ext-zmq": "*",
+                "php": ">=5.3.2",
+                "react/event-loop": "0.3.*"
+            },
+            "require-dev": {
+                "ext-pcntl": "*"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.2-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "React\\ZMQ": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "ZeroMQ bindings for React.",
+            "keywords": [
+                "zeromq",
+                "zmq"
+            ],
+            "time": "2013-09-18 11:02:06"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -1788,7 +1833,7 @@
                     "homepage": "http://symfony.com/contributors"
                 },
                 {
-                    "name": "Jean-François Simon",
+                    "name": "Jean-Fran\u00e7ois Simon",
                     "email": "jeanfrancois.simon@sensiolabs.com"
                 }
             ],
@@ -2110,12 +2155,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/HttpKernel.git",
-                "reference": "147e648e587a76256fc753a4b8feaa6f0be60536"
+                "reference": "36578f3ad3dac980c841bf7921b2a1df6b156f8e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/HttpKernel/zipball/147e648e587a76256fc753a4b8feaa6f0be60536",
-                "reference": "147e648e587a76256fc753a4b8feaa6f0be60536",
+                "url": "https://api.github.com/repos/symfony/HttpKernel/zipball/36578f3ad3dac980c841bf7921b2a1df6b156f8e",
+                "reference": "36578f3ad3dac980c841bf7921b2a1df6b156f8e",
                 "shasum": ""
             },
             "require": {
@@ -2172,7 +2217,7 @@
             ],
             "description": "Symfony HttpKernel Component",
             "homepage": "http://symfony.com",
-            "time": "2013-12-03 14:51:26"
+            "time": "2013-12-05 07:46:04"
         },
         {
             "name": "symfony/process",
