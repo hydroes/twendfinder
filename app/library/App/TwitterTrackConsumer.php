@@ -33,6 +33,13 @@ class FilterTrackConsumer extends OauthPhirehose
     // queue status
     Queue::push('App\Queues\QueueTwitterStatus', array('status' => $data));
 
+    // re write this to use registry and factory
+    $context = new ZMQContext();
+    $socket = $context->getSocket(ZMQ::SOCKET_PUSH, 'my pusher');
+    $socket->connect("tcp://localhost:5555");
+
+    $socket->send($status);
+
   }
 
   /**
