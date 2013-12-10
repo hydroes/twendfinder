@@ -32,16 +32,16 @@ class Pusher implements WampServerInterface {
      * @param string JSON'ified string we'll receive from ZeroMQ
      */
     public function onBlogEntry($entry) {
-        $entryData = json_decode($entry, true);
+//        $entryData = json_decode($entry, true);
 
         // If the lookup topic object isn't set there is no one to publish to
-        if (!array_key_exists($entryData['cat'], $this->subscribedTopics)) {
-            return;
-        }
+//        if (!array_key_exists($entryData['cat'], $this->subscribedTopics)) {
+//            return;
+//        }
 
-        $topic = $this->subscribedTopics[$entryData['cat']];
+        $topic = $this->subscribedTopics['test'];
 
         // re-send the data to all the clients subscribed to that category
-        $topic->broadcast($entryData);
+        $topic->broadcast('test');
     }
 }
