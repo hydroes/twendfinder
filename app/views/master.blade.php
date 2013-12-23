@@ -13,7 +13,7 @@
     <script>
         // WAMP session object
         var sess;
-        var wsuri = "ws://sockets.twendfinder.com:8080";
+        var wsuri = "ws://sockets.twendfinder.com:443";
 
         window.onload = function() {
 
