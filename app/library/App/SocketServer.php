@@ -13,13 +13,13 @@ class Pusher implements WampServerInterface
 
     public function onOpen(ConnectionInterface $conn)
     {
-        echo 'client connected';
+        echo "client connected\n";
         $this->clients->attach($conn);
     }
 
     public function onSubscribe(ConnectionInterface $conn, $topic)
     {
-        echo 'onSubscribe';
+        echo "onSubscribe\n";
         // When a visitor subscribes to a topic link the Topic object in a  lookup array
         if (!array_key_exists($topic->getId(), $this->subscribedTopics)) {
             $this->subscribedTopics[$topic->getId()] = $topic;
@@ -44,6 +44,7 @@ class Pusher implements WampServerInterface
     public function onPublish(ConnectionInterface $conn, $topic, $event, array $exclude, array $eligible)
     {
         echo 'onPublish';
+        echo "\n";
         // In this application if clients send data it's because the user hacked around in console
         $conn->close();
     }
