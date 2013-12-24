@@ -7,6 +7,8 @@ class Pusher implements WampServerInterface
 {
     protected $_clients;
 
+    public $subscribedTopics = array();
+
     public function __construct() {
         $this->clients = new \SplObjectStorage;
     }
