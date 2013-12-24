@@ -22,6 +22,7 @@ class Pusher implements WampServerInterface
     public function onSubscribe(ConnectionInterface $conn, $topic)
     {
         echo "onSubscribe\n";
+        var_dump($topic);
         // When a visitor subscribes to a topic link the Topic object in a  lookup array
         if (!array_key_exists($topic->getId(), $this->subscribedTopics)) {
             $this->subscribedTopics[$topic->getId()] = $topic;
@@ -30,7 +31,6 @@ class Pusher implements WampServerInterface
     public function onUnSubscribe(ConnectionInterface $conn, $topic)
     {
         echo "onUnSubscribe\n";
-        var_dump($topic);
     }
     public function onClose(ConnectionInterface $conn)
     {
