@@ -30,6 +30,7 @@ class Pusher implements WampServerInterface
     public function onUnSubscribe(ConnectionInterface $conn, $topic)
     {
         echo "onUnSubscribe\n";
+        var_dump($topic);
     }
     public function onClose(ConnectionInterface $conn)
     {
@@ -45,8 +46,7 @@ class Pusher implements WampServerInterface
     }
     public function onPublish(ConnectionInterface $conn, $topic, $event, array $exclude, array $eligible)
     {
-        echo 'onPublish';
-        echo "\n";
+        echo "onPublish\n";
         // In this application if clients send data it's because the user hacked around in console
         $conn->close();
     }
