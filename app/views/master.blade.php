@@ -26,8 +26,8 @@
                  sess = session;
                  console.log("Connected to " + wsuri);
 
-                 // subscribe to topic, providing an event handler
-                 sess.subscribe("http://example.com/simple", onEvent);
+                 // subscribe to topic, providing an event handler http://example.com/simple
+                 sess.subscribe("ws://sockets.twendfinder.com:443", onEvent);
               },
 
               // WAMP session is gone
@@ -46,12 +46,12 @@
 
         function publishEvent()
         {
-           sess.publish("http://example.com/simple", {a: "foo", b: "bar", c: 23});
+           sess.publish("ws://sockets.twendfinder.com:443", {a: "foo", b: "bar", c: 23});
         }
 
         function callProcedure() {
            // issue an RPC, returns promise object
-           sess.call("http://example.com/simple/calc#add", 23, 7).then(
+           sess.call("ws://sockets.twendfinder.com:443", 23, 7).then(
 
               // RPC success callback
               function (res) {
