@@ -111,3 +111,9 @@ App::singleton('mongoClient', function()
 //    $db = $mongoClient->selectDB(Config::get('database.mongo_db_name'));
     return $mongoClient;
 });
+
+App::singleton('zeroMqContext', function()
+{
+    // create zero mq context object
+    return new ZMQContext();
+});
