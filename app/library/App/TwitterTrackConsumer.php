@@ -38,6 +38,10 @@ class FilterTrackConsumer extends OauthPhirehose
     $socket = $context->getSocket(ZMQ::SOCKET_PUSH, 'stream');
     $socket->connect('tcp://127.0.0.1:3000');
 
+    if (class_exists("ZMQ") && defined("ZMQ::LIBZMQ_VER")) {
+        echo ZMQ::LIBZMQ_VER, PHP_EOL;
+    }
+
     $socket->send('TEST MESSAGE');
 
   }

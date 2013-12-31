@@ -45,11 +45,6 @@ class TwitterStreamCommand extends Command {
             $sc = new FilterTrackConsumer(OAUTH_TOKEN, OAUTH_SECRET, Phirehose::METHOD_FILTER);
             $sc->consume();
 
-            if (class_exists("ZMQ") && defined("ZMQ::LIBZMQ_VER")) {
-                echo ZMQ::LIBZMQ_VER, PHP_EOL;
-            }
-
-
 //            echo $sc->getLastErrorMsg();
 	}
 
