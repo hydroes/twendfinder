@@ -35,8 +35,8 @@ class FilterTrackConsumer extends OauthPhirehose
 
     // re write this to use registry and factory
     $context = new ZMQContext();
-    $socket = $context->getSocket(ZMQ::SOCKET_PUSH, 'my pusher');
-    $socket->connect("tcp://localhost:5555");
+    $socket = $context->getSocket(ZMQ::SOCKET_PUSH, '');
+    $socket->connect('tcp://127.0.0.1:3000');
 
     $socket->send($status);
 
