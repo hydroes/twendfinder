@@ -40,7 +40,8 @@ class FilterTrackConsumer extends OauthPhirehose
 //        echo ZMQ::LIBZMQ_VER, PHP_EOL;
 //    }
 
-    $socket->send($data['text']);
+    $sendData = ( isset($data['text']) === true ) ? $data['text'] : 'no tweet available';
+    $socket->send($sendData);
 
   }
 
