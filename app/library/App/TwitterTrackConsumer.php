@@ -40,7 +40,7 @@ die(var_dump($data));
 //        echo ZMQ::LIBZMQ_VER, PHP_EOL;
 //    }
 
-    $socket->send(['status']['text']);
+    $socket->send($data['status']['text']);
 
   }
 
