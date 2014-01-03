@@ -40,7 +40,7 @@ class FilterTrackConsumer extends OauthPhirehose
 //        echo ZMQ::LIBZMQ_VER, PHP_EOL;
 //    }
 
-    $socket->send($data['text']);
+    $socket->send($data['status']);
 
   }
 
