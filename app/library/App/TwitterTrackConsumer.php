@@ -32,7 +32,7 @@ class FilterTrackConsumer extends OauthPhirehose
 
     // queue status
     Queue::push('App\Queues\QueueTwitterStatus', array('status' => $data));
-die(var_dump($data));
+//die(var_dump($data));
     // re write this to use registry and factory
     $socket = \App::make('zeroMqSocket');
 
@@ -40,7 +40,7 @@ die(var_dump($data));
 //        echo ZMQ::LIBZMQ_VER, PHP_EOL;
 //    }
 
-    $socket->send($data['status']['text']);
+    $socket->send($data['text']);
 
   }
 
