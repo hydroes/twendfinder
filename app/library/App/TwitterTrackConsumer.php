@@ -34,15 +34,13 @@ class FilterTrackConsumer extends OauthPhirehose
     Queue::push('App\Queues\QueueTwitterStatus', array('status' => $data));
 
     // re write this to use registry and factory
-    $context = \App::make('zeroMqContext');
-    $socket = $context->getSocket(ZMQ::SOCKET_PUSH, 'stream');
-    $socket->connect('tcp://127.0.0.1:3000');
+    $socket = \App::make('zeroMqSocket');
 
-    if (class_exists("ZMQ") && defined("ZMQ::LIBZMQ_VER")) {
-        echo ZMQ::LIBZMQ_VER, PHP_EOL;
-    }
+//    if (class_exists("ZMQ") && defined("ZMQ::LIBZMQ_VER")) {
+//        echo ZMQ::LIBZMQ_VER, PHP_EOL;
+//    }
 
-    $socket->send('TEST MESSAGE');
+    $socket->send($data['status']['text']);
 
   }
 
