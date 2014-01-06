@@ -2,15 +2,25 @@
 
 @section('content')
 <h1>Welcome!</h1>
-<p>Welcome to Brian's web page!</p>
+<p>Live twitter stream:</p>
 
-{{ Form::open(array('action' => 'HomeController@showSnapShot')) }}
-{{ Form::text('search_term', 'laravel') }}
 
-{{Form::submit('Rate me!')}}
-{{Form::token()}}
+<div id="tweets"></div>
 
-{{ Form::close() }}
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="http://sockets.twendfinder.com/node_modules/socket.io/node_modules/socket.io-client/dist/socket.io.js"></script>
+<script>
+socket = io.connect('http://sockets.twendfinder.com:443');
+//    socket.emit('tweets', function (data) {
+//        console.log(data);
+//    });
+
+socket.on('tweet', function(data){
+
+    $('#tweets').html(data + '<br />' + $('#tweets').html());
+//        console.log(data)
+});
+</script>
 
 @endsection
 
