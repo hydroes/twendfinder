@@ -20,6 +20,8 @@ class TwitterStreamCommand extends Command {
 	 */
 	protected $description = 'Streams tweets from twitter';
 
+        protected $_twitterConsumer;
+
 	/**
 	 * Create a new command instance.
 	 *
@@ -28,6 +30,13 @@ class TwitterStreamCommand extends Command {
 	public function __construct()
 	{
 		parent::__construct();
+
+                // put this into the registry
+                define("TWITTER_CONSUMER_KEY", Config::get('twitter.consumer_key'));
+                define("TWITTER_CONSUMER_SECRET", Config::get('twitter.consumer_secret'));
+                define("OAUTH_TOKEN", Config::get('twitter.access_token'));
+                define("OAUTH_SECRET", Config::get('twitter.access_token_secret'));
+                $this->_twitterConsumer = new FilterTrackConsumer(OAUTH_TOKEN, OAUTH_SECRET, Phirehose::METHOD_FILTER);
 	}
 
 	/**
@@ -37,13 +46,7 @@ class TwitterStreamCommand extends Command {
 	 */
 	public function fire()
 	{
-            define("TWITTER_CONSUMER_KEY", Config::get('twitter.consumer_key'));
-            define("TWITTER_CONSUMER_SECRET", Config::get('twitter.consumer_secret'));
-            define("OAUTH_TOKEN", Config::get('twitter.access_token'));
-            define("OAUTH_SECRET", Config::get('twitter.access_token_secret'));
-
-            $sc = new FilterTrackConsumer(OAUTH_TOKEN, OAUTH_SECRET, Phirehose::METHOD_FILTER);
-            $sc->consume();
+            $this->_twitterConsumer->consume();
 
 //            echo $sc->getLastErrorMsg();
 	}
