@@ -17,7 +17,7 @@ socket = io.connect('http://sockets.twendfinder.com:443');
 
 socket.on('tweet', function(data){
 
-    $('#tweets').html(data + '<br />' + $('#tweets').html());
+    $('#tweets').prepend(data + '<br /><hr />');
 //        console.log(data)
 });
 </script>
