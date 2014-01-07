@@ -2,7 +2,7 @@
 
 @section('content')
 <h1>Welcome!</h1>
-<p>Live twitter stream:</p>
+<p>Live twitter stream: <span id="counter"></span></p>
 
 
 <div id="tweets"></div>
@@ -20,6 +20,14 @@ socket.on('tweet', function(data){
     $('#tweets').prepend(data + '<br /><hr />');
 //        console.log(data)
 });
+
+socket.on('tweetCount', function(data){
+
+    $('#counter').text(data);
+        console.log(data)
+});
+
+
 </script>
 
 @endsection
