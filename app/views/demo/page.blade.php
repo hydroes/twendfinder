@@ -22,9 +22,7 @@ socket.on('tweet', function(data){
 });
 
 socket.on('tweetCount', function(data){
-
     $('#counter').text(data);
-        console.log(data)
 });
 
 
