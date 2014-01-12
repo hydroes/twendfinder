@@ -7,10 +7,12 @@ class QueueTwitterStatus
     {
         // \Log::info('This is some useful information about job: ' . $job->getJobId());
 
-        $m = \App::make('mongoClient');
-        $collection = $m->selectCollection(\Config::get('database.mongo_db_name'), 'twitter_statuses');
+//        $m = \App::make('mongoClient');
+//        $collection = $m->selectCollection(\Config::get('database.mongo_db_name'), 'twitter_statuses');
+//        $collection->insert($data['status']);
 
-        $collection->insert($data['status']);
+        // insert stream count for each minute
+        Cache::increment(date('Y-m-d-H-i'));
 
         // NB: be sure to release job else it never leaves
         $job->delete();

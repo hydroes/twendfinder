@@ -86,4 +86,6 @@ return array(
 
 	'prefix' => 'laravel',
 
+        'redis_expires' => '259200', /* 3 days */
+
 );
