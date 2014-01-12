@@ -13,13 +13,7 @@ class QueueTwitterStatus
 
         // insert stream count for each minute
         $key = date('Y-m-d-H-i');
-        if (Cache::has($key))
-        {
-            Cache::increment($key);
-        } else
-        {
-            Cache::add($key, 1, 1000);
-        }
+        \Cache::increment($key);
 
         // NB: be sure to release job else it never leaves
         $job->delete();
