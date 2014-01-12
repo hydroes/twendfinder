@@ -31,14 +31,10 @@ class FilterTrackConsumer extends OauthPhirehose
     $data = json_decode($status, true);
 
     // queue status
-//    Queue::push('App\Queues\QueueTwitterStatus', array('status' => $data));
+    Queue::push('App\Queues\QueueTwitterStatus', array('status' => $data));
 
     // create zmq socket
     $socket = \App::make('zeroMqSocket');
-
-//    if (class_exists("ZMQ") && defined("ZMQ::LIBZMQ_VER")) {
-//        echo ZMQ::LIBZMQ_VER, PHP_EOL;
-//    }
 
     // sometimes there is now tweet data
     $sendData = ( isset($data['text']) === true ) ? $data['text'] : 'no tweet available';
