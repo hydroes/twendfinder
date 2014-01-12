@@ -12,7 +12,7 @@ class QueueTwitterStatus
 //        $collection->insert($data['status']);
 
         // insert stream count for each minute
-        Cache::increment(date('Y-m-d-H-i'));
+        \Cache::increment(date('Y-m-d-H-i'));
 
         // NB: be sure to release job else it never leaves
         $job->delete();
