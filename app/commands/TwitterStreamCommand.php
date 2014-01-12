@@ -48,7 +48,8 @@ class TwitterStreamCommand extends Command {
 	{
             $this->_twitterConsumer->consume();
 
-//            echo $sc->getLastErrorMsg();
+            // log errors
+            Log::info('Phirehose', array('consumer err' => $sc->getLastErrorMsg()));
 	}
 
 	/**
