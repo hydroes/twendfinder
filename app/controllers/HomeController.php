@@ -17,6 +17,7 @@ class HomeController extends BaseController {
 
 	public function showWelcome()
 	{
+            Cache::add('TEST', 1, 1000);
             return View::make('demo.page');
 	}
 
