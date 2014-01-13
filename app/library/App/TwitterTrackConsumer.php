@@ -6,14 +6,10 @@ class FilterTrackConsumer extends OauthPhirehose
    * Subclass specific attribs
    */
     protected $myTrackWords = array(
-        'i love',
-        'i hate',
-        'i think',
-        'i believe',
-        'i feel',
-        'i wish',
-        'i want',
-        'i will',
+        'standard bank',
+        'standardbank',
+        '@standardbankgrp',
+        'standardbankgrp',
     );
 
   /**
