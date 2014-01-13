@@ -25,7 +25,7 @@ class FilterTrackConsumer extends OauthPhirehose
             ob_start();
             var_dump($status);
             $result = ob_get_clean();
-            Log::info($result);
+            Log::info(array('twitter consumer' => $result));
             return;
         }
     /*
