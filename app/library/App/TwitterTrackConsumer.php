@@ -30,7 +30,7 @@ class FilterTrackConsumer extends OauthPhirehose
     Queue::push('App\Queues\QueueTwitterStatus', array('status' => $data));
 
     // log weird tweets
-    if (isset($data['text']) === false)
+    if (isset($data['text']) === false || strlen($status) === 0)
     {
         ob_start();
         var_dump($status);
