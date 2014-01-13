@@ -29,6 +29,12 @@ class FilterTrackConsumer extends OauthPhirehose
     // queue status
     Queue::push('App\Queues\QueueTwitterStatus', array('status' => $data));
 
+    // log weird tweets
+    if (isset($data['text']) === false)
+    {
+        Log::info($data);
+    }
+
     // create zmq socket
     $socket = \App::make('zeroMqSocket');
 
