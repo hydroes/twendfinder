@@ -32,7 +32,10 @@ class FilterTrackConsumer extends OauthPhirehose
     // log weird tweets
     if (isset($data['text']) === false)
     {
-        Log::info($status);
+        ob_start();
+        var_dump($status);
+        $result = ob_get_clean();
+        Log::info($result);
     }
 
     // create zmq socket
