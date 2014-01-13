@@ -17,8 +17,17 @@ class FilterTrackConsumer extends OauthPhirehose
    *
    * @param string $status
    */
-  public function enqueueStatus($status)
-  {
+    public function enqueueStatus($status)
+    {
+        // log weird tweets
+        if (strlen($status) === 0)
+        {
+            ob_start();
+            var_dump($status);
+            $result = ob_get_clean();
+            Log::info($result);
+            return;
+        }
     /*
      * In this simple example, we will just display to STDOUT rather than enqueue.
      * NOTE: You should NOT be processing tweets at this point in a real application, instead they should be being
@@ -28,15 +37,6 @@ class FilterTrackConsumer extends OauthPhirehose
 
     // queue status
     Queue::push('App\Queues\QueueTwitterStatus', array('status' => $data));
-
-    // log weird tweets
-    if (isset($data['text']) === false || strlen($status) === 0)
-    {
-        ob_start();
-        var_dump($status);
-        $result = ob_get_clean();
-        Log::info($result);
-    }
 
     // create zmq socket
     $socket = \App::make('zeroMqSocket');
