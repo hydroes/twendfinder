@@ -5,7 +5,9 @@
 <p>Live twitter stream: <span id="counter"></span></p>
 
 
-<div id="tweets"></div>
+<table id="tweets" class="table table-hover">
+
+</table>
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script src="http://sockets.twendfinder.com/node_modules/socket.io/node_modules/socket.io-client/dist/socket.io.js"></script>
@@ -17,7 +19,7 @@ socket = io.connect('http://sockets.twendfinder.com:443');
 
 socket.on('tweet', function(data){
 
-    $('#tweets').prepend(data + '<br /><hr />');
+    $('#tweets').prepend('<tr><td>'+data+'</td></tr>');
 //        console.log(data)
 });
 
