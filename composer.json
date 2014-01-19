@@ -6,9 +6,7 @@
 	"require": {
 		"laravel/framework": "4.1.*",
                 "fennb/phirehose": "dev-master",
-		"pda/pheanstalk": "dev-master",
-                "cboden/Ratchet": "0.3.*",
-		"react/zmq": "0.2.*"
+		"pda/pheanstalk": "dev-master"
 	},
 	"autoload": {
 		"classmap": [
