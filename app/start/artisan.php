@@ -15,3 +15,5 @@ Artisan::add(new TwitterStreamCommand);
 
 Artisan::add(new SocketServer);
 
+Artisan::add(new DeployCommand);
+
