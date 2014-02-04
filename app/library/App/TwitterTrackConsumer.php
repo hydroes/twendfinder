@@ -6,10 +6,11 @@ class FilterTrackConsumer extends OauthPhirehose
    * Subclass specific attribs
    */
     protected $myTrackWords = array(
-        'standard bank',
-        'standardbank',
-        '@standardbankgrp',
-        'standardbankgrp',
+        'i love',
+        'i hate',
+        'i think',
+        'i believe',
+        'i want',
     );
 
   /**
@@ -36,7 +37,7 @@ class FilterTrackConsumer extends OauthPhirehose
     $data = json_decode($status, true);
 
     // queue status
-    Queue::push('App\Queues\QueueTwitterStatus', array('status' => $data));
+//    Queue::push('App\Queues\QueueTwitterStatus', array('status' => $data));
 
     // create zmq socket
     $socket = \App::make('zeroMqSocket');
