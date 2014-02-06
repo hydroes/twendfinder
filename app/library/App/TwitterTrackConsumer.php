@@ -48,7 +48,7 @@ class FilterTrackConsumer extends OauthPhirehose
   
   protected function _buildMiniTweet($data) {
       $tweet = array();
-      $tweet['status'] = (isset($data->text) === true) ? $data->text : '';
+      $tweet['text'] = (isset($data->text) === true) ? $data->text : '';
       
       $tweet['screen_name'] = '';
       $tweet['profile_pic'] = '';
