@@ -17,16 +17,15 @@ socket = io.connect('http://sockets.twendfinder.com:443');
 //        console.log(data);
 //    });
 
-socket.on('tweet', function(data){
-    
-    var status = eval(data);
+socket.on('tweet', function(data) {
+    var status = JSON && JSON.parse(json) || $.parseJSON(json);
     console.log(status);
     
-//    $('#tweets').prepend('<tr><td><img src="'+status.profile_pic+'" class="img-rounded" /></td><td>'+status.text+'</td></tr>');
+    $('#tweets').prepend('<tr><td><img src="'+status.profile_pic+'" class="img-rounded" /></td><td>'+status.text+'</td></tr>');
     
 });
 
-socket.on('tweetCount', function(data){
+socket.on('tweetCount', function(data) {
     $('#counter').text(data);
 });
 
