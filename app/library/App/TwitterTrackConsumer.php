@@ -46,7 +46,7 @@ class FilterTrackConsumer extends OauthPhirehose
     }
   }
   
-  protected function _buildMiniTweet(array $data) {
+  protected function _buildMiniTweet($data) {
       $tweet = array();
       $tweet['status'] = $data->text;
       $tweet['screen_name'] = $data->user->screen_name;
