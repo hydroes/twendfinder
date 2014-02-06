@@ -30,7 +30,7 @@ class FilterTrackConsumer extends OauthPhirehose
      * NOTE: You should NOT be processing tweets at this point in a real application, instead they should be being
      *       enqueued and processed asyncronously from the collection process.
      */
-    $data = json_decode($status, true);
+    $data = json_decode($status);
 
     // queue status
 //    Queue::push('App\Queues\QueueTwitterStatus', array('status' => $data));
@@ -48,14 +48,14 @@ class FilterTrackConsumer extends OauthPhirehose
   
   protected function _buildMiniTweet(array $data) {
       $tweet = array();
-      $tweet['status'] = $data['text'];
-      $tweet['screen_name'] = $data['user']['screen_name'];
-      $tweet['profile_pic'] = $data['user']['profile_image_url'];
+      $tweet['status'] = $data->text;
+      $tweet['screen_name'] = $data->user->screen_name;
+      $tweet['profile_pic'] = $data->user->profile_image_url;
       
       // get tetweet info
-      if (isset($data['retweeted']) === true && isset($data['retweeted_status']) === true)
+      if (isset($data->retweeted_status) === true)
       {
-          $tweet['retweet_user'] = $data['retweeted_status']['user']['screen_name'];
+          $tweet['retweet_user'] = $data->retweeted_status->user->screen_name;
       }
       
       return json_encode($tweet);
