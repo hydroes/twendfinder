@@ -53,7 +53,7 @@ class FilterTrackConsumer extends OauthPhirehose
       $tweet['profile_pic'] = $data['user']['profile_image_url'];
       
       // get tetweet info
-      if ($data['retweeted_status'] !== false)
+      if (isset($data['retweeted']) === true && isset($data['retweeted_status']) === true)
       {
           $tweet['retweet_user'] = $data['retweeted_status']['user']['screen_name'];
       }
