@@ -23,10 +23,6 @@ class FilterTrackConsumer extends OauthPhirehose
         // log weird tweets
         if (strlen($status) === 0)
         {
-            ob_start();
-            var_dump($status);
-            $result = ob_get_clean();
-            Log::info(array('twitter consumer' => $result));
             return;
         }
     /*
@@ -37,15 +33,33 @@ class FilterTrackConsumer extends OauthPhirehose
     $data = json_decode($status, true);
 
     // queue status
-    Queue::push('App\Queues\QueueTwitterStatus', array('status' => $data));
+//    Queue::push('App\Queues\QueueTwitterStatus', array('status' => $data));
 
     // create zmq socket
     $socket = \App::make('zeroMqSocket');
 
-    // sometimes there is now tweet data
-    $sendData = ( isset($data['text']) === true ) ? $data['text'] : 'no tweet available';
-    $socket->send($sendData);
-
+    // build basic tweet to send to nodejs sockets
+    $tweet = $this->_buildMiniTweet($data);
+    if ($tweet !== false) 
+    {
+        $socket->send($tweet);
+    }
+  }
+  
+  protected function _buildMiniTweet(array $data) {
+      $tweet = array();
+      $tweet['status'] = $data['text'];
+      $tweet['screen_name'] = $data['user']['screen_name'];
+      $tweet['profile_pic'] = $data['user']['profile_image_url'];
+      
+      // get tetweet info
+      if ($data['retweeted_status'] !== false)
+      {
+          $tweet['retweet_user'] = $data['retweeted_status']['user']['screen_name'];
+      }
+      
+      return json_encode($tweet);
+      
   }
 
   /**
