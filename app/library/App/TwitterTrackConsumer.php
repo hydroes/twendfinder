@@ -21,7 +21,7 @@ class FilterTrackConsumer extends OauthPhirehose
     public function enqueueStatus($status)
     {
         // log weird tweets
-        if (strlen($status) === 0)
+        if (strlen($status) === 0 || $status === false)
         {
             return;
         }
