@@ -19,7 +19,7 @@ socket = io.connect('http://sockets.twendfinder.com:443');
 
 socket.on('tweet', function(data) {
     var status = JSON && JSON.parse(data) || $.parseJSON(data);
-    
+    console.log(status)
     $('#tweets').prepend('<tr><td><img src="'+status.profile_pic+'" class="img-rounded" /></td><td><div><a href="https://twitter.com/'+status.screen_name+'" target="_blank">'+status.screen_name+'</a></div><div>'+status.text+'</div></td></tr>');
     
 });
