@@ -21,7 +21,7 @@ class FilterTrackConsumer extends OauthPhirehose
     public function enqueueStatus($status)
     {
         // log weird tweets
-        if (strlen($status) === 0 || $status === false)
+        if (strlen($status) <= 0)
         {
             return;
         }
@@ -40,7 +40,7 @@ class FilterTrackConsumer extends OauthPhirehose
 
     // build basic tweet to send to nodejs sockets
     $tweet = $this->_buildMiniTweet($data);
-    if ($tweet !== false) 
+    if ($data !== false || $data !== null) 
     {
         $socket->send($tweet);
     }
