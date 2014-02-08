@@ -30,7 +30,7 @@ socket.on('tweetCount', function(data) {
     $('#counter').text(data);
 });
 
-$('#feed-flow').on('click', function(e) 
+$('#feed-flow').click(function(e) 
 {
     var target = $(e.target);
     console.log(target);
