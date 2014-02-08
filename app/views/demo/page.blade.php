@@ -32,7 +32,8 @@ socket.on('tweetCount', function(data) {
 
 $('#feed-flow').on('click', function(e) 
 {
-    console.log(e.id);
+    var target = $(e.target);
+    console.log(target);
     //socket.emit('feed-flow', { my: 'data' });
 });
 
