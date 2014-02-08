@@ -40,11 +40,11 @@ class FilterTrackConsumer extends OauthPhirehose
     $socket = \App::make('zeroMqSocket');
 
     // build basic tweet to send to nodejs sockets
-    $tweet = $this->_buildMiniTweet($data);
+    $tweet = $this->_buildTweet($data);
     $socket->send($tweet);
   }
   
-  protected function _buildMiniTweet($data) {
+  protected function _buildTweet($data) {
       $tweet = array();
       $tweet['text'] = (isset($data->text) === true) ? $data->text : '';
       
@@ -56,12 +56,22 @@ class FilterTrackConsumer extends OauthPhirehose
           $tweet['profile_pic'] = (isset($data->user->profile_image_url) === true) ? $data->user->profile_image_url : '';
       }
       
-      // get tetweet info
+      // get retweet info
       $tweet['retweet_user'] = '';
       if (isset($data->retweeted_status) === true && isset($data->retweeted_status->user) === true)
       {
             $tweet['retweet_user'] = 
                 (isset($data->retweeted_status->user->screen_name) === true) ? $data->retweeted_status->user->screen_name : '';
+      }
+      
+      // get url info
+      $tweet['urlEntities'] = array();
+      if (isset($data->entities) === true && isset($data->entities->urls) === true)
+      {
+          foreach ($data->entities->urls as $url) 
+          {
+              $tweet['urlEntities'][] = $url;
+          }
       }
       
       return json_encode($tweet);
