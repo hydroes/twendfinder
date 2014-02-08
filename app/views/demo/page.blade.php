@@ -5,7 +5,7 @@
 <h3>Below is a live feed of the worlds tweets about love, hate, and other emotions</h3>
 <p>Tweets counted so far: <span id="counter"></span></p>
 
-<button type="button" class="btn btn-default" id="feed-flow" data-pause-flow="true">Pause feed</button>
+<button type="button" class="btn btn-primary" id="feed-flow" data-pause-flow="true">Pause feed</button>
 
 <table id="tweets" class="table table-hover">
 
@@ -36,19 +36,18 @@ $('#feed-flow').click(function(e)
     
     var pause_flow = target.data('pause-flow');
     
-    console.log(pause_flow);
-    
     socket.emit('feed-flow', { paused: pause_flow});
     
     if (pause_flow == true) {
+        target.removeClass('btn-primary').addClass('btn-success');
         pause_flow = false;
     } else {
+        target.removeClass('btn-success').addClass('btn-primary');
         pause_flow = true;
     }
     
     target.data('pause-flow', pause_flow);
     
-    console.log(pause_flow);
 });
 
 
