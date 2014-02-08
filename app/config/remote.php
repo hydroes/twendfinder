@@ -29,7 +29,7 @@ return array(
         'connections' => array(
 
                 'production' => array(
-                        'host'      => '192.241.120.109',
+                        'host'      => 'secure.twendfinder.com',
                         'username'  => 'root',
                         'password'  => '',
                         'key'       => 'C:\xampp\twend\id_rsa',

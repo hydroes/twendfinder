@@ -2,9 +2,10 @@
 
 @section('content')
 <h1>Welcome!</h1>
-<h2>Below is a live feed of the worlds tweets about love, hate, and other emotions</h2>
+<h3>Below is a live feed of the worlds tweets about love, hate, and other emotions</h3>
 <p>Tweets counted so far: <span id="counter"></span></p>
 
+<button type="button" class="btn btn-default" id="feed-flow" data-pause-flow="true">Pause feed</button>
 
 <table id="tweets" class="table table-hover">
 
@@ -27,6 +28,12 @@ socket.on('tweet', function(data) {
 
 socket.on('tweetCount', function(data) {
     $('#counter').text(data);
+});
+
+$('#feed-flow').on('click', function(e) 
+{
+    console.log(e.id);
+    //socket.emit('feed-flow', { my: 'data' });
 });
 
 
