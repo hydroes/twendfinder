@@ -33,8 +33,22 @@ socket.on('tweetCount', function(data) {
 $('#feed-flow').click(function(e) 
 {
     var target = $(e.target);
-    console.log(target.data('pause-flow'));
-    //socket.emit('feed-flow', { my: 'data' });
+    
+    var pause_flow = target.data('pause-flow');
+    
+    console.log(pause_flow);
+    
+    socket.emit('feed-flow', { paused: pause_flow});
+    
+    if (pause_flow == true) {
+        pause_flow = false;
+    } else {
+        pause_flow = true;
+    }
+    
+    target.data('pause-flow', pause_flow);
+    
+    console.log(pause_flow);
 });
 
 
