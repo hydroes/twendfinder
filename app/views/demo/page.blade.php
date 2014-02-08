@@ -2,7 +2,8 @@
 
 @section('content')
 <h1>Welcome!</h1>
-<p>Live twitter stream: <span id="counter"></span></p>
+<h2>Below is a live feed of the worlds tweets about love, hate, and other emotions</h2>
+<p>Tweets counted so far: <span id="counter"></span></p>
 
 
 <table id="tweets" class="table table-hover">
