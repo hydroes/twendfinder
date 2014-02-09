@@ -47,7 +47,7 @@ $('#feed-flow').click(function(e)
     }
     
     target.data('pause-flow', pause_flow);
-    
+    console.log(pause_flow);
 });
 
 
