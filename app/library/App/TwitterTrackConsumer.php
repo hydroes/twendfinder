@@ -20,9 +20,8 @@ class FilterTrackConsumer extends OauthPhirehose
    */
     public function enqueueStatus($status)
     {
-        // sometimes empty data is passed
-        $status = trim($status);
-        if (strlen($status) === 0)
+        // TODO: sometimes empty data is passed, not sure what type it is
+        if (is_null($status) === true || empty($status) === true || strlen($status) === 0)
         {
             return;
         }
@@ -43,39 +42,39 @@ class FilterTrackConsumer extends OauthPhirehose
     $tweet = $this->_buildTweet($data);
     $socket->send($tweet);
   }
-  
+
   protected function _buildTweet($data) {
       $tweet = array();
       $tweet['text'] = (isset($data->text) === true) ? $data->text : '';
-      
+
       $tweet['screen_name'] = '';
       $tweet['profile_pic'] = '';
-      
+
       if (isset($data->user) === true) {
           $tweet['screen_name'] = (isset($data->user->screen_name) === true) ? $data->user->screen_name : '';
           $tweet['profile_pic'] = (isset($data->user->profile_image_url) === true) ? $data->user->profile_image_url : '';
       }
-      
+
       // get retweet info
       $tweet['retweet_user'] = '';
       if (isset($data->retweeted_status) === true && isset($data->retweeted_status->user) === true)
       {
-            $tweet['retweet_user'] = 
+            $tweet['retweet_user'] =
                 (isset($data->retweeted_status->user->screen_name) === true) ? $data->retweeted_status->user->screen_name : '';
       }
-      
+
       // get url info
       $tweet['urlEntities'] = array();
       if (isset($data->entities) === true && isset($data->entities->urls) === true)
       {
-          foreach ($data->entities->urls as $url) 
+          foreach ($data->entities->urls as $url)
           {
               $tweet['urlEntities'][] = $url;
           }
       }
-      
+
       return json_encode($tweet);
-      
+
   }
 
   /**
