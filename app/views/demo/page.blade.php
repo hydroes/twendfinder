@@ -39,10 +39,10 @@ $('#feed-flow').click(function(e)
     socket.emit('feed-flow', { paused: pause_flow});
     
     if (pause_flow == true) {
-        target.removeClass('btn-primary').addClass('btn-success');
+        target.removeClass('btn-primary').addClass('btn-success').text('Unpause feed');
         pause_flow = false;
     } else {
-        target.removeClass('btn-success').addClass('btn-primary');
+        target.removeClass('btn-success').addClass('btn-primary').text('Pause feed');
         pause_flow = true;
     }
     
