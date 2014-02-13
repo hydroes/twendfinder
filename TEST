@@ -1,0 +1,140 @@
+array(23) {
+  ["created_at"]=>
+  string(30) "Thu Feb 06 22:04:50 +0000 2014"
+  ["id"]=>
+  int(431549068280471552)
+  ["id_str"]=>
+  string(18) "431549068280471552"
+  ["text"]=>
+  string(22) "I want some long hair."
+  ["source"]=>
+  string(84) "<a href="http://twitter.com/download/android" rel="nofollow">Twitter for Android</a>"
+  ["truncated"]=>
+  bool(false)
+  ["in_reply_to_status_id"]=>
+  NULL
+  ["in_reply_to_status_id_str"]=>
+  NULL
+  ["in_reply_to_user_id"]=>
+  NULL
+  ["in_reply_to_user_id_str"]=>
+  NULL
+  ["in_reply_to_screen_name"]=>
+  NULL
+  ["user"]=>
+  array(39) {
+    ["id"]=>
+    int(57080029)
+    ["id_str"]=>
+    string(8) "57080029"
+    ["name"]=>
+    string(15) "C i e r r a ❤"
+    ["screen_name"]=>
+    string(10) "_xoCierraa"
+    ["location"]=>
+    string(27) "   Fulfilling My dreams ღ"
+    ["url"]=>
+    NULL
+    ["description"]=>
+    string(81) "19 ッ | ♌ || #GMC15 | IG: ceepretty_ || Mrs. to my Mr. @_fck_it_all 웃유 ❦"
+    ["protected"]=>
+    bool(false)
+    ["followers_count"]=>
+    int(958)
+    ["friends_count"]=>
+    int(927)
+    ["listed_count"]=>
+    int(0)
+    ["created_at"]=>
+    string(30) "Wed Jul 15 17:36:06 +0000 2009"
+    ["favourites_count"]=>
+    int(64)
+    ["utc_offset"]=>
+    int(-25200)
+    ["time_zone"]=>
+    string(27) "Mountain Time (US & Canada)"
+    ["geo_enabled"]=>
+    bool(false)
+    ["verified"]=>
+    bool(false)
+    ["statuses_count"]=>
+    int(16741)
+    ["lang"]=>
+    string(2) "en"
+    ["contributors_enabled"]=>
+    bool(false)
+    ["is_translator"]=>
+    bool(false)
+    ["is_translation_enabled"]=>
+    bool(false)
+    ["profile_background_color"]=>
+    string(6) "ACDED6"
+    ["profile_background_image_url"]=>
+    string(103) "http://pbs.twimg.com/profile_background_images/378800000060848004/7ebf413ce2b5cb3e18ab7d402f6a60cb.jpeg"
+    ["profile_background_image_url_https"]=>
+    string(104) "https://pbs.twimg.com/profile_background_images/378800000060848004/7ebf413ce2b5cb3e18ab7d402f6a60cb.jpeg"
+    ["profile_background_tile"]=>
+    bool(true)
+    ["profile_image_url"]=>
+    string(75) "http://pbs.twimg.com/profile_images/430208298541776896/-InFmnfA_normal.jpeg"
+    ["profile_image_url_https"]=>
+    string(76) "https://pbs.twimg.com/profile_images/430208298541776896/-InFmnfA_normal.jpeg"
+    ["profile_banner_url"]=>
+    string(57) "https://pbs.twimg.com/profile_banners/57080029/1389594831"
+    ["profile_link_color"]=>
+    string(6) "038543"
+    ["profile_sidebar_border_color"]=>
+    string(6) "FFFFFF"
+    ["profile_sidebar_fill_color"]=>
+    string(6) "F6F6F6"
+    ["profile_text_color"]=>
+    string(6) "333333"
+    ["profile_use_background_image"]=>
+    bool(true)
+    ["default_profile"]=>
+    bool(false)
+    ["default_profile_image"]=>
+    bool(false)
+    ["following"]=>
+    NULL
+    ["follow_request_sent"]=>
+    NULL
+    ["notifications"]=>
+    NULL
+  }
+  ["geo"]=>
+  NULL
+  ["coordinates"]=>
+  NULL
+  ["place"]=>
+  NULL
+  ["contributors"]=>
+  NULL
+  ["retweet_count"]=>
+  int(0)
+  ["favorite_count"]=>
+  int(0)
+  ["entities"]=>
+  array(4) {
+    ["hashtags"]=>
+    array(0) {
+    }
+    ["symbols"]=>
+    array(0) {
+    }
+    ["urls"]=>
+    array(0) {
+    }
+    ["user_mentions"]=>
+    array(0) {
+    }
+  }
+  ["favorited"]=>
+  bool(false)
+  ["retweeted"]=>
+  bool(false)
+  ["filter_level"]=>
+  string(6) "medium"
+  ["lang"]=>
+  string(2) "en"
+}
