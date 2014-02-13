@@ -35,6 +35,21 @@ class FilterTrackConsumer extends OauthPhirehose
     // queue status
 //    Queue::push('App\Queues\QueueTwitterStatus', array('status' => $data));
 
+    // NB: log warnings so that account does not get disconnected
+    if (isset($data->warning) === true) {
+        $msg = '';
+        $code = (isset($data->code) === true) ? $data->code : '';
+        $message = (isset($data->message) === true) ? $data->message : '';
+        $percent_full =  (isset($data->percent_full) === true) ? (int)$data->percent_full : 0;
+        $msg = $code . ': ' . $message;
+        \Log::warning('TWIITER QUEUE - ' . $msg);
+
+        // stop processing untill queue catches up
+        if ($percent_full >= 80) {
+            return;
+        }
+    }
+
     // create zmq socket
     $socket = \App::make('zeroMqSocket');
 
