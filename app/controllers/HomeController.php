@@ -25,7 +25,7 @@ class HomeController extends BaseController {
             $twitterClient = App::make('twitterClient');
 
             // tweets
-            $search = array('q' => $_POST['search_term']);
+//            $search = array('q' => $_POST['search_term']);
             $tweets = $twitterClient->get('trends/available.json');
 
             die('<pre>'.var_dump($tweets));
