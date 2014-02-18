@@ -32,6 +32,7 @@ class FilterTrackConsumer extends OauthPhirehose
         
         $data = json_decode($status);
 
+        // ignore limit messages
         if (isset($data->limit) === true) {
             return;
         }

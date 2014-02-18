@@ -53,7 +53,7 @@ class DeployCommand extends Command {
             'chmod 0775 -R storage',
             'echo "transferring trender_new to trender"',
             'cd /var/www',
-            'mv trender trender_old',
+            'mv trender "`date "+trender_%m_%d_%y__%H_%M_%S"`"',
             'mv trender_latest trender',
         );
 

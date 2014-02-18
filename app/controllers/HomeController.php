@@ -26,7 +26,7 @@ class HomeController extends BaseController {
 
             // tweets
             $search = array('q' => $_POST['search_term']);
-            $tweets = $twitterClient->get('search/tweets.json', $search);
+            $tweets = $twitterClient->get('trends/available.json');
 
             die('<pre>'.var_dump($tweets));
         }
