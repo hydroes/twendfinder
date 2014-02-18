@@ -12,6 +12,8 @@ class FilterTrackConsumer extends OauthPhirehose
         'i believe',
         'i want',
     );
+    
+    protected $_status_count = 0;
 
   /**
    * Enqueue each status
@@ -20,8 +22,15 @@ class FilterTrackConsumer extends OauthPhirehose
    */
     public function enqueueStatus($status)
     {
+        
+        ++$this->_status_count;
+        
+        if ($this->_status_count > 49 || $this->_status_count < 52) {
+            \Log::info($status);
+        }
+        
         // TODO: sometimes empty data is passed, not sure what type it is
-        if (is_null($status) === true || empty($status) === true || strlen($status) === 0)
+        if (strlen($status) === 0)
         {
             return;
         }
