@@ -32,7 +32,7 @@ class FilterTrackConsumer extends OauthPhirehose
         
         $data = json_decode($status);
 
-        if ($this->_status_count > 50 || $this->_status_count < 52) {
+        if ($this->_status_count > 49 || $this->_status_count < 52) {
             \Log::info($status);
         }
         
