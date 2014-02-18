@@ -13,7 +13,7 @@
 
 Route::get('/', 'HomeController@showWelcome');
 
-Route::post('/showSnapShot', 'HomeController@showSnapShot');
+Route::get('/showSnapShot', 'HomeController@showSnapShot');
 
 // rest api controller
 Route::controller('disruptions', 'ApiController');
