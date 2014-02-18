@@ -22,50 +22,45 @@ class FilterTrackConsumer extends OauthPhirehose
    */
     public function enqueueStatus($status)
     {
-        
         ++$this->_status_count;
-        
-        if ($this->_status_count > 49 || $this->_status_count < 52) {
-            \Log::info($status);
-        }
-        
+
         // TODO: sometimes empty data is passed, not sure what type it is
         if (strlen($status) === 0)
         {
             return;
         }
-    /*
-     * In this simple example, we will just display to STDOUT rather than enqueue.
-     * NOTE: You should NOT be processing tweets at this point in a real application, instead they should be being
-     *       enqueued and processed asyncronously from the collection process.
-     */
-    $data = json_decode($status);
-    
+        
+        $data = json_decode($status);
 
-    // queue status
-//    Queue::push('App\Queues\QueueTwitterStatus', array('status' => $data));
-
-    // NB: log warnings so that account does not get disconnected
-    if (isset($data->warning) === true) {
-        $msg = '';
-        $code = (isset($data->code) === true) ? $data->code : '';
-        $message = (isset($data->message) === true) ? $data->message : '';
-        $percent_full =  (isset($data->percent_full) === true) ? (int)$data->percent_full : 0;
-        $msg = $code . ': ' . $message;
-        \Log::warning('TWIITER QUEUE - ' . $msg);
-
-        // stop processing untill queue catches up
-        if ($percent_full >= 80) {
+        if (isset($data->limit) === true) {
+            \Log::info($status);
             return;
         }
-    }
 
-    // create zmq socket
-    $socket = \App::make('zeroMqSocket');
+        // NB: log warnings so that account does not get disconnected
+        if (isset($data->warning) === true) {
+            $msg = '';
+            $code = (isset($data->code) === true) ? $data->code : '';
+            $message = (isset($data->message) === true) ? $data->message : '';
+            $percent_full =  (isset($data->percent_full) === true) ? (int)$data->percent_full : 0;
+            $msg = $code . ': ' . $message;
+            \Log::warning('TWITTER QUEUE - ' . $msg);
 
-    // build basic tweet to send to nodejs sockets
-    $tweet = $this->_buildTweet($data);
-    $socket->send($tweet);
+            // stop processing untill queue catches up
+            if ($percent_full >= 80) {
+                return;
+            }
+        }
+        
+        // queue status
+        //    Queue::push('App\Queues\QueueTwitterStatus', array('status' => $data));
+
+        // create zmq socket
+        $socket = \App::make('zeroMqSocket');
+
+        // build basic tweet to send to nodejs sockets
+        $tweet = $this->_buildTweet($data);
+        $socket->send($tweet);
   }
 
   protected function _buildTweet($data) {
