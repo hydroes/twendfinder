@@ -51,10 +51,12 @@ class DeployCommand extends Command {
             'cd app/',
             'chown -R www-data storage',
             'chmod 0775 -R storage',
+            'service supervisor stop',
             'echo "transferring trender_new to trender"',
             'cd /var/www',
             'mv trender "`date "+trender_%m_%d_%y__%H_%M_%S"`"',
             'mv trender_latest trender',
+            'service supervisor start'
         );
 
         SSH::run($commands, function($line)
