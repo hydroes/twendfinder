@@ -54,8 +54,8 @@ class FilterTrackConsumer extends OauthPhirehose
         ++$this->_status_count;
         
         // Send status to PHP analytics consumer
-        $socket = \App::make('zeroMqSocketPhp');
-        $socket->send($status);
+//        $socket = \App::make('zeroMqSocketPhp');
+//        $socket->send($status);
         
         // queue status
         //    Queue::push('App\Queues\QueueTwitterStatus', array('status' => $data));
