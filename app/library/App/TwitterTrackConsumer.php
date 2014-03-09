@@ -61,7 +61,7 @@ class FilterTrackConsumer extends OauthPhirehose
         //    Queue::push('App\Queues\QueueTwitterStatus', array('status' => $data));
 
         // create zmq socket
-        $nodeSocket = \App::make('zeroMqSocketNode');
+        $nodeSocket = \App::make('zeroMqSocket');
 
         // build basic tweet to send to nodejs sockets
         $tweet = $this->_buildTweet($data);

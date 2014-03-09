@@ -141,3 +141,16 @@ App::singleton('zeroMqSocketPhp', function()
     return $socket;
 
 });
+
+App::singleton('zeroMqSocket', function()
+{
+    // create zero mq context object
+    $context = new ZMQContext();
+    $publisher = $context->getSocket(ZMQ::SOCKET_PUB);
+
+    // bind socket to ip and port
+    $publisher->bind('tcp://127.0.0.1:3000');
+
+    return $publisher;
+
+});
