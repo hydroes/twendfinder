@@ -37,32 +37,32 @@ class DeployCommand extends Command {
 	 */
 	public function fire()
 	{
-		// Live deployment
-        $commands = array(
-            'echo "logged on"',
-            'cd /var/www',
-            'git clone git@bitbucket.org:hydroes/trender.git trender_latest',
-            'cd trender_latest',
-            'echo "updating composer.phar"',
-            'php composer.phar selfupdate',
-            'echo "running composer install"',
-            'php composer.phar install',
-            'echo "applying folder permissions"',
-            'cd app/',
-            'chown -R www-data storage',
-            'chmod 0775 -R storage',
-            'service supervisor stop',
-            'echo "transferring trender_new to trender"',
-            'cd /var/www',
-            'mv trender "`date "+trender_%m_%d_%y__%H_%M_%S"`"',
-            'mv trender_latest trender',
-            'service supervisor start'
-        );
+            // Live deployment
+            $commands = array(
+                'echo "logged on"',
+                'cd /var/www',
+                'git clone git@bitbucket.org:hydroes/trender.git trender_latest',
+                'cd trender_latest',
+                'echo "updating composer.phar"',
+                'php composer.phar selfupdate',
+                'echo "running composer install"',
+                'php composer.phar install',
+                'echo "applying folder permissions"',
+                'cd app/',
+                'chown -R www-data storage',
+                'chmod 0775 -R storage',
+                'service supervisor stop',
+                'echo "transferring trender_new to trender"',
+                'cd /var/www',
+                'mv trender "`date "+trender_%m_%d_%y__%H_%M_%S"`"',
+                'mv trender_latest trender',
+                'service supervisor start'
+            );
 
-        SSH::run($commands, function($line)
-        {
-            echo $line.PHP_EOL;
-        });
+            SSH::run($commands, function($line)
+            {
+                echo $line.PHP_EOL;
+            });
 	}
 
 	/**
