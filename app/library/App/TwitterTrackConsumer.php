@@ -22,9 +22,7 @@ class FilterTrackConsumer extends OauthPhirehose
    */
     public function enqueueStatus($status)
     {
-        ++$this->_status_count;
-
-        // TODO: sometimes empty data is passed, not sure what type it is
+        // TODO: sometimes empty data is passed, not sure lib does this
         if (strlen($status) === 0)
         {
             return;
@@ -36,7 +34,7 @@ class FilterTrackConsumer extends OauthPhirehose
         if (isset($data->limit) === true) {
             return;
         }
-
+        
         // NB: log warnings so that account does not get disconnected
         if (isset($data->warning) === true) {
             $msg = '';
@@ -46,23 +44,36 @@ class FilterTrackConsumer extends OauthPhirehose
             $msg = $code . ': ' . $message;
             \Log::warning('TWITTER QUEUE - ' . $msg);
 
-            // stop processing untill queue catches up
+            // stop processing until queue catches up
             if ($percent_full >= 80) {
                 return;
             }
         }
         
+        // count the status as a tweet
+        ++$this->_status_count;
+        
+        // Send status to PHP analytics consumer
+        $socket = \App::make('zeroMqSocketPhp');
+        $socket->send($data);
+        
         // queue status
         //    Queue::push('App\Queues\QueueTwitterStatus', array('status' => $data));
 
         // create zmq socket
-        $socket = \App::make('zeroMqSocket');
+        $nodeSocket = \App::make('zeroMqSocketNode');
 
         // build basic tweet to send to nodejs sockets
         $tweet = $this->_buildTweet($data);
-        $socket->send($tweet);
+        $nodeSocket->send($tweet);
   }
 
+  /**
+   * ETL for extracting basic tweet information.
+   * 
+   * @param  array $data Tweet status
+   * @return string
+   */
   protected function _buildTweet($data) {
       $tweet = array();
       $tweet['text'] = (isset($data->text) === true) ? $data->text : '';
@@ -97,27 +108,23 @@ class FilterTrackConsumer extends OauthPhirehose
 
   }
 
-  /**
-   * In this example, we just set the track words to a random 2 words. In a real example, you'd want to check some sort
-   * of shared medium (ie: memcache, DB, filesystem) to determine if the filter has changed and set appropriately. The
-   * speed of this method will affect how quickly you can update filters.
-   */
-  public function checkFilterPredicates()
-  {
-    // This is all that's required, Phirehose will detect the change and reconnect as soon as possible
-//    $randWord1 = $this->myTrackWords[rand(0, 3)];
-//    $randWord2 = $this->myTrackWords[rand(0, 3)];
-
-  /**
-   * Specifies keywords to track. Track keywords are case-insensitive logical ORs. Terms are exact-matched, ignoring
-   * punctuation. Phrases, keywords with spaces, are not supported. Queries are subject to Track Limitations.
-   * Applies to: METHOD_FILTER
-   *
-   * See: http://apiwiki.twitter.com/Streaming-API-Documentation#TrackLimiting
-   *
-   * @param array $trackWords
-   */
-    $this->setTrack($this->myTrackWords);
-  }
-
+    /**
+    * Retrieves the latest list of words to track.
+    * The speed of this method will affect how quickly you can update filters.
+    * 
+    * @return void 
+    */
+    public function checkFilterPredicates()
+    {
+        /**
+        * Specifies keywords to track. Track keywords are case-insensitive logical ORs. Terms are exact-matched, ignoring
+        * punctuation. Phrases, keywords with spaces, are not supported. Queries are subject to Track Limitations.
+        * Applies to: METHOD_FILTER
+        *
+        * See: http://apiwiki.twitter.com/Streaming-API-Documentation#TrackLimiting
+        *
+        * @param array $trackWords
+        */
+        $this->setTrack($this->myTrackWords);
+    }
 }

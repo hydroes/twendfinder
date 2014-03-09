@@ -112,7 +112,7 @@ App::singleton('mongoClient', function()
     return $mongoClient;
 });
 
-App::singleton('zeroMqSocket', function()
+App::singleton('zeroMqSocketNode', function()
 {
     // create zero mq context object
     $context = new ZMQContext();
@@ -122,6 +122,21 @@ App::singleton('zeroMqSocket', function()
 
     // bind socket to ip and port
     $socket->bind('tcp://127.0.0.1:3000');
+
+    return $socket;
+
+});
+
+App::singleton('zeroMqSocketPhp', function()
+{
+    // create zero mq context object
+    $context = new ZMQContext();
+
+    // Socket to send messages on
+    $socket = new ZMQSocket($context, ZMQ::SOCKET_PUSH);
+
+    // bind socket to ip and port
+    $socket->bind('tcp://127.0.0.1:3001');
 
     return $socket;
 
