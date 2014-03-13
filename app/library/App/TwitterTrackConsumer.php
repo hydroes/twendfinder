@@ -67,12 +67,15 @@ class FilterTrackConsumer extends OauthPhirehose
         // build basic tweet to send to nodejs sockets
         $tweet = $this->_buildTweet($data);
         
+//        $socket->send("microTweets", ZMQ::MODE_SNDMORE);
+//        $socket->send($tweet);
+        
         $socket->send("microTweets", ZMQ::MODE_SNDMORE);
-        $socket->send($tweet);
+        $socket->send("We want to see this");
   }
 
   /**
-   * ETL for extracting basic tweet information.
+   * ETL for extracting basic tweet information to JSON format.
    * 
    * @param  array $data Tweet status
    * @return string
