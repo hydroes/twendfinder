@@ -38,7 +38,7 @@ class StatusAnalyserCommand extends Command {
 	public function fire()
 	{
             // create zmq socket
-            $socket = \App::make('zeroMqSocket');
+            $socket = \App::make('zeroMqSubscriberSocket');
             // Get message details
             $address = $socket->recv();
             $contents = $socket->recv();
