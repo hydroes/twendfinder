@@ -11,7 +11,7 @@ class StatusAnalyserCommand extends Command {
 	 *
 	 * @var string
 	 */
-	protected $name = 'analyse:statuses';
+	protected $name = 'status:analyser';
 
 	/**
 	 * The console command description.
