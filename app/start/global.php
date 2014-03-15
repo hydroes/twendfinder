@@ -103,6 +103,16 @@ App::bind('twitterClient', function($app)
     return $twitterClient;
 });
 
+App::bind('zeroMqSubscriberSocket', function($app) {
+    // create zero mq context object
+    $context = new ZMQContext();
+    $socket = new ZMQSocket($context, ZMQ::SOCKET_SUB);
+    $socket->connect("tcp://localhost:3000");
+    $socket->setSockOpt(ZMQ::SOCKOPT_SUBSCRIBE, "tweets");
+    
+    return $socket;
+});
+
 
 App::singleton('mongoClient', function()
 {
