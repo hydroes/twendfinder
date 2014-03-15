@@ -70,8 +70,6 @@ class FilterTrackConsumer extends OauthPhirehose
         $socket->send("microTweets", ZMQ::MODE_SNDMORE);
         $socket->send($tweet);
         
-//        $socket->send("microTweets", ZMQ::MODE_SNDMORE);
-//        $socket->send("We wa nt to see this");
   }
 
   /**
