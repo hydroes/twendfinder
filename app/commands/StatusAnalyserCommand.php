@@ -40,11 +40,16 @@ class StatusAnalyserCommand extends Command {
             // create zmq socket
             $socket = \App::make('zeroMqSubscriberSocket');
             
-            while (true) {
+            while (true) 
+            {
                 // Get message details
                 $address = $socket->recv();
                 $contents = $socket->recv();
-                printf ("[%s] %s%s", $address, $contents, PHP_EOL);
+//                printf ("[%s] %s%s", $address, $contents, PHP_EOL);
+                
+                // count statuses per minute
+                $key = date('d_m_Y_H_i_s');
+                \Cache::increment('key');
             }
             
 	}
