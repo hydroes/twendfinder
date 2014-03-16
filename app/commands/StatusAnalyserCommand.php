@@ -49,7 +49,7 @@ class StatusAnalyserCommand extends Command {
                 
                 // count statuses per minute
                 $key = date('d_m_Y_H_i_s');
-                \Cache::increment('key');
+                \Cache::increment($key);
             }
             
 	}
