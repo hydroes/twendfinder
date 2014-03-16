@@ -48,7 +48,7 @@ class StatusAnalyserCommand extends Command {
 //                printf ("[%s] %s%s", $address, $contents, PHP_EOL);
                 
                 // count statuses per minute
-                $key = date('d_m_Y_H_i_s');
+                $key = date('d_m_Y_H_i');
                 \Cache::increment($key);
             }
             
