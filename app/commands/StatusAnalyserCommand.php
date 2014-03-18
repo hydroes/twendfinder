@@ -47,6 +47,8 @@ class StatusAnalyserCommand extends Command {
                 // Get message details
                 $address = $socket->recv();
                 $contents = $socket->recv();
+                
+                $data = json_decode($contents);
 //                printf ("[%s] %s%s", $address, $contents, PHP_EOL);
                 
                 // create cache key
