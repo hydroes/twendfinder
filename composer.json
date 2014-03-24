@@ -1,12 +1,11 @@
 {
-	"name": "laravel/laravel",
-	"description": "The Laravel Framework.",
-	"keywords": ["framework", "laravel"],
+	"name": "Twendfinder",
+	"description": "Finds emotional trends on social networks",
+	"keywords": ["trends", "social", "visulazation"],
 	"license": "MIT",
 	"require": {
 		"laravel/framework": "4.1.*",
-                "fennb/phirehose": "dev-master",
-		"pda/pheanstalk": "dev-master"
+                "fennb/phirehose": "dev-master"
 	},
 	"autoload": {
 		"classmap": [
