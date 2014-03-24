@@ -3,10 +3,12 @@
 	"description": "Finds emotional trends on social networks",
 	"keywords": ["trends", "social", "visulazation"],
 	"license": "MIT",
+        "homepage": "http://twendfinder.com",
 	"require": {
 		"laravel/framework": "4.1.*",
                 "fennb/phirehose": "dev-master"
 	},
+        "authors": [{"name": "Brian Gouws"}],
 	"autoload": {
 		"classmap": [
 			"app/commands",
