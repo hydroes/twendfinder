@@ -42,7 +42,7 @@ class StatusAnalyserCommand extends Command {
 
             $statAnalyser = App::make('statsAnalyser');
 
-            // prepare keywords
+            // prepare keywords (remove i ...)
             $keywords = Config::get('twitter.keywords');
             foreach ($keywords as &$keyword)
             {

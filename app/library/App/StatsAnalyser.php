@@ -29,7 +29,7 @@ class statsAnalyser
         // count individual keywords in statuses
         foreach ($keywords as $keyword)
         {
-            if (strpos($status->text, $keyword) === true)
+            if (strpos($status->text, $keyword) !== false)
             {
                 $keyname = $key_prefix . "_{$keyword}";
                 $this->incrementCounter($keyname);
