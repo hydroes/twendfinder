@@ -42,6 +42,13 @@ class StatusAnalyserCommand extends Command {
 
             $statAnalyser = App::make('statsAnalyser');
 
+            // prepare keywords
+            $keywords = Config::get('twitter.keywords');
+            foreach ($keywords as &$keyword)
+            {
+                $keyword = substr($keyword, 2);
+            }
+
             while (true)
             {
                 // Get message details
@@ -49,10 +56,9 @@ class StatusAnalyserCommand extends Command {
                 $contents = $socket->recv();
 
                 $data = json_decode($contents);
-//                printf ("[%s] %s%s", $address, $contents, PHP_EOL);
 
                 // analyse status
-                $statAnalyser->count($data, Config::get('twitter.keywords'));
+                $statAnalyser->count($data, $keywords);
 
             }
 
