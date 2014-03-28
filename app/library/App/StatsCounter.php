@@ -22,11 +22,35 @@ class statsCounter
         // analyse total statuses
 
         // count individual keywords in statuses
-
         foreach ($keywords as $keyword)
         {
-
+            if (strpos($status->text, $keyword) === true)
+            {
+                $this->incrementCounter($keyword);
+            }
         }
 
+    }
+
+    /**
+     * Saves a counter to
+     * @param string $key Name of counter increment
+     * @return void
+     */
+    public function incrementCounter($key)
+    {
+        $current_count = Cache::get($key, 0);
+
+        $current_count++;
+
+        // count statuses per minute
+        if ($current_count === 0)
+        {
+            Cache::add($key, $current_count, $this->cache_expiry);
+        }
+        else
+        {
+            Cache::put($key, $current_count, $this->cache_expiry);
+        }
     }
 }

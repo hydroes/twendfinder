@@ -12,8 +12,6 @@ class FilterTrackConsumer extends OauthPhirehose
         'i believe',
         'i want',
     );
-    
-    protected $_status_count = 0;
 
   /**
    * Enqueue each status
@@ -22,19 +20,19 @@ class FilterTrackConsumer extends OauthPhirehose
    */
     public function enqueueStatus($status)
     {
-        // TODO: sometimes empty data is passed, not sure lib does this
+        // sometimes empty data is passed, not sure lib does this
         if (strlen($status) === 0)
         {
             return;
         }
-        
+
         $data = json_decode($status);
 
         // ignore limit messages
         if (isset($data->limit) === true) {
             return;
         }
-        
+
         // NB: log warnings so that account does not get disconnected
         if (isset($data->warning) === true) {
             $msg = '';
@@ -49,32 +47,25 @@ class FilterTrackConsumer extends OauthPhirehose
                 return;
             }
         }
-        
-        // count the status as a tweet
-        ++$this->_status_count;
-        
+
         // create zmq socket
         $socket = \App::make('zeroMqSocket');
-        
+
         // Send status to PHP analytics consumer
         $socket->send("tweets", ZMQ::MODE_SNDMORE);
         $socket->send($status);
-        
-        // queue status
-        //    Queue::push('App\Queues\QueueTwitterStatus', array('status' => $data));
 
-        
-        // build basic tweet to send to nodejs sockets
+        // extract basic tweet to send to nodejs sockets
         $tweet = $this->_buildTweet($data);
-        
+
         $socket->send("microTweets", ZMQ::MODE_SNDMORE);
         $socket->send($tweet);
-        
+
   }
 
   /**
    * ETL for extracting basic tweet information to JSON format.
-   * 
+   *
    * @param  array $data Tweet status
    * @return string
    */
@@ -115,8 +106,8 @@ class FilterTrackConsumer extends OauthPhirehose
     /**
     * Retrieves the latest list of words to track.
     * The speed of this method will affect how quickly you can update filters.
-    * 
-    * @return void 
+    *
+    * @return void
     */
     public function checkFilterPredicates()
     {
