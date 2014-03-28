@@ -26,6 +26,8 @@ class statsAnalyser
         $ttl_status_key = $key_prefix . "_total";
         $this->incrementCounter($ttl_status_key);
 
+        $multi_keyword_count = 0;
+
         // count individual keywords in statuses
         foreach ($keywords as $keyword)
         {
@@ -33,7 +35,16 @@ class statsAnalyser
             {
                 $keyname = $key_prefix . "_{$keyword}";
                 $this->incrementCounter($keyname);
+
+                $multi_keyword_count++;
             }
+        }
+
+        // some statuses can contain multiple keywords, count this amount
+        if ($multi_keyword_count > 1)
+        {
+            $multi_key_name = $key_prefix . "_multi";
+            $this->incrementCounter($multi_key_name);
         }
 
     }
