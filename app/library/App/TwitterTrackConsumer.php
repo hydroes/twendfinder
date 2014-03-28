@@ -2,22 +2,11 @@
 
 class FilterTrackConsumer extends OauthPhirehose
 {
-   /**
-   * Subclass specific attribs
-   */
-    protected $myTrackWords = array(
-        'i love',
-        'i hate',
-        'i think',
-        'i believe',
-        'i want',
-    );
-
-  /**
-   * Enqueue each status
-   *
-   * @param string $status
-   */
+    /**
+     * Enqueue each status
+     *
+     * @param string $status
+     */
     public function enqueueStatus($status)
     {
         // sometimes empty data is passed, not sure lib does this
@@ -120,6 +109,6 @@ class FilterTrackConsumer extends OauthPhirehose
         *
         * @param array $trackWords
         */
-        $this->setTrack($this->myTrackWords);
+        $this->setTrack(Config::get('twitter.keywords'));
     }
 }

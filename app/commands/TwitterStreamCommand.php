@@ -31,13 +31,13 @@ class TwitterStreamCommand extends Command {
 	{
 		parent::__construct();
 
-                // put this into the registry
-                define("TWITTER_CONSUMER_KEY", Config::get('twitter.consumer_key'));
-                define("TWITTER_CONSUMER_SECRET", Config::get('twitter.consumer_secret'));
-                define("OAUTH_TOKEN", Config::get('twitter.access_token'));
-                define("OAUTH_SECRET", Config::get('twitter.access_token_secret'));
-                
-                $this->_twitterConsumer = new FilterTrackConsumer(OAUTH_TOKEN, OAUTH_SECRET, Phirehose::METHOD_FILTER);
+        // put this into the registry
+        define("TWITTER_CONSUMER_KEY", Config::get('twitter.consumer_key'));
+        define("TWITTER_CONSUMER_SECRET", Config::get('twitter.consumer_secret'));
+        define("OAUTH_TOKEN", Config::get('twitter.access_token'));
+        define("OAUTH_SECRET", Config::get('twitter.access_token_secret'));
+
+        $this->_twitterConsumer = new FilterTrackConsumer(OAUTH_TOKEN, OAUTH_SECRET, Phirehose::METHOD_FILTER);
 	}
 
 	/**
@@ -47,12 +47,12 @@ class TwitterStreamCommand extends Command {
 	 */
 	public function fire()
 	{
-            $this->_twitterConsumer->consume();
+        $this->_twitterConsumer->consume();
 
-            // log errors
-            Log::info('Phirehose', array(
-                'consumer err' => $this->_twitterConsumer->getLastErrorMsg())
-            );
+        // log errors
+        Log::info('Phirehose', array(
+            'consumer err' => $this->_twitterConsumer->getLastErrorMsg())
+        );
 	}
 
 	/**

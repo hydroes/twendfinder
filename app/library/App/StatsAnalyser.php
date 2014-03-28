@@ -1,13 +1,13 @@
 <?php
 
-class statsCounter
+class statsAnalyser
 {
     /**
      * Amount of time in minutes to keep data cached for
      *
      * @var integer
      */
-    public $cache_expiry = 10080;
+    public $cache_expiry = 10080; // 7 days
 
     /**
      * Analyses statuses against the keywords and increments counters based off
@@ -17,16 +17,22 @@ class statsCounter
      * @param array $keywords Keywords to match against the status
      * @return void
      */
-    public function analyse(array $status, array $keywords)
+    public function count(stdClass $status, array $keywords)
     {
+        // create cache prefix key
+        $key_prefix = date('d_m_Y_H_i');
+
         // analyse total statuses
+        $ttl_status_key = $key_prefix . "_total";
+        $this->incrementCounter($ttl_status_key);
 
         // count individual keywords in statuses
         foreach ($keywords as $keyword)
         {
             if (strpos($status->text, $keyword) === true)
             {
-                $this->incrementCounter($keyword);
+                $keyname = $key_prefix . "_{$keyword}";
+                $this->incrementCounter($keyname);
             }
         }
 
