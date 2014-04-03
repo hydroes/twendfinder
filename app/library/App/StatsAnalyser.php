@@ -30,9 +30,9 @@ class statsAnalyser
         foreach ($keywords as $keyword)
         {
             $keyname = $key_prefix . "_{$keyword}";
-            $keyword_count = $this->_findKeywords($status->text, $keyword);
+            $keyword_count = $this->_findKeywords($status->text, $keyword, 0, 0);
 
-            $this->incrementCounter($keyname, $keyword_count, 0, 0);
+            $this->incrementCounter($keyname, $keyword_count);
 
         }
 
