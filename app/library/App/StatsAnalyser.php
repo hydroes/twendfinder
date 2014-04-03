@@ -24,7 +24,7 @@ class statsAnalyser
 
         // analyse total statuses
         $ttl_status_key = $key_prefix . "_total";
-        $this->incrementCounter($ttl_status_key);
+        $this->incrementCounter($ttl_status_key, 1);
 
         // count individual keywords in statuses
         foreach ($keywords as $keyword)
