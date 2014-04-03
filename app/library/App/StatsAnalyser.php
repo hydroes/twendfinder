@@ -32,7 +32,7 @@ class statsAnalyser
             $keyname = $key_prefix . "_{$keyword}";
             $keyword_count = $this->_findKeywords($status->text, $keyword);
 
-            $this->incrementCounter($keyname, $keyword_count);
+            $this->incrementCounter($keyname, $keyword_count, 0, 0);
 
         }
 
