@@ -30,7 +30,8 @@ class statsAnalyser
         foreach ($keywords as $keyword)
         {
             $keyname = $key_prefix . "_{$keyword}";
-            $keyword_count = $this->_findKeywords($status->text, $keyword, 0, 0);
+            $keyword_count = 0;
+            $this->_findKeywords($status->text, $keyword, $keyword_count);
 
             $this->incrementCounter($keyname, $keyword_count);
 
@@ -48,7 +49,7 @@ class statsAnalyser
      * @param int $keyword_count Number of keywords found
      * @return integer
      */
-    protected function _findKeywords($string, $keyword, $offset = 0, &$keyword_count = 0)
+    protected function _findKeywords($string, $keyword, &$keyword_count, $offset = 0)
     {
         if (stripos($string, $keyword, $offset) !== false)
         {
