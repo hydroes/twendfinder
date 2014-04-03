@@ -35,6 +35,11 @@ class statsAnalyser
 
             $this->incrementCounter($keyname, $keyword_count);
 
+            if ($keyword_count > 1)
+            {
+                $this->incrementCounter($key_prefix . '_multi', 1);
+            }
+
         }
 
     }
