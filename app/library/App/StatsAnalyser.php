@@ -30,8 +30,7 @@ class statsAnalyser
         foreach ($keywords as $keyword)
         {
             $keyname = $key_prefix . "_{$keyword}";
-            $keyword_count = 0;
-            $this->_findKeywords($status->text, $keyword, $keyword_count);
+            $keyword_count = $this->_findKeywords($status->text, $keyword);
 
             $this->incrementCounter($keyname, $keyword_count);
 
@@ -45,24 +44,24 @@ class statsAnalyser
     }
 
     /**
-     * Recursivly iterates through a string and returns how many times a keyword
+     * Iterates through a string and returns how many times a keyword
      * occurs in the string.
      *
      * @param string $string String to search keywords
      * @param string $keyword Keyword to look for in string
-     * @param int $offset Last offset where keyword was found in string
-     * @param int $keyword_count Number of keywords found
      * @return integer
      */
-    protected function _findKeywords($string, $keyword, &$keyword_count, $offset = 0)
+    protected function _findKeywords($string, $keyword)
     {
-        if (stripos($string, $keyword, $offset) !== false)
+        $c = 0;
+        $keyword_count = 0;
+        // Calculate the length once for all
+        $keyword_length = strlen($keyword);
+
+        while(($i = stripos($string, $keyword, $c)) !== false)
         {
+            $c = $i + $keyword_length;
             $keyword_count++;
-
-            $offset = (int)$offset + strlen($keyword);
-
-            $this->_findKeywords($string, $keyword, $offset, $keyword_count);
         }
 
         return $keyword_count;
