@@ -34,14 +34,14 @@ class statsAnalyser
 
             $this->incrementCounter($keyname, $keyword_count);
 
-            if ($keyword_count > 1)
+            if ($keyword_count === 1)
+            {
+                $this->incrementCounter($key_prefix . '_single', 1);
+            }
+            else if
             {
                 $this->incrementCounter($key_prefix . '_multi', 1);
                 $this->incrementCounter($key_prefix . '_multi_num', $keyword_count);
-            }
-            else
-            {
-                $this->incrementCounter($key_prefix . '_single', 1);
             }
 
         }
