@@ -34,14 +34,17 @@ class statsAnalyser
 
             $this->incrementCounter($keyname, $keyword_count);
 
+            // keyword counts can be tallied up and used to check keyword totals
             if ($keyword_count === 1)
             {
-                $this->incrementCounter($key_prefix . '_single', 1);
+                $this->incrementCounter("{$key_prefix}_single", 1);
             }
             else if ($keyword_count > 1)
             {
+                // count number of statuses with multi keywords
                 $this->incrementCounter($key_prefix . '_multi', 1);
-                $this->incrementCounter($key_prefix . '_multi_num', $keyword_count);
+                // count the total number of keywords in multi key statuses
+                $this->incrementCounter("{$key_prefix}_multi_num", $keyword_count);
             }
 
         }
