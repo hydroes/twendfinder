@@ -42,7 +42,7 @@ class statsAnalyser
             else if ($keyword_count > 1)
             {
                 // count number of statuses with multi keywords
-                $this->incrementCounter($key_prefix . '_multi', 1);
+                $this->incrementCounter("{$key_prefix}_multi", 1);
                 // count the total number of keywords in multi key statuses
                 $this->incrementCounter("{$key_prefix}_multi_num", $keyword_count);
             }
