@@ -76,8 +76,10 @@ class statsAnalyser
     }
 
     /**
-     * Saves a counter to
+     * Saves a counter to datastore
+     * 
      * @param string $key Name of counter increment
+     * @param int $increment_amount Amount to increment counter by
      * @return void
      */
     public function incrementCounter($key, $increment_amount = 0)
