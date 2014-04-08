@@ -49,9 +49,6 @@ class statsAnalyser
 
         }
 
-        // count statuses per minute
-//        $this->incrementCounter('statuses_counted_last_minute', 1, 1);
-
     }
 
     /**
