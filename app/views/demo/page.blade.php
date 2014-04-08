@@ -14,6 +14,10 @@
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script src="http://sockets.twendfinder.com/node_modules/socket.io/node_modules/socket.io-client/dist/socket.io.js"></script>
 <script>
+/**
+ * TODO: This must be rewritten in angular
+ */
+
 socket = io.connect('http://sockets.twendfinder.com:443');
 //    socket.emit('tweets', function (data) {
 //        console.log(data);
@@ -33,8 +37,9 @@ socket.on('tweetCount', function(data)
 
 socket.on('graphData', function(data)
 {
+    var graphData = JSON && JSON.parse(data) || $.parseJSON(data);
     console.log('graphData');
-    console.log(data.foo);
+    console.log(graphData);
 });
 
 $('#feed-flow').click(function(e)
