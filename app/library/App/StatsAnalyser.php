@@ -86,7 +86,7 @@ class statsAnalyser
      * @param int $expiry Cache expire time in minutes
      * @return void
      */
-    public function incrementCounter($key, $increment_amount, $expiry = null)
+    public function incrementCounter($key, $increment_amount, $expiry)
     {
         // do nothing if nothing to increment
         if ((int)$increment_amount === 0)
@@ -94,7 +94,8 @@ class statsAnalyser
             return;
         }
 
-        $expires = (is_int($expiry) === true) ? $expiry : $this->cache_expiry;
+        $expires = (isset($expiry) === true
+            && is_int($expiry) === true) ? $expiry : $this->cache_expiry;
 
         $current_count = Cache::get($key, 0);
 
