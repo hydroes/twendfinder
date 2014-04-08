@@ -49,6 +49,9 @@ class statsAnalyser
 
         }
 
+        // count statuses per minute
+        $this->incrementCounter('statuses_counted_last_minute', 1, 1);
+
     }
 
     /**
@@ -77,18 +80,21 @@ class statsAnalyser
 
     /**
      * Saves a counter to datastore
-     * 
+     *
      * @param string $key Name of counter increment
      * @param int $increment_amount Amount to increment counter by
+     * @param int $expiry Cache expire time in minutes
      * @return void
      */
-    public function incrementCounter($key, $increment_amount = 0)
+    public function incrementCounter($key, $increment_amount, $expiry)
     {
         // do nothing if nothing to increment
         if ((int)$increment_amount === 0)
         {
             return;
         }
+
+        $expires = (is_int($expiry) === true) ? $expiry : $this->cache_expiry;
 
         $current_count = Cache::get($key, 0);
 
@@ -97,11 +103,11 @@ class statsAnalyser
         // count statuses per minute
         if ($current_count === 0)
         {
-            Cache::add($key, $new_count, $this->cache_expiry);
+            Cache::add($key, $new_count, $expires);
         }
         else
         {
-            Cache::put($key, $new_count, $this->cache_expiry);
+            Cache::put($key, $new_count, $expires);
         }
     }
 }
