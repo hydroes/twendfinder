@@ -26,12 +26,15 @@ socket.on('tweet', function(data) {
 
 });
 
-socket.on('tweetCount', function(data) {
+socket.on('tweetCount', function(data)
+{
     $('#counter').text(data);
 });
 
-socket.on('graphData', function(data){
-  console.log(data);
+socket.on('graphData', function(data)
+{
+    console.log('graphData');
+    console.log(data.foo);
 });
 
 $('#feed-flow').click(function(e)
