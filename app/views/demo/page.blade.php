@@ -23,21 +23,25 @@ socket.on('tweet', function(data) {
     var status = JSON && JSON.parse(data) || $.parseJSON(data);
 //    console.log(status)
     $('#tweets').prepend('<tr><td><img src="'+status.profile_pic+'" class="img-rounded" /></td><td><div><a href="https://twitter.com/'+status.screen_name+'" target="_blank">'+status.screen_name+'</a></div><div>'+status.text+'</div></td></tr>');
-    
+
 });
 
 socket.on('tweetCount', function(data) {
     $('#counter').text(data);
 });
 
-$('#feed-flow').click(function(e) 
+socket.on('graphData', function(data){
+  console.log(data);
+});
+
+$('#feed-flow').click(function(e)
 {
     var target = $(e.target);
-    
+
     var pause_flow = target.data('pause-flow');
-    
+
     socket.emit('feed-flow', { paused: pause_flow});
-    
+
     if (pause_flow == true) {
         target.removeClass('btn-primary').addClass('btn-success').text('Unpause feed');
         pause_flow = false;
@@ -45,7 +49,7 @@ $('#feed-flow').click(function(e)
         target.removeClass('btn-success').addClass('btn-primary').text('Pause feed');
         pause_flow = true;
     }
-    
+
     target.data('pause-flow', pause_flow);
     console.log(pause_flow);
 });
