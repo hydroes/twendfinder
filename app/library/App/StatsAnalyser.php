@@ -86,7 +86,7 @@ class statsAnalyser
      * @param int $expiry Cache expire time in minutes
      * @return void
      */
-    public function incrementCounter($key, $increment_amount, $expiry)
+    public function incrementCounter($key, $increment_amount, $expiry = null)
     {
         // do nothing if nothing to increment
         if ((int)$increment_amount === 0)
