@@ -1,6 +1,6 @@
 <?php
 
-class statsAnalyser
+class StatsAnalyser
 {
     /**
      * Amount of time in minutes to keep data cached for

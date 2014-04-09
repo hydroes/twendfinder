@@ -40,7 +40,7 @@ class StatusAnalyserCommand extends Command {
             // create zmq socket
             $socket = \App::make('zeroMqSubscriberSocket');
 
-            $statAnalyser = App::make('statsAnalyser');
+            $statAnalyser = App::make('StatsAnalyser');
 
             // prepare keywords (remove i ...)
             $keywords = Config::get('twitter.keywords');
