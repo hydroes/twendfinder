@@ -10,6 +10,13 @@ class StatsAggregator extends Stats
     private $_process_interval = 60;
 
     /**
+     * Number of times that the process method is run
+     *
+     * @var int
+     */
+    private $_processed_count = 0;
+
+    /**
      * This method runs every x amount of seconds and processes aggregate stats
      *
      * @return void
@@ -19,8 +26,15 @@ class StatsAggregator extends Stats
         $this->_countStatusesPerMinute();
 
         sleep($this->_process_interval);
+        $this->_processed_count++;
     }
 
+    /**
+     * Updates the cache with the total number of statuses counted in the last
+     * minute.
+     *
+     * @return void
+     */
     protected function _countStatusesPerMinute()
     {
         // create key of last minute and get total
