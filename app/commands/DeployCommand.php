@@ -51,6 +51,8 @@ class DeployCommand extends Command {
                 'cd app/',
                 'chown -R www-data storage',
                 'chmod 0775 -R storage',
+                // bring site into maintenance
+                'php artisan down',
                 'service supervisor stop',
                 'echo "flushing redis cache"',
                 'redis-cli FLUSHALL',
@@ -58,7 +60,8 @@ class DeployCommand extends Command {
                 'cd /var/www',
                 'mv trender "`date "+trender_%m_%d_%y__%H_%M_%S"`"',
                 'mv trender_latest trender',
-                'service supervisor start'
+                'service supervisor start',
+                'php artisan up',
             );
 
             SSH::run($commands, function($line)
