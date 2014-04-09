@@ -11,9 +11,8 @@
 |
 */
 
-Artisan::add(new TwitterStreamCommand);
-
 Artisan::add(new DeployCommand);
-
 Artisan::add(new StatusAnalyserCommand);
+Artisan::add(new StatsAggregatorCommand);
+Artisan::add(new TwitterStreamCommand);
 
