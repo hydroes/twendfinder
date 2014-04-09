@@ -16,7 +16,7 @@ class StatsAnalyser extends Stats
         $key_prefix = date('d_m_Y_H_i');
 
         // analyse total statuses
-        $ttl_status_key = $key_prefix . "_total";
+        $ttl_status_key = "{$key_prefix}_total";
         $this->incrementCounter($ttl_status_key, 1);
 
         // count individual keywords in statuses

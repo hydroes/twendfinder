@@ -16,7 +16,26 @@ class StatsAggregator extends Stats
      */
     public function process()
     {
-        echo "\nprocessing " . time();
+        $this->_countStatusesPerMinute();
+
         sleep($this->_process_interval);
+    }
+
+    protected function _countStatusesPerMinute()
+    {
+        // create key of last minute and get total
+        $key_prefix = date('d_m_Y_H_i', strtotime("now - 1 minute"));
+        $key_name = "{$key_prefix}_total";
+        $last_minute_total = Cache::get($key_name);
+
+        $last_minute_key = 'statuses_last_minute';
+
+        // upsert a key that will always hold the number of statuses for the last minute
+        if (Cache::has($last_minute_key))
+        {
+            Cache::forget($last_minute_key);
+        }
+
+        Cache::add($last_minute_key, $last_minute_total, $this->cache_expiry);
     }
 }
