@@ -37,12 +37,12 @@ class StatsAggregatorCommand extends Command {
 	 */
 	public function fire()
 	{
-        $aggregator = \App::make('StatsAggregator');
+        $statsAggregator = \App::make('StatsAggregator');
 
-		// aggregate stats
+		// aggregate stats every x period
         while (true)
         {
-            $aggregator->process();
+            $statsAggregator->process();
         }
 	}
 
