@@ -1,6 +1,6 @@
 <?php
 
-class Stats
+abstract class Stats
 {
     /**
      * Amount of time in minutes to keep data cached for
@@ -8,7 +8,7 @@ class Stats
      * @var integer
      */
     public $cache_expiry = 10080; // 7 days
-    
+
     /**
      * Saves a counter to datastore
      *
