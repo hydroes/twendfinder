@@ -27,9 +27,9 @@ class StatsAggregator extends Stats
     public function process()
     {
         $time_periods = array(
-            'minute' => 60,
-            'hour' => 3600,
-            'day' => 1440,
+            self::MINUTE => 60,
+            self::HOUR => 3600,
+            self::DAY => 1440,
         );
         $time = time();
 echo "process run {$time}\n";
@@ -57,7 +57,7 @@ echo "process run {$time}\n";
      * @return void
      */
     protected function _countStatusesForPeriod($period = null)
-    {
+    {echo "_countStatusesForPeriod\n";
         $last_period_total = 0;
         $time_period = 0;
 
