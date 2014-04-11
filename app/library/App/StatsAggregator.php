@@ -78,7 +78,7 @@ echo "process run {$time}\n";
             default:
                 \Log::error('Valid period not given');
                 return;
-
+echo "hopefully it gets here \n";
             // get totals for time period
             for ($min = 1; $min <= $time_period; $min++)
             {
@@ -98,7 +98,7 @@ echo "{$key_prefix}\n";
         {
             Cache::forget($last_period_key);
         }
-
+echo "adding last period {$last_period_total} \n";
         Cache::add($last_period_key, $last_period_total, $this->cache_expiry);
 
     }
