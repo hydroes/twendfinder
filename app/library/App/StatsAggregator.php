@@ -38,7 +38,7 @@ echo "process run {$time}\n";
         {
             $keyname = "last_{$period_name}_aggregated";
             // only aggregate hourly stats on an hourly basis
-            $last_period_aggregated = Cache::get($keyname, $time);
+            $last_period_aggregated = Cache::get($keyname, 0);
 
             if (($time - $last_period_aggregated) > $period_time)
             {echo "period expired\n";
