@@ -17,6 +17,8 @@ class StatsAggregator extends Stats
 
     const WEEK = 'week';
 
+    const MONTH = 'month';
+
     /**
      * This method runs every x amount of seconds and processes aggregate stats
      *
@@ -30,15 +32,13 @@ class StatsAggregator extends Stats
             'minute' => 60,
             'hour' => 3600,
             'day' => 1440,
-            'month' => 43829,
         );
 
         foreach ($time_periods as $period_name => $period_time)
         {
             $keyname = "last_{$period_name}_aggregated";
             // only aggregate hourly stats on an hourly basis
-            $last_period_aggregated = Cache::get($keyname, DATE,
-                $this->cache_expiry);
+            $last_period_aggregated = Cache::get($keyname, DATE);
 
             if ((DATE - $last_period_aggregated) > $period_time)
             {
