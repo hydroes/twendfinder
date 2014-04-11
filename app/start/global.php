@@ -92,3 +92,13 @@ require app_path().'/filters.php';
 |
 */
 require_once 'ioc.php';
+
+/*
+|--------------------------------------------------------------------------
+| Define common app globals
+|--------------------------------------------------------------------------
+|
+| Create commonly used app globals
+|
+*/
+define('DATE', time());

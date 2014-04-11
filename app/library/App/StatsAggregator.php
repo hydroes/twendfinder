@@ -9,12 +9,13 @@ class StatsAggregator extends Stats
      */
     private $_process_interval = 60;
 
-    /**
-     * Number of times that the process method is run
-     *
-     * @var int
-     */
-    private $_processed_count = 0;
+    const MINUTE = 'minute';
+
+    const HOUR = 'hour';
+
+    const DAY = 'day';
+
+    const WEEK = 'week';
 
     /**
      * This method runs every x amount of seconds and processes aggregate stats
@@ -23,33 +24,82 @@ class StatsAggregator extends Stats
      */
     public function process()
     {
-        $this->_countStatusesPerMinute();
+        $this->_countStatusesForPeriod(self::MINUTE);
+
+        $time_periods = array(
+            'hour' => 3600,
+            'day' => 1440,
+            'month' => 43829,
+        );
+
+        foreach ($time_periods as $period_name => $period_time)
+        {
+            $keyname = "last_{$period_name}_aggregated";
+            // only aggregate hourly stats on an hourly basis
+            $last_period_aggregated = Cache::get($keyname, DATE,
+                $this->cache_expiry);
+
+            if ((DATE - $last_period_aggregated) > $period_time)
+            {
+                Cache::forget($keyname);
+                Cache::put($keyname, DATE, $this->cache_expiry);
+                $this->_countStatusesForPeriod($period_name);
+            }
+        }
 
         sleep($this->_process_interval);
-        $this->_processed_count++;
     }
 
     /**
-     * Updates the cache with the total number of statuses counted in the last
-     * minute.
+     * Retrieves & caches count totals for a specified period
      *
+     * @param string $period Period to retrieve count totals for
      * @return void
      */
-    protected function _countStatusesPerMinute()
+    protected function _countStatusesForPeriod($period = null)
     {
-        // create key of last minute and get total
-        $key_prefix = date('d_m_Y_H_i', strtotime("now - 1 minute"));
-        $key_name = "{$key_prefix}_total";
-        $last_minute_total = Cache::get($key_name);
+        $last_period_total = 0;
+        $time_period = 0;
 
-        $last_minute_key = 'statuses_last_minute';
-
-        // upsert a key that will always hold the number of statuses for the last minute
-        if (Cache::has($last_minute_key))
+        switch ($period)
         {
-            Cache::forget($last_minute_key);
+            case self::MINUTE :
+                $time_period = 1;
+                break;
+            case self::HOUR :
+                $time_period = 60;
+                break;
+            case self::DAY :
+                $time_period = 1440;
+                break;
+            case self::WEEK :
+                $time_period = 10080;
+                break;
+            default:
+                \Log::error('Valid period not given');
+                return;
+
+            // get totals for time period
+            for ($min = 1; $min <= $time_period; $min++)
+            {
+                $key_prefix = date(
+                    'd_m_Y_H_i',
+                    strtotime("now - {$min} minute")
+                );
+
+                $keyname = "{$key_prefix}_total";
+                $last_period_total += Cache::get($keyname, 0);
+            }
         }
 
-        Cache::add($last_minute_key, $last_minute_total, $this->cache_expiry);
+        $last_period_key = "last_{$period}_total";
+
+        if (Cache::has($last_period_key))
+        {
+            Cache::forget($last_period_key);
+        }
+
+        Cache::add($last_period_key, $last_period_total, $this->cache_expiry);
+
     }
 }
