@@ -22,7 +22,7 @@ class StatsAggregator extends Stats
     private $_aggregate_periods = array(
         self::MINUTE => 60,
         self::HOUR => 3600,
-        self::DAY => 1440,
+        self::DAY => 86400,
     );
 
     /**
