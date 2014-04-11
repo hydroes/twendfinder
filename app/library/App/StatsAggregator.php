@@ -19,6 +19,12 @@ class StatsAggregator extends Stats
 
     const MONTH = 'month';
 
+    private $_aggregate_periods = array(
+        self::MINUTE => 60,
+        self::HOUR => 3600,
+        self::DAY => 1440,
+    );
+
     /**
      * This method runs every x amount of seconds and processes aggregate stats
      *
@@ -26,14 +32,9 @@ class StatsAggregator extends Stats
      */
     public function process()
     {
-        $time_periods = array(
-            self::MINUTE => 60,
-            self::HOUR => 3600,
-            self::DAY => 1440,
-        );
         $time = time();
 echo "process run {$time}\n";
-        foreach ($time_periods as $period_name => $period_time)
+        foreach ($this->_aggregate_periods as $period_name => $period_time)
         {
             $keyname = "last_{$period_name}_aggregated";
             // only aggregate hourly stats on an hourly basis
@@ -57,7 +58,7 @@ echo "process run {$time}\n";
      * @return void
      */
     protected function _countStatusesForPeriod($period = null)
-    {echo "_countStatusesForPeriod\n";
+    {echo "_countStatusesForPeriod({$period})\n";
         $last_period_total = 0;
         $time_period = 0;
 
@@ -78,7 +79,7 @@ echo "process run {$time}\n";
             default:
                 \Log::error('Valid period not given');
                 return;
-echo "hopefully it gets here \n";
+echo "INSIDE SWITCH \n";
             // get totals for time period
             for ($min = 1; $min <= $time_period; $min++)
             {
@@ -98,7 +99,7 @@ echo "{$key_prefix}\n";
         {
             Cache::forget($last_period_key);
         }
-echo "adding last period {$last_period_total} \n";
+echo "adding last {$period} {$last_period_total} \n";
         Cache::add($last_period_key, $last_period_total, $this->cache_expiry);
 
     }
