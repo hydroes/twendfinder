@@ -27,6 +27,7 @@ class StatsAggregator extends Stats
         $this->_countStatusesForPeriod(self::MINUTE);
 
         $time_periods = array(
+            'minute' => 60,
             'hour' => 3600,
             'day' => 1440,
             'month' => 43829,
