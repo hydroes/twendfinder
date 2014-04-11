@@ -86,7 +86,7 @@ echo "process run {$time}\n";
                     'd_m_Y_H_i',
                     strtotime("now - {$min} minute")
                 );
-
+echo "{$key_prefix}\n";
                 $keyname = "{$key_prefix}_total";
                 $last_period_total += Cache::get($keyname, 0);
             }
