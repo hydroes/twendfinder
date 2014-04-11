@@ -79,18 +79,18 @@ echo "process run {$time}\n";
             default:
                 \Log::error('Valid period not given');
                 return;
-echo "INSIDE SWITCH \n";
-            // get totals for time period
-            for ($min = 1; $min <= $time_period; $min++)
-            {
-                $key_prefix = date(
-                    'd_m_Y_H_i',
-                    strtotime("now - {$min} minute")
-                );
+        }
+
+        // get totals for time period
+        for ($min = 1; $min <= $time_period; $min++)
+        {
+            $key_prefix = date(
+                'd_m_Y_H_i',
+                strtotime("now - {$min} minute")
+            );
 echo "{$key_prefix}\n";
-                $keyname = "{$key_prefix}_total";
-                $last_period_total += Cache::get($keyname, 0);
-            }
+            $keyname = "{$key_prefix}_total";
+            $last_period_total += Cache::get($keyname, 0);
         }
 
         $last_period_key = "last_{$period}_total";
