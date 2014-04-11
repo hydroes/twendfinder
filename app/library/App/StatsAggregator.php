@@ -26,24 +26,24 @@ class StatsAggregator extends Stats
      */
     public function process()
     {
-        $this->_countStatusesForPeriod(self::MINUTE);
-
         $time_periods = array(
             'minute' => 60,
             'hour' => 3600,
             'day' => 1440,
         );
 
+        $time = time();
+
         foreach ($time_periods as $period_name => $period_time)
         {
             $keyname = "last_{$period_name}_aggregated";
             // only aggregate hourly stats on an hourly basis
-            $last_period_aggregated = Cache::get($keyname, DATE);
+            $last_period_aggregated = Cache::get($keyname, $time);
 
-            if ((DATE - $last_period_aggregated) > $period_time)
+            if (($time - $last_period_aggregated) > $period_time)
             {
                 Cache::forget($keyname);
-                Cache::put($keyname, DATE, $this->cache_expiry);
+                Cache::put($keyname, $time, $this->cache_expiry);
                 $this->_countStatusesForPeriod($period_name);
             }
         }
