@@ -31,7 +31,6 @@ class StatsAggregator extends Stats
             'hour' => 3600,
             'day' => 1440,
         );
-echo "process run\n";
         $time = time();
 echo "process run {$time}\n";
         foreach ($time_periods as $period_name => $period_time)
@@ -41,7 +40,7 @@ echo "process run {$time}\n";
             $last_period_aggregated = Cache::get($keyname, 0);
 
             if (($time - $last_period_aggregated) > $period_time)
-            {echo "period expired\n";
+            {echo "period {$period_name} expired\n";
                 Cache::forget($keyname);
                 Cache::put($keyname, $time, $this->cache_expiry);
                 $this->_countStatusesForPeriod($period_name);
