@@ -89,6 +89,8 @@ echo "process run {$time}\n";
                 strtotime("now - {$min} minute")
             );
 echo "{$key_prefix}\n";
+$tz = Config::get('app.timezone');
+echo "timezone {$tz}\n";
             $keyname = "{$key_prefix}_total";
             $last_period_total += Cache::get($keyname, 0);
         }
