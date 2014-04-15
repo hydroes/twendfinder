@@ -9,6 +9,8 @@ abstract class Stats
      */
     public $cache_expiry = 10080; // 7 days
 
+    const KEY_FORMAT = 'd_m_Y_H_i';
+
     /**
      * Saves a counter to datastore
      *

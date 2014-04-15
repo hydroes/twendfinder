@@ -85,7 +85,7 @@ echo "process run {$time}\n";
         for ($min = 1; $min <= $time_period; $min++)
         {
             $key_prefix = date(
-                'd_m_Y_H_i',
+                self::KEY_FORMAT,
                 strtotime("now - {$min} minute")
             );
 

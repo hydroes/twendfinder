@@ -13,7 +13,7 @@ class StatsAnalyser extends Stats
     public function count(stdClass $status, array $keywords)
     {
         // create cache prefix key
-        $key_prefix = date('d_m_Y_H_i');
+        $key_prefix = date(self::KEY_FORMAT);
 
         // analyse total statuses
         $ttl_status_key = "{$key_prefix}_total";
