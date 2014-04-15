@@ -7,7 +7,7 @@ class StatsAggregator extends Stats
      *
      * @var int
      */
-    private $_process_interval = 30;
+    private $_process_interval = 60;
 
     const MINUTE = 'minute';
 
@@ -88,19 +88,16 @@ echo "process run {$time}\n";
                 'd_m_Y_H_i',
                 strtotime("now - {$min} minute")
             );
-echo "{$key_prefix}\n";
-$tz = Config::get('app.timezone');
-echo "timezone {$tz}\n";
+
             $keyname = "{$key_prefix}_total";
             $last_period_total += Cache::get($keyname, 0);
+echo "last minute keyname:  {$keyname}\n";
         }
 
         $last_period_key = "last_{$period}_total";
 
-        if (Cache::has($last_period_key))
-        {
-            Cache::forget($last_period_key);
-        }
+        Cache::forget($last_period_key);
+
 echo "adding last {$period} {$last_period_total} \n";
         Cache::add($last_period_key, $last_period_total, $this->cache_expiry);
 
