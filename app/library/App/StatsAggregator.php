@@ -33,7 +33,6 @@ class StatsAggregator extends Stats
     public function process()
     {
         $time = time();
-echo "process run {$time}\n";
         foreach ($this->_aggregate_periods as $period_name => $period_time)
         {
             $keyname = "last_{$period_name}_aggregated";
@@ -41,7 +40,7 @@ echo "process run {$time}\n";
             $last_period_aggregated = Cache::get($keyname, 0);
 
             if (($time - $last_period_aggregated) > $period_time)
-            {echo "period {$period_name} expired\n";
+            {
                 Cache::forget($keyname);
                 Cache::put($keyname, $time, $this->cache_expiry);
                 $this->_countStatusesForPeriod($period_name);
@@ -58,7 +57,7 @@ echo "process run {$time}\n";
      * @return void
      */
     protected function _countStatusesForPeriod($period = null)
-    {echo "_countStatusesForPeriod({$period})\n";
+    {
         $last_period_total = 0;
         $time_period = 0;
 
@@ -91,14 +90,12 @@ echo "process run {$time}\n";
 
             $keyname = "{$key_prefix}_total";
             $last_period_total += Cache::get($keyname, 0);
-echo "last minute keyname:  {$keyname}\n";
         }
 
         $last_period_key = "last_{$period}_total";
 
         Cache::forget($last_period_key);
 
-echo "adding last {$period} {$last_period_total} \n";
         Cache::add($last_period_key, $last_period_total, $this->cache_expiry);
 
     }
