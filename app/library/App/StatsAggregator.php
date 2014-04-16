@@ -49,15 +49,16 @@ class StatsAggregator extends Stats
         foreach ($this->_aggregate_periods as $period_name => $period_time)
         {
             $keyname = "last_{$period_name}_aggregated";
-            // only aggregate hourly stats on an hourly basis
             $last_period_aggregated = Cache::get($keyname, 0);
 
+            // only aggregate hourly stats every x period
             if (($time - $last_period_aggregated) > $period_time)
             {
                 Cache::forget($keyname);
                 Cache::put($keyname, $time, $this->cache_expiry);
                 $last_period_total =
-                    $this->_getCounterTotalByPeriodAndName($period_name, 'total');
+                    $this->_getCounterTotalByPeriodAndName($period_name,
+                    'total');
 
                 $last_period_key = "last_{$period_name}_total";
 
@@ -75,7 +76,7 @@ class StatsAggregator extends Stats
      *
      * @param string $period Period to retrieve count totals for
      * @param string $count_type Counter type to retrieve
-     * @return void
+     * @return int
      */
     protected function _getCounterTotalByPeriodAndName($period = null,
         $count_type = '')
@@ -100,6 +101,12 @@ class StatsAggregator extends Stats
             default:
                 \Log::error('Valid period not given');
                 return;
+        }
+
+        if (empty($count_type) === true)
+        {
+            \Log::error('Valid count type not given');
+            return;
         }
 
         // get totals for time period
