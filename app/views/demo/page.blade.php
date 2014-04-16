@@ -35,13 +35,6 @@ socket.on('tweetCount', function(data)
     $('#counter').text(data);
 });
 
-socket.on('graphData', function(data)
-{
-    var graphData = JSON && JSON.parse(data) || $.parseJSON(data);
-    console.log('graphData');
-    console.log(graphData);
-});
-
 socket.on('statsData', function(data)
 {
     var statsData = JSON && JSON.parse(data) || $.parseJSON(data);
