@@ -55,8 +55,6 @@ class DeployCommand extends Command {
                 'chown -R www-data storage',
                 'chmod 0775 -R storage',
                 'service supervisor stop',
-                'echo "flushing redis cache"',
-                'redis-cli FLUSHALL',
                 'echo "transferring trender_new to trender"',
                 'cd /var/www',
                 'mv trender "`date "+trender_%m_%d_%y__%H_%M_%S"`"',
