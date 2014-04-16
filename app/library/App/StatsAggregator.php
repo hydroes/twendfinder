@@ -33,6 +33,19 @@ class StatsAggregator extends Stats
     public function process()
     {
         $time = time();
+
+        $this->_countStatsForLastPeriod($time);
+
+        sleep($this->_process_interval);
+    }
+
+    /**
+     * Counts and caches statuses recieved in the last minute, hour, day etc.
+     *
+     * @param int $time
+     */
+    protected function _countStatsForLastPeriod($time)
+    {
         foreach ($this->_aggregate_periods as $period_name => $period_time)
         {
             $keyname = "last_{$period_name}_aggregated";
@@ -43,15 +56,22 @@ class StatsAggregator extends Stats
             {
                 Cache::forget($keyname);
                 Cache::put($keyname, $time, $this->cache_expiry);
-                $this->_countStatusesForPeriod($period_name);
+                $last_period_total =
+                    $this->_countStatusesForPeriod($period_name);
+
+                $last_period_key = "last_{$period_name}_total";
+
+                Cache::forget($last_period_key);
+
+                Cache::add($last_period_key, $last_period_total,
+                    $this->cache_expiry);
+
             }
         }
-
-        sleep($this->_process_interval);
     }
 
     /**
-     * Retrieves & caches count totals for a specified period
+     * Retrieves count totals for a specified period
      *
      * @param string $period Period to retrieve count totals for
      * @return void
@@ -92,11 +112,7 @@ class StatsAggregator extends Stats
             $last_period_total += Cache::get($keyname, 0);
         }
 
-        $last_period_key = "last_{$period}_total";
-
-        Cache::forget($last_period_key);
-
-        Cache::add($last_period_key, $last_period_total, $this->cache_expiry);
+        return $last_period_total;
 
     }
 }

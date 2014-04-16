@@ -9,6 +9,11 @@ abstract class Stats
      */
     public $cache_expiry = 10080; // 7 days
 
+    /**
+     * The format used to build all key prefixes used to store data in redis.
+     *
+     * @var string 
+     */
     const KEY_FORMAT = 'd_m_Y_H_i';
 
     /**
