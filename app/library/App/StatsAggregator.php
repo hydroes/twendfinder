@@ -34,7 +34,7 @@ class StatsAggregator extends Stats
     {
         $time = time();
 
-        $this->_countStatsForLastPeriod($time);
+        $this->_countStatsForLastPeriodX($time);
 
         sleep($this->_process_interval);
     }
@@ -44,7 +44,7 @@ class StatsAggregator extends Stats
      *
      * @param int $time
      */
-    protected function _countStatsForLastPeriod($time)
+    protected function _countStatsForLastPeriodX($time)
     {
         foreach ($this->_aggregate_periods as $period_name => $period_time)
         {

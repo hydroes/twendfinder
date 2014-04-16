@@ -42,6 +42,13 @@ socket.on('graphData', function(data)
     console.log(graphData);
 });
 
+socket.on('statsData', function(data)
+{
+    var statsData = JSON && JSON.parse(data) || $.parseJSON(data);
+    console.log('statsData');
+    console.log(statsData);
+});
+
 $('#feed-flow').click(function(e)
 {
     var target = $(e.target);
