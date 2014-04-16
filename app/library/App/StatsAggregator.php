@@ -57,7 +57,7 @@ class StatsAggregator extends Stats
                 Cache::forget($keyname);
                 Cache::put($keyname, $time, $this->cache_expiry);
                 $last_period_total =
-                    $this->_countStatusesForPeriod($period_name);
+                    $this->_getCounterTotalByPeriodAndName($period_name, 'total');
 
                 $last_period_key = "last_{$period_name}_total";
 
@@ -74,9 +74,11 @@ class StatsAggregator extends Stats
      * Retrieves count totals for a specified period
      *
      * @param string $period Period to retrieve count totals for
+     * @param string $count_type Counter type to retrieve
      * @return void
      */
-    protected function _countStatusesForPeriod($period = null)
+    protected function _getCounterTotalByPeriodAndName($period = null,
+        $count_type = '')
     {
         $last_period_total = 0;
         $time_period = 0;
@@ -108,7 +110,7 @@ class StatsAggregator extends Stats
                 strtotime("now - {$min} minute")
             );
 
-            $keyname = "{$key_prefix}_total";
+            $keyname = "{$key_prefix}_{$count_type}";
             $last_period_total += Cache::get($keyname, 0);
         }
 
