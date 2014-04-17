@@ -7,7 +7,7 @@ class StatsAggregator extends Stats
      *
      * @var int
      */
-    private $_process_interval = 29;
+    private $_process_interval = 30;
 
     const MINUTE = 'minute';
 
