@@ -42,7 +42,7 @@ class StatsAggregator extends Stats
     /**
      * Counts and caches statuses recieved in the last minute, hour, day etc.
      *
-     * @param int $time
+     * @param int $time Current time to work off
      */
     protected function _countStatsForLastPeriodX($time)
     {
