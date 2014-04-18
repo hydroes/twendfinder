@@ -32,7 +32,9 @@ class FilterTrackConsumer extends OauthPhirehose
             \Log::warning('TWITTER QUEUE - ' . $msg);
 
             // stop processing until queue catches up
-            if ($percent_full >= 80) {
+            if ($percent_full >= 80) 
+            {
+                \Log::warning('TWITTER QUEUE OVER 80% capacity');
                 return;
             }
         }
