@@ -35,11 +35,11 @@ socket.on('tweetCount', function(data)
     $('#counter').text(data);
 });
 
-socket.on('statsData', function(data)
+socket.on('statsCurrentData', function(data)
 {
-    var statsData = JSON && JSON.parse(data) || $.parseJSON(data);
-    console.log('statsData');
-    console.log(statsData);
+    var statsCurrentData = JSON && JSON.parse(data) || $.parseJSON(data);
+    console.log('statsCurrentData');
+    console.log(statsCurrentData);
 });
 
 $('#feed-flow').click(function(e)
