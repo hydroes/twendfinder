@@ -7,9 +7,9 @@
 
 <p>
     Tweets counted in the last:
-    <span class="label label-info">Minute <span class="badge badge-important" id="cur_min">0</span></span> <br />
-    <span class="label label-info">Hour <span class="badge badge-important" id="cur_hour">0</span></span> <br />
-    <span class="label label-info">24 hours <span class="badge badge-important" id="cur_day">0</span></span> <br />
+    <span class="label label-info">Minute <span class="badge badge-important" id="cur_min">0</span></span> 
+    <span class="label label-info">Hour <span class="badge badge-important" id="cur_hour">0</span></span> 
+    <span class="label label-info">24 hours <span class="badge badge-important" id="cur_day">0</span></span> 
 </p>
 
 <button type="button" class="btn btn-primary" id="feed-flow" data-pause-flow="true">Pause feed</button>
@@ -52,9 +52,9 @@ socket.on('statsCurrentData', function(data)
     var min = new Number(statsCurrentData.minute);
     var hour = new Number(statsCurrentData.hour);
     var day = new Number(statsCurrentData.day);
-    $('#cur_min').text(min);
-    $('#cur_hour').text(hour);
-    $('#cur_day').text(day);
+    $('#cur_min').text(min.toPrecision(10));
+    $('#cur_hour').text(hour.toPrecision(10));
+    $('#cur_day').text(day.toPrecision(10));
     
 });
 
@@ -85,11 +85,7 @@ $('#feed-flow').click(function(e)
 });
 
 
-$(function() 
-{
-  // quick get some stats:
-  socket.emit('get-current-stats-data');
-});
+socket.emit('get-current-stats-data');
 
 
 </script>
