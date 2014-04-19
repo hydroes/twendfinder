@@ -7,9 +7,9 @@
 
 <p>
     Tweets counted in the last:
-    <span class="label label-info">Minute <span class="label label-important" id="cur_min">0</span></span> 
-    <span class="label label-info">Hour <span class="label label-important" id="cur_hour">0</span></span> 
-    <span class="label label-info">24 hours <span class="label label-important" id="cur_day">0</span></span> 
+    <span class="label label-info active">Minute <span class="badge badge-important" id="cur_min">0</span></span> 
+    <span class="label label-info active">Hour <span class="badge badge-important" id="cur_hour">0</span></span> 
+    <span class="label label-info active">24 hours <span class="badge badge-important" id="cur_day">0</span></span> 
 </p>
 
 <button type="button" class="btn btn-primary" id="feed-flow" data-pause-flow="true">Pause feed</button>
