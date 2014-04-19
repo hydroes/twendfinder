@@ -42,6 +42,12 @@ socket.on('statsCurrentData', function(data)
     console.log(statsCurrentData);
 });
 
+// get stats data every x period
+var getStatsCurrent = setInterval(function()
+{
+    socket.emit('get-current-stats-data');
+}, 60000);
+
 $('#feed-flow').click(function(e)
 {
     var target = $(e.target);
