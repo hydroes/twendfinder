@@ -49,6 +49,12 @@ socket.on('statsCurrentData', function(data)
     console.log(statsCurrentData);
     
     // update ui with stats
+    var min = new Number(statsCurrentData.minute);
+    var hour = new Number(statsCurrentData.hour);
+    var day = new Number(statsCurrentData.day);
+    $('#cur_min').text(min);
+    $('#cur_hour').text(hour);
+    $('#cur_day').text(day);
     
 });
 
@@ -76,6 +82,13 @@ $('#feed-flow').click(function(e)
 
     target.data('pause-flow', pause_flow);
     console.log(pause_flow);
+});
+
+
+$(function() 
+{
+  // quick get some stats:
+  socket.emit('get-current-stats-data');
 });
 
 
