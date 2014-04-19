@@ -25,7 +25,10 @@
  * TODO: This must be rewritten in angular
  */
 
-socket = io.connect('http://sockets.twendfinder.com:443');
+socket = io.connect('http://sockets.twendfinder.com:443', function()
+{
+    socket.emit('get-current-stats-data');
+});
 //    socket.emit('tweets', function (data) {
 //        console.log(data);
 //    });
@@ -83,10 +86,6 @@ $('#feed-flow').click(function(e)
     target.data('pause-flow', pause_flow);
     console.log(pause_flow);
 });
-
-
-socket.emit('get-current-stats-data');
-
 
 </script>
 
