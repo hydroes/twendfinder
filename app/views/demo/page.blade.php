@@ -25,13 +25,12 @@
  * TODO: This must be rewritten in angular
  */
 
-socket = io.connect('http://sockets.twendfinder.com:443', function()
+socket = io.connect('http://sockets.twendfinder.com:443');
+
+socket.on('init', function()
 {
     socket.emit('get-current-stats-data');
 });
-//    socket.emit('tweets', function (data) {
-//        console.log(data);
-//    });
 
 socket.on('tweet', function(data) {
     var status = JSON && JSON.parse(data) || $.parseJSON(data);
