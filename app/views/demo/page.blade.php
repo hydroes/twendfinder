@@ -5,6 +5,13 @@
 <h3>Below is a live feed of the worlds tweets about love, hate, and other emotions</h3>
 <p>Tweets counted so far: <span id="counter"></span></p>
 
+<p>
+    Tweets counted in the last:
+    <span class="label label-info">Minute <span class="badge badge-important" id="cur_min">0</span></span> <br />
+    <span class="label label-info">Hour <span class="badge badge-important" id="cur_hour">0</span></span> <br />
+    <span class="label label-info">24 hours <span class="badge badge-important" id="cur_day">0</span></span> <br />
+</p>
+
 <button type="button" class="btn btn-primary" id="feed-flow" data-pause-flow="true">Pause feed</button>
 
 <table id="tweets" class="table table-hover">
@@ -40,6 +47,9 @@ socket.on('statsCurrentData', function(data)
     var statsCurrentData = JSON && JSON.parse(data) || $.parseJSON(data);
     console.log('statsCurrentData');
     console.log(statsCurrentData);
+    
+    // update ui with stats
+    
 });
 
 // get stats data every x period
