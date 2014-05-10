@@ -23,6 +23,7 @@ class StatsAggregator extends Stats
         self::MINUTE => 60,
         self::HOUR => 3600,
         self::DAY => 86400,
+        self::WEEK => 604800,
     );
 
     /**
@@ -51,7 +52,7 @@ class StatsAggregator extends Stats
             $keyname = "last_{$period_name}_aggregated";
             $last_period_aggregated = Cache::get($keyname, 0);
 
-            // only aggregate hourly stats every x period
+            // only aggregate periodical stats every x period
             if (($time - $last_period_aggregated) > $period_time)
             {
                 Cache::forget($keyname);
