@@ -16,7 +16,7 @@ twendfinderApp.controller('TweetsCtrl', function ($scope)
   {
       var status = JSON && JSON.parse(data) || $.parseJSON(data);
       $scope.statuses.push(status);
-  };
+  });
   
 });
 
