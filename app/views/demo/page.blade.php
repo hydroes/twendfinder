@@ -4,14 +4,12 @@
 
 <script>
 
-socket = io.connect('http://sockets.twendfinder.com:443');
-
 // My controller
 var twendfinderApp = angular.module('twendfinderApp', []);
 
 twendfinderApp.controller('TweetsCtrl', function ($scope) 
 {
-  
+  var socket = io.connect('http://sockets.twendfinder.com:443');
   $scope.statuses = [];
   
   socket.on('tweet', function(data) 
@@ -60,7 +58,7 @@ twendfinderApp.controller('TweetsCtrl', function ($scope)
  * TODO: This must be rewritten in angular
  */
 
-//socket = io.connect('http://sockets.twendfinder.com:443');
+socket = io.connect('http://sockets.twendfinder.com:443');
 
 socket.on('init', function()
 {
