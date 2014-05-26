@@ -48,7 +48,7 @@ $scope.phones = [
     <tr ng-repeat="phone in phones">
         <div>@{{phone.name}}</div>
     </tr>
-    <tr ng-repeat="status in statuses">
+<!--    <tr ng-repeat="status in statuses">
         <td>
             <img src="'@{{status.profile_pic}}'" class="img-rounded" />
         </td>
@@ -58,7 +58,7 @@ $scope.phones = [
             </div>
             <div>@{{status.text}}</div>
         </td>
-    </tr>
+    </tr>-->
 </table>
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
