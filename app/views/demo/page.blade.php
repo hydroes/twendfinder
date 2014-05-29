@@ -6,10 +6,10 @@
 
 // My controller
 var twendfinderApp = angular.module('twendfinderApp', []);
-socket = io.connect('http://sockets.twendfinder.com:443');
+
 twendfinderApp.controller('TweetsCtrl', function ($scope) 
 {
-  
+  var socket = io.connect('http://sockets.twendfinder.com:443');
   $scope.statuses = [];
   
   socket.on('tweet', function(data) 
