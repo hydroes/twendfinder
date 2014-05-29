@@ -41,11 +41,11 @@ twendfinderApp.controller('TweetsCtrl', function ($scope)
 <table id="tweets" class="table table-hover" ng-controller="TweetsCtrl">
     <tr ng-repeat="status in statuses">
         <td>
-            <img src="'@{{status.profile_pic}}'" class="img-rounded" />
+            <img src="@{{status.profile_pic}}" class="img-rounded" />
         </td>
         <td>
             <div>
-                <a href="@{{status.screen_name}}" target="_blank">@{{status.screen_name}}</a>
+                <a href="https://twitter.com/@{{status.screen_name}}" target="_blank">@{{status.screen_name}}</a>
             </div>
             <div>@{{status.text}}</div>
         </td>
