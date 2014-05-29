@@ -45,7 +45,7 @@ twendfinderApp.controller('TweetsCtrl', function ($scope)
         </td>
         <td>
             <div>
-                <a href="https://twitter.com/@{{status.screen_name}}" target="_blank">@{{status.screen_name}}</a>
+                <a href="@{{status.screen_name}}" target="_blank">@{{status.screen_name}}</a>
             </div>
             <div>@{{status.text}}</div>
         </td>
