@@ -6,27 +6,21 @@
 
 // My controller
 var twendfinderApp = angular.module('twendfinderApp', []);
-
+socket = io.connect('http://sockets.twendfinder.com:443');
 twendfinderApp.controller('TweetsCtrl', function ($scope) 
 {
-  var socket = io.connect('http://sockets.twendfinder.com:443');
+  
   $scope.statuses = [];
   
-//  socket.on('tweet', function(data) 
-//  {
-//      var status = JSON && JSON.parse(data) || $.parseJSON(data);
-//      $scope.statuses.push(status);
-//  });
+  socket.on('tweet', function(data) 
+  {
+      $scope.$apply(function() {
+          var status = JSON && JSON.parse(data) || $.parseJSON(data);
+          $scope.statuses.push(status);
+      });
+      
+  });
 
-$scope.phones = [
-    {'name': 'Nexus S',
-     'snippet': 'Fast just got faster with Nexus S.'},
-    {'name': 'Motorola XOOM™ with Wi-Fi',
-     'snippet': 'The Next, Next Generation tablet.'},
-    {'name': 'MOTOROLA XOOM™',
-     'snippet': 'The Next, Next Generation tablet.'}
-  ];
-  
 });
 
 </script>
@@ -45,10 +39,7 @@ $scope.phones = [
 <button type="button" class="btn btn-primary" id="feed-flow" data-pause-flow="true">Pause feed</button>
 
 <table id="tweets" class="table table-hover" ng-controller="TweetsCtrl">
-    <tr ng-repeat="phone in phones">
-        <div>@{{phone.name}}</div>
-    </tr>
-<!--    <tr ng-repeat="status in statuses">
+    <tr ng-repeat="status in statuses">
         <td>
             <img src="'@{{status.profile_pic}}'" class="img-rounded" />
         </td>
@@ -58,7 +49,7 @@ $scope.phones = [
             </div>
             <div>@{{status.text}}</div>
         </td>
-    </tr>-->
+    </tr>
 </table>
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
