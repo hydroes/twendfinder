@@ -62,6 +62,8 @@ class FilterTrackConsumer extends OauthPhirehose
    */
   protected function _buildTweet($data) {
       $tweet = array();
+      $tweet['id'] = (isset($data->id) === true) ? $data->id : '';
+      $tweet['id_str'] = (isset($data->id_str) === true) ? $data->id_str : '';
       $tweet['text'] = (isset($data->text) === true) ? $data->text : '';
 
       $tweet['screen_name'] = '';
