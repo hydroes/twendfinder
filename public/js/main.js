@@ -9,6 +9,10 @@ var twendfinderApp = angular.module('twendfinderApp', []);
 
 twendfinderApp.controller('TweetsCtrl', function ($scope)
 {
+    $scope.hello = function() {
+        alert('Hello !');
+    };
+
     var socket = io.connect('http://sockets.twendfinder.com:443');
     $scope.statuses = [];
 
@@ -47,4 +51,3 @@ twendfinderApp.controller('TweetsCtrl', function ($scope)
     };
 
 });
-
