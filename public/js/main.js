@@ -25,6 +25,7 @@ twendfinderApp.controller('TweetsCtrl', function ($scope)
 
     $scope.toggleStreamFlow = function()
     {
+        console.log('CLIQed');
         $scope.streamFlowPaused = ($scope.streamFlowPaused === false) ? true : false;
 
         console.log('flow toggle: ', $scope.streamFlowPaused);
