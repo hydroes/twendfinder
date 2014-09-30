@@ -39,7 +39,7 @@ twendfinderApp.controller('TweetsCtrl', function ($scope)
 <button type="button" class="btn btn-primary" id="feed-flow" data-pause-flow="true">Pause feed</button>
 
 <table id="tweets" class="table table-hover" ng-controller="TweetsCtrl">
-    <tr ng-repeat="status in statuses track by status.id_str">
+    <tr ng-repeat="status in statuses | limitTo:-30 track by $index">
         <td>
             <img src="@{{status.profile_pic}}" class="img-rounded" />
         </td>
