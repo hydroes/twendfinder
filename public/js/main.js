@@ -1,0 +1,1 @@
+var twendfinderApp = angular.module('twendfinderApp', []);
