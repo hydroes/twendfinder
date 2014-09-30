@@ -14,7 +14,7 @@
 </p>
 
 <div ng-controller="TweetsCtrl">
-    <button type="button" class="btn btn-primary" id="feed-flow" ng_click="toggleStreamFlow()">Pause feed</button>
+    <button type="button" class="btn btn-primary" id="feed-flow" ng-click="toggleStreamFlow()">Pause feed</button>
 
     <table id="tweets" class="table table-hover">
         <tr ng-repeat="status in statuses | limitTo:-10 track by $index">
