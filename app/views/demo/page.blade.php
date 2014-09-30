@@ -1,21 +1,21 @@
 @extends('master')
 
 @section('content')
-
-<h1>Welcome!</h1>
-<h3>Below is a live feed of the worlds tweets about love, hate, and other emotions</h3>
-<p>Tweets counted so far: <span id="counter"></span></p>
-
-<p>
-    Tweets counted in the last:
-    <span class="label label-info active">Minute <span class="badge badge-important" id="cur_min">0</span></span> 
-    <span class="label label-info active">Hour <span class="badge badge-important" id="cur_hour">0</span></span> 
-    <span class="label label-info active">24 hours <span class="badge badge-important" id="cur_day">0</span></span> 
-</p>
-
 <div ng-controller="TweetsCtrl">
-    <button ng-click="toggleStreamFlow()" ng-show="toggleStreamFlow == false" class="btn btn-primary">Pause feed</button>
-    <button ng-click="toggleStreamFlow()" ng-show="toggleStreamFlow == true" class="btn btn-success">Un-pause feed</button>
+    <h1>Welcome!</h1>
+    <h3>Below is a live feed of the worlds tweets about love, hate, and other emotions</h3>
+    <p>Tweets counted so far: <span id="counter"></span></p>
+
+    <p>
+        Tweets counted in the last:
+        <span class="label label-info active">Minute <span class="badge badge-important" id="cur_min">0</span></span>
+        <span class="label label-info active">Hour <span class="badge badge-important" id="cur_hour">0</span></span>
+        <span class="label label-info active">24 hours <span class="badge badge-important" id="cur_day">0</span></span>
+    </p>
+
+
+    <button ng-click="toggleStreamFlow()" ng-show="toggleStreamFlow === false" class="btn btn-primary">Pause feed</button>
+    <button ng-click="toggleStreamFlow()" ng-show="toggleStreamFlow === true" class="btn btn-success">Un-pause feed</button>
 
     <table id="tweets" class="table table-hover">
         <tr ng-repeat="status in statuses | limitTo:-10 track by $index">
