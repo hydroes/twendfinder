@@ -12,9 +12,10 @@
         <span class="label label-info active">24 hours <span class="badge badge-important" id="cur_day">0</span></span>
     </p>
 
-
-    <button ng-controller="TweetsCtrl" ng-click="toggleStreamFlow()" ng-hide="streamFlowPaused" class="btn btn-primary">Pause feed</button>
-    <button ng-controller="TweetsCtrl" ng-click="toggleStreamFlow()" ng-show="streamFlowPaused" class="btn btn-success">Un-pause feed</button>
+    <div ng-controller="TweetsCtrl">
+        <button ng-click="toggleStreamFlow()" ng-hide="streamFlowPaused" class="btn btn-primary">Pause feed</button>
+        <button ng-click="toggleStreamFlow()" ng-show="streamFlowPaused" class="btn btn-success">Un-pause feed</button>
+    </div>
 
     <table ng-controller="TweetsCtrl" id="tweets" class="table table-hover">
         <tr ng-repeat="status in statuses | limitTo:-10 track by $index">
