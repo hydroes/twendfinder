@@ -13,7 +13,7 @@
     <span class="label label-info active">24 hours <span class="badge badge-important" id="cur_day">0</span></span> 
 </p>
 
-<button type="button" class="btn btn-primary" id="feed-flow" data-pause-flow="true">Pause feed</button>
+<button type="button" class="btn btn-primary" id="feed-flow" data-pause-flow="true" ng-controller="TweetsCtrl" ng-click="toggleStreamFlow()">Pause feed</button>
 
 <table id="tweets" class="table table-hover" ng-controller="TweetsCtrl">
     <tr ng-repeat="status in statuses | limitTo:-30 track by $index">
@@ -78,26 +78,6 @@ var getStatsCurrent = setInterval(function()
 {
     socket.emit('get-current-stats-data');
 }, 60000);
-
-$('#feed-flow').click(function(e)
-{
-    var target = $(e.target);
-
-    var pause_flow = target.data('pause-flow');
-
-    socket.emit('feed-flow', { paused: pause_flow});
-
-    if (pause_flow == true) {
-        target.removeClass('btn-primary').addClass('btn-success').text('Unpause feed');
-        pause_flow = false;
-    } else {
-        target.removeClass('btn-success').addClass('btn-primary').text('Pause feed');
-        pause_flow = true;
-    }
-
-    target.data('pause-flow', pause_flow);
-    console.log(pause_flow);
-});
 
 </script>
 

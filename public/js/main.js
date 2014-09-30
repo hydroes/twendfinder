@@ -21,5 +21,27 @@ twendfinderApp.controller('TweetsCtrl', function ($scope)
 
   });
 
+  $scope.streamFlowPaused = false;
+
+    $scope.toggleStreamFlow = function() {
+        $scope.streamFlowPaused = ($scope.streamFlowPaused === false) ? true : false;
+
+
+        socket.emit('feed-flow', { paused: $scope.streamFlowPaused});
+
+        //        if (pause_flow == true) {
+        //            target.removeClass('btn-primary').addClass('btn-success').text('Unpause feed');
+        //            pause_flow = false;
+        //        } else {
+        //            target.removeClass('btn-success').addClass('btn-primary').text('Pause feed');
+        //            pause_flow = true;
+        //        }
+
+        //        target.data('pause-flow', pause_flow);
+        console.log($scope.streamFlowPaused);
+
+
+  };
+
 });
 
