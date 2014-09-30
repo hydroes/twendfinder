@@ -24,7 +24,7 @@
             <div>
                 <a href="https://twitter.com/@{{status.screen_name}}" target="_blank">@{{status.screen_name}}</a>
             </div>
-            <div ng-bind-html="">@{{status.text}}</div>
+            <div ng-bind-html="status.text"></div>
         </td>
     </tr>
 </table>
