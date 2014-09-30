@@ -18,6 +18,9 @@ twendfinderApp.factory('socket', function ($rootScope) {
           }
         });
       })
+    },
+    init: function (callback) {
+      socket.on('init', callback);
     }
   };
 });
