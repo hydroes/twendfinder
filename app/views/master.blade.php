@@ -12,7 +12,7 @@
     
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
     <script src="https://www.google.com/jsapi"></script>
-    <script src="/js/services.js"></script>
+    <script src="/js/service.js"></script>
     <script src="/js/controllers.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
