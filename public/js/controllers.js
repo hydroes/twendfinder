@@ -7,9 +7,8 @@
 // My controller
 var twendfinderApp = angular.module('twendfinderApp', []);
 
-twendfinderApp.controller('TweetsCtrl', function ($scope)
+twendfinderApp.controller('TweetsCtrl', function ($scope, socket)
 {
-    var socket = io.connect('http://sockets.twendfinder.com:443');
     $scope.statuses = [];
 
     socket.on('tweet', function(data)
@@ -31,7 +30,7 @@ twendfinderApp.controller('TweetsCtrl', function ($scope)
     };
 });
 
-twendfinderApp.controller('StatsCtrl', function ($scope)
+twendfinderApp.controller('StatsCtrl', function ($scope, socket)
 {
     $scope.initialize = function()
     {
