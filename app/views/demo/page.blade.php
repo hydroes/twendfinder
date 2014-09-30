@@ -1,7 +1,6 @@
 @extends('master')
 
 @section('content')
-<div ng-controller="TweetsCtrl">
     <h1>Welcome!</h1>
     <h3>Below is a live feed of the worlds tweets about love, hate, and other emotions</h3>
     <p>Tweets counted so far: <span id="counter"></span></p>
@@ -14,10 +13,10 @@
     </p>
 
 
-    <button ng-click="toggleStreamFlow()" ng-hide="streamFlowPaused" class="btn btn-primary">Pause feed</button>
-    <button ng-click="toggleStreamFlow()" ng-show="streamFlowPaused" class="btn btn-success">Un-pause feed</button>
+    <button ng-controller="TweetsCtrl" ng-click="toggleStreamFlow()" ng-hide="streamFlowPaused" class="btn btn-primary">Pause feed</button>
+    <button ng-controller="TweetsCtrl" ng-click="toggleStreamFlow()" ng-show="streamFlowPaused" class="btn btn-success">Un-pause feed</button>
 
-    <table id="tweets" class="table table-hover">
+    <table ng-controller="TweetsCtrl" id="tweets" class="table table-hover">
         <tr ng-repeat="status in statuses | limitTo:-10 track by $index">
             <td>
                 <img src="@{{status.profile_pic}}" class="img-rounded" />
@@ -30,7 +29,6 @@
             </td>
         </tr>
     </table>
-</div>
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script src="http://sockets.twendfinder.com/node_modules/socket.io/node_modules/socket.io-client/dist/socket.io.js"></script>

@@ -30,4 +30,9 @@ twendfinderApp.controller('TweetsCtrl', function ($scope)
         socket.emit('feed-flow', { paused: $scope.streamFlowPaused});
     };
 
+    $scope.initialize = function()
+    {
+
+    };
+
 });
