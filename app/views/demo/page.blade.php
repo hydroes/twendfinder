@@ -2,29 +2,6 @@
 
 @section('content')
 
-<script>
-
-// My controller
-var twendfinderApp = angular.module('twendfinderApp', []);
-
-twendfinderApp.controller('TweetsCtrl', function ($scope) 
-{
-  var socket = io.connect('http://sockets.twendfinder.com:443');
-  $scope.statuses = [];
-  
-  socket.on('tweet', function(data) 
-  {
-      $scope.$apply(function() {
-          var status = JSON && JSON.parse(data) || $.parseJSON(data);
-          $scope.statuses.push(status);
-      });
-      
-  });
-
-});
-
-</script>
-
 <h1>Welcome!</h1>
 <h3>Below is a live feed of the worlds tweets about love, hate, and other emotions</h3>
 <p>Tweets counted so far: <span id="counter"></span></p>
