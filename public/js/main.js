@@ -9,21 +9,22 @@ var twendfinderApp = angular.module('twendfinderApp', []);
 
 twendfinderApp.controller('TweetsCtrl', function ($scope)
 {
-  var socket = io.connect('http://sockets.twendfinder.com:443');
-  $scope.statuses = [];
+    var socket = io.connect('http://sockets.twendfinder.com:443');
+    $scope.statuses = [];
 
-  socket.on('tweet', function(data)
-  {
-      $scope.$apply(function() {
-          var status = JSON && JSON.parse(data) || $.parseJSON(data);
-          $scope.statuses.push(status);
-      });
+    socket.on('tweet', function(data)
+    {
+        $scope.$apply(function() {
+            var status = JSON && JSON.parse(data) || $.parseJSON(data);
+            $scope.statuses.push(status);
+        });
 
-  });
+    });
 
-  $scope.streamFlowPaused = false;
+    $scope.streamFlowPaused = false;
 
-    $scope.toggleStreamFlow = function() {
+    $scope.toggleStreamFlow = function()
+    {
         $scope.streamFlowPaused = ($scope.streamFlowPaused === false) ? true : false;
 
 
@@ -41,7 +42,7 @@ twendfinderApp.controller('TweetsCtrl', function ($scope)
         console.log($scope.streamFlowPaused);
 
 
-  };
+    };
 
 });
 

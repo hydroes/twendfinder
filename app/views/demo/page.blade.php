@@ -13,21 +13,23 @@
     <span class="label label-info active">24 hours <span class="badge badge-important" id="cur_day">0</span></span> 
 </p>
 
-<button type="button" class="btn btn-primary" id="feed-flow" data-pause-flow="true" ng-controller="TweetsCtrl" ng-click="toggleStreamFlow()">Pause feed</button>
+<div ng-controller="TweetsCtrl">
+    <button type="button" class="btn btn-primary" id="feed-flow" data-pause-flow="true" ng-click="toggleStreamFlow()">Pause feed</button>
 
-<table id="tweets" class="table table-hover" ng-controller="TweetsCtrl">
-    <tr ng-repeat="status in statuses | limitTo:-30 track by $index">
-        <td>
-            <img src="@{{status.profile_pic}}" class="img-rounded" />
-        </td>
-        <td>
-            <div>
-                <a href="https://twitter.com/@{{status.screen_name}}" target="_blank">@{{status.screen_name}}</a>
-            </div>
-            <div>@{{status.text}}</div>
-        </td>
-    </tr>
-</table>
+    <table id="tweets" class="table table-hover">
+        <tr ng-repeat="status in statuses | limitTo:-10 track by $index">
+            <td>
+                <img src="@{{status.profile_pic}}" class="img-rounded" />
+            </td>
+            <td>
+                <div>
+                    <a href="https://twitter.com/@{{status.screen_name}}" target="_blank">@{{status.screen_name}}</a>
+                </div>
+                <div>@{{status.text}}</div>
+            </td>
+        </tr>
+    </table>
+</div>
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script src="http://sockets.twendfinder.com/node_modules/socket.io/node_modules/socket.io-client/dist/socket.io.js"></script>
