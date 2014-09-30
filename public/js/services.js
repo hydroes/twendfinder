@@ -1,4 +1,4 @@
-app.factory('socket', function ($rootScope) {
+angular.factory('socket', function ($rootScope) {
   var socket = io.connect('http://sockets.twendfinder.com:443');
   return {
     on: function (eventName, callback) {
