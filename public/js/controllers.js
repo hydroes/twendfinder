@@ -38,7 +38,8 @@ twendfinderApp.controller('StatsCtrl', function ($scope, socket)
 
         socket.on('statsCurrentData', function(data)
         {
-            var statsCurrentData = JSON && JSON.parse(data) || $.parseJSON(data);
+//            var statsCurrentData = JSON && JSON.parse(data) || $.parseJSON(data);
+            var statsCurrentData = angular.fromJson(data);
             console.log('statsCurrentData');
             console.log(statsCurrentData);
 
