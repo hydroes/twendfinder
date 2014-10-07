@@ -1,26 +1,5 @@
-twendfinderApp.factory('socket', function ($rootScope) {
-  var socket = io.connect('http://sockets.twendfinder.com:443');
-  return {
-    on: function (eventName, callback) {
-      socket.on(eventName, function () {
-        var args = arguments;
-        $rootScope.$apply(function () {
-          callback.apply(socket, args);
-        });
-      });
-    },
-    emit: function (eventName, data, callback) {
-      socket.emit(eventName, data, function () {
-        var args = arguments;
-        $rootScope.$apply(function () {
-          if (callback) {
-            callback.apply(socket, args);
-          }
-        });
-      })
-    },
-    init: function (callback) {
-      socket.on('init', callback);
-    }
-  };
+twendfinderApp.factory('mySocket', function (socketFactory) {
+    var mySocket = socketFactory();
+    mySocket.forward('error');
+    return mySocket;
 });

@@ -1,1 +1,3 @@
-var twendfinderApp = angular.module('twendfinderApp', []);
+var twendfinderApp = angular.module('twendfinderApp', [
+    'btford.socket-io'
+]);

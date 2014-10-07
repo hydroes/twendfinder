@@ -4,7 +4,9 @@ twendfinderApp.controller('TweetsCtrl', function ($scope, socket)
 
     socket.on('tweet', function(data)
     {
-        $scope.$apply(function() {
+        socket.forward('tweet', $scope);
+
+        $scope.$on('socket:tweet', function (ev, data) {
             var status = JSON && JSON.parse(data) || $.parseJSON(data);
             $scope.statuses.push(status);
         });
