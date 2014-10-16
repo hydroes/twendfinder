@@ -1,0 +1,22 @@
+{
+  "name": "trender",
+  "version": "0.0.1",
+  "description": "Twitter feed analyser",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@bitbucket.org:hydroes/trender.git"
+  },
+  "keywords": [
+    "twitter",
+    "analyser"
+  ],
+  "author": "Brian Gouws",
+  "license": "ISC",
+  "devDependencies": {
+    "bower": "^1.3.12"
+  }
+}
