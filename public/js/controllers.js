@@ -22,7 +22,7 @@ twendfinderApp.controller('TweetsCtrl', function ($scope, socket)
 twendfinderApp.controller('StatsCtrl', function ($scope, socket)
 {
     $scope.initialize = function()
-    {return;
+    {
         socket.on('init', function()
         {
             socket.emit('get-current-stats-data');
