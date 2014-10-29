@@ -3,11 +3,11 @@
 @section('content')
     <h1>Welcome!</h1>
     <h3>Below is a live feed of the worlds tweets about love, hate, and other emotions</h3>
-    <p>Tweets counted so far: <span id="counter"></span></p>
+    <p>Tweets counted so far: <span>{{counter}}</span></p>
 
     <p ng-controller="StatsCtrl" ng-init="initialize()">
         Tweets counted in the last:
-        <span class="label label-info active">Minute <span class="badge badge-important" id="cur_min">0</span></span>
+        <span class="label label-info active">Minute <span class="badge badge-important">{{cur_min}}</span></span>
         <span class="label label-info active">Hour <span class="badge badge-important" id="cur_hour">0</span></span>
         <span class="label label-info active">24 hours <span class="badge badge-important" id="cur_day">0</span></span>
     </p>

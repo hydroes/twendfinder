@@ -31,7 +31,7 @@ twendfinderApp.controller('StatsCtrl', function ($scope, socket)
 
         socket.on('tweetCount', function(data)
         {
-            $('#counter').text(data);
+            $scope.counter = data;
         });
 
         socket.on('statsCurrentData', function(data)
@@ -45,9 +45,9 @@ twendfinderApp.controller('StatsCtrl', function ($scope, socket)
             var min = new Number(statsCurrentData.minute);
             var hour = new Number(statsCurrentData.hour);
             var day = new Number(statsCurrentData.day);
-            $('#cur_min').text(min.toPrecision(10));
-            $('#cur_hour').text(hour.toPrecision(10));
-            $('#cur_day').text(day.toPrecision(10));
+            $scope.cur_min = min;
+            $scope.cur_hour = hour;
+            $scope.cur_day = day;
 
         });
 
