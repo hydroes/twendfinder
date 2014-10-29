@@ -7,9 +7,9 @@
 
     <p ng-controller="StatsCtrl" ng-init="initialize()">
         Tweets counted in the last:
-        <span class="label label-info active">Minute <span class="badge badge-important">{{cur_min}}</span></span>
-        <span class="label label-info active">Hour <span class="badge badge-important" id="cur_hour">0</span></span>
-        <span class="label label-info active">24 hours <span class="badge badge-important" id="cur_day">0</span></span>
+        <span class="label label-info active">Minute <span class="badge badge-important">@{{cur_min}}</span></span>
+        <span class="label label-info active">Hour <span class="badge badge-important">@{{cur_hour}}</span></span>
+        <span class="label label-info active">24 hours <span class="badge badge-important">@{{cur_day}}</span></span>
     </p>
 
     <div ng-controller="TweetsCtrl">
