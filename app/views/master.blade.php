@@ -15,7 +15,7 @@
     <script src="/js/main.js"></script>
     <script src="/js/controllers.js"></script>
     <script src="bower_components/ng-socket-io/ng-socket-io.min.js"></script>
-    <script src="http://sockets.twendfinder.com/node_modules/socket.io/node_modules/socket.io-client/dist/socket.io.js"></script>
+    <script src="http://sockets.twendfinder.com/node_modules/socket.io/node_modules/socket.io-client/socket.io.js"></script>
     <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
         (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
