@@ -47,6 +47,10 @@ class DeployCommand extends Command {
                 'php composer.phar selfupdate',
                 'echo "running composer install"',
                 'php composer.phar install',
+                'echo "running npm install"',
+                'npm install',
+                'echo "running bower install"',
+                'bower install --allow-root',
                 // bring site into maintenance
                 'echo "putting site into maintenance mode"',
                 'php artisan down',
