@@ -1,6 +1,6 @@
 (function() {
 'use strict';
-
+// https://github.com/mbenford/ngSocketIO
 angular.module('socket-io', []).factory('socket', ["$rootScope","io", function($rootScope, io) {
     var socket = io.connect('http://sockets.twendfinder.com:443'),
         events = {},

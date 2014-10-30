@@ -7,7 +7,7 @@ twendfinderApp.controller('TweetsCtrl', function ($scope, socket)
         var status = JSON && JSON.parse(data) || $.parseJSON(data);
         $scope.statuses.push(status);
 
-    });
+    }).bindTo($scope);
 
     $scope.streamFlowPaused = false;
 
@@ -26,20 +26,17 @@ twendfinderApp.controller('StatsCtrl', function ($scope, socket)
         socket.on('init', function()
         {
             socket.emit('get-current-stats-data');
-        });
+        }).bindTo($scope);
 
         // @todo: bind destroy event
         socket.on('tweetCount', function(data)
         {
             $scope.counter = data;
-        });
+        }).bindTo($scope);
 
         socket.on('statsCurrentData', function(data)
         {
-//            var statsCurrentData = JSON && JSON.parse(data) || $.parseJSON(data);
             var statsCurrentData = angular.fromJson(data);
-            console.log('statsCurrentData');
-            console.log(statsCurrentData);
 
             // update ui with stats
             var min = new Number(statsCurrentData.minute);
@@ -49,7 +46,7 @@ twendfinderApp.controller('StatsCtrl', function ($scope, socket)
             $scope.cur_hour = hour;
             $scope.cur_day = day;
 
-        });
+        }).bindTo($scope);
 
         // get stats data every x period
         var getStatsCurrent = setInterval(function()
