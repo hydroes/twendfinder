@@ -39,12 +39,9 @@ twendfinderApp.controller('StatsCtrl', function ($scope, socket, $filter)
             var statsCurrentData = angular.fromJson(data);
 
             // update ui with stats
-//            $filter('number')(number, fractionSize)
-            var hour = new Number(statsCurrentData.hour);
-            var day = new Number(statsCurrentData.day);
             $scope.cur_min = statsCurrentData.minute;
-            $scope.cur_hour = hour;
-            $scope.cur_day = day;
+            $scope.cur_hour = statsCurrentData.hour;
+            $scope.cur_day = statsCurrentData.day;
 
         }).bindTo($scope);
 
