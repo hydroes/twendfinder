@@ -1,1 +1,1 @@
-var twendfinderApp = angular.module('twendfinderApp', ['socket-io']);
+var twendfinderApp = angular.module('twendfinderApp', ['ngSanitize', 'socket-io']);
