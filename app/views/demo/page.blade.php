@@ -7,9 +7,9 @@
 
     <p ng-controller="StatsCtrl" ng-init="initialize()">
         Tweets counted in the last:
-        <span class="label label-info active">Minute <span class="badge badge-important">@{{cur_min}}</span></span>
-        <span class="label label-info active">Hour <span class="badge badge-important">@{{cur_hour}}</span></span>
-        <span class="label label-info active">24 hours <span class="badge badge-important">@{{cur_day}}</span></span>
+        <span class="label label-info active">Minute <span class="badge badge-important">@{{cur_min | number}}</span></span>
+        <span class="label label-info active">Hour <span class="badge badge-important">@{{cur_hour | number}}</span></span>
+        <span class="label label-info active">24 hours <span class="badge badge-important">@{{cur_day | number}}</span></span>
     </p>
 
     <div ng-controller="TweetsCtrl">
@@ -20,11 +20,11 @@
     <table ng-controller="TweetsCtrl" id="tweets" class="table table-hover">
         <tr ng-repeat="status in statuses | limitTo:-10 track by $index">
             <td>
-                <img src="@{{status.profile_pic}}" class="img-rounded" />
+                <img ng-src="@{{status.profile_pic}}" class="img-rounded" />
             </td>
             <td>
                 <div>
-                    <a href="https://twitter.com/@{{status.screen_name}}" target="_blank">@{{status.screen_name}}</a>
+                    <a ng-href="https://twitter.com/@{{status.screen_name}}" target="_blank">@{{status.screen_name}}</a>
                 </div>
                 <div>@{{status.text}}</div>
             </td>

@@ -28,7 +28,7 @@ twendfinderApp.controller('StatsCtrl', function ($scope, socket)
             socket.emit('get-current-stats-data');
         });
 
-
+        // @todo: bind destroy event
         socket.on('tweetCount', function(data)
         {
             $scope.counter = data;
