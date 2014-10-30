@@ -19,7 +19,7 @@ twendfinderApp.controller('TweetsCtrl', function ($scope, socket)
     };
 });
 
-twendfinderApp.controller('StatsCtrl', function ($scope, socket)
+twendfinderApp.controller('StatsCtrl', function ($scope, socket, $filter)
 {
     $scope.initialize = function()
     {
@@ -39,10 +39,10 @@ twendfinderApp.controller('StatsCtrl', function ($scope, socket)
             var statsCurrentData = angular.fromJson(data);
 
             // update ui with stats
-            var min = new Number(statsCurrentData.minute);
+//            $filter('number')(number, fractionSize)
             var hour = new Number(statsCurrentData.hour);
             var day = new Number(statsCurrentData.day);
-            $scope.cur_min = min;
+            $scope.cur_min = statsCurrentData.minute;
             $scope.cur_hour = hour;
             $scope.cur_day = day;
 
