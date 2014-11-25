@@ -19,7 +19,7 @@ twendfinderApp.controller('TweetsCtrl', function ($scope, socket)
     };
 });
 
-twendfinderApp.controller('StatsCtrl', function ($scope, socket)
+twendfinderApp.controller('StatsCtrl', function ($scope, $interval, socket)
 {
     $scope.initialize = function()
     {
