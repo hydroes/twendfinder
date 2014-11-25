@@ -19,7 +19,7 @@ twendfinderApp.controller('TweetsCtrl', function ($scope, socket)
     };
 });
 
-twendfinderApp.controller('StatsCtrl', function ($scope, socket, $filter)
+twendfinderApp.controller('StatsCtrl', function ($scope, socket)
 {
     $scope.initialize = function()
     {
@@ -44,13 +44,17 @@ twendfinderApp.controller('StatsCtrl', function ($scope, socket, $filter)
             $scope.cur_day = statsCurrentData.day;
 
         }).bindTo($scope);
-
+        
         // get stats data every x period
-        var getStatsCurrent = setInterval(function()
+        var getStatsCurrent = $interval(function()
         {
             socket.emit('get-current-stats-data');
         }, 60000);
 
+        socket.on('stats-for-last', function(data)
+        {
+            console.log(data);
+        }).bindTo($scope);
 
     };
 });
