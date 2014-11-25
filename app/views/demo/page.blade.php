@@ -3,7 +3,6 @@
 @section('content')
     <h1>Welcome!</h1>
     <h3>Below is a live feed of the worlds tweets about love, hate, and other emotions</h3>
-    <p>Tweets counted so far: <span>@{{counter}}</span></p>
 
     <p ng-controller="StatsCtrl" ng-init="initialize()">
         Tweets counted in the last:
