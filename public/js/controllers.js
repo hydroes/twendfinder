@@ -53,7 +53,7 @@ twendfinderApp.controller('StatsCtrl', function ($scope, $interval, socket)
 
         socket.on('stats-for-last', function(data)
         {
-            console.log(data);
+            console.log('stats-for-last', data);
         }).bindTo($scope);
 
     };
