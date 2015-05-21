@@ -9,9 +9,9 @@ return array(
 	|
 	|
 	*/
-	'consumer_key' => 'h54qHRatZK1EphoX4MQ8AA',
+	'consumer_key' => '3OiwY06Ao5ZLZyunEJ1wpOr5W',
 
-	'consumer_secret' => 'KY5R6EhIMMjT4Uew5hOwauUySV0d05vyzvhBY58EA',
+	'consumer_secret' => 'JsJE4cmX6oZ3p5097bAAIqSeyR5ljOtAOvgV27RLFYUA78yzyE',
 
     'access_token' => '410585557-vddYvHpO6RlNyBbKQIGPA9oDRwneQ4P3O8eYczkU',
 
