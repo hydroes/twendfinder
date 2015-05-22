@@ -10,6 +10,7 @@
     <script src="bower_components/angular/angular.min.js"></script>
     <script src="bower_components/angular-sanitize/angular-sanitize.min.js"></script>
     <script src="bower_components/angular-route/angular-route.min.js"></script>
+    <script src="bower_components/moment/min/moment.min.js"></script>
     
     <script src="https://www.google.com/jsapi"></script>
     <script src="/js/main.js"></script>
