@@ -67,11 +67,28 @@ angular.module('twendfinderApp').controller('StatsCtrl', function ($scope, $inte
         console.log('statsData', statsData)
         var graph = new google.visualization.DataTable();
 
+        var rows = [];
+
         // add the data to the graph
         for (var i = 0; i < statsData.length; i++) {
             var counterName = statsData[i].counterName;
-            console.log('counterName', counterName)
+            // console.log('counterName', counterName)
+
+            // get data for row
+            for (var y = 0; y < statsData[i].counterData.length; y++) {
+
+                if (rows.statsData[i].counterData[y].time === undefined) {
+                    rows.statsData[i].counterData[y].time = [];
+                }
+
+                rows.statsData[i].counterData[y].time.push(rows.statsData[i].counterData[y].value);
+
+                // statsData[i].counterData[y]
+            }
+
         }
+
+        console.log('rows', rows)
 
 
         graph.addColumn('number', 'Day');
