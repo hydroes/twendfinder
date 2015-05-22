@@ -8,6 +8,8 @@
     <span class="label label-info active">24 hours <span class="badge badge-important">{{cur_day | number}}</span></span>
 </p>
 
+<div id="line_top_x"></div>
+
 <div ng-controller="TweetsCtrl">
     <button ng-click="toggleStreamFlow()" ng-hide="streamFlowPaused" class="btn btn-primary">Pause feed</button>
     <button ng-click="toggleStreamFlow()" ng-show="streamFlowPaused" class="btn btn-success">Un-pause feed</button>
