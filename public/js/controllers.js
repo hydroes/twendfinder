@@ -68,6 +68,7 @@ angular.module('twendfinderApp').controller('StatsCtrl', function ($scope, $inte
         var graph = new google.visualization.DataTable();
 
         var rows = [];
+        var rowNames = [];
 
         // add the data to the graph
         for (var i = 0; i < statsData.length; i++) {
@@ -85,6 +86,7 @@ angular.module('twendfinderApp').controller('StatsCtrl', function ($scope, $inte
 
                 if (rows[counterTime] === undefined) {
                     rows[counterTime] = [];
+                    rowNames.push(counterTime);
                 }
 
                 rows[counterTime].push(counterValue);
@@ -96,7 +98,7 @@ angular.module('twendfinderApp').controller('StatsCtrl', function ($scope, $inte
 
         }
 
-        console.log('rows', rows)
+        console.log('rows', rowNames)
 
         graph.addRows(rows);
 
