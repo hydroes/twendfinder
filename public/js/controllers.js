@@ -53,12 +53,11 @@ angular.module('twendfinderApp').controller('StatsCtrl', function ($scope, $inte
             socket.emit('get-current-stats-data');
         }, 60000);
 
+        // request stats
+        socket.emit('get-current-stats-data');
         socket.on('stats-for-last', function(statsData)
         {
             console.log('stats-for-last', statsData);
-            
-            google.load('visualization', '1.1', {packages: ['line']});
-            google.setOnLoadCallback($scope.drawChart());
 
         }).bindTo($scope);
 

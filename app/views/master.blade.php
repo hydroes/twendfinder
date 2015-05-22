@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="twendfinderApp">
+<html lang="en">
   <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,8 +11,8 @@
     <script src="bower_components/angular-sanitize/angular-sanitize.min.js"></script>
     <script src="bower_components/angular-route/angular-route.min.js"></script>
     <script src="bower_components/moment/min/moment.min.js"></script>
-    
-    <script src="https://www.google.com/jsapi"></script>
+    <script src="https://www.google.com/jsapi"></script>    
+
     <script src="/js/main.js"></script>
     <script src="/js/controllers.js"></script>
     <script src="http://sockets.twendfinder.com/node_modules/socket.io/node_modules/socket.io-client/dist/socket.io.min.js"></script>
