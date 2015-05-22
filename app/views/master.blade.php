@@ -25,10 +25,8 @@
         ga('create', 'UA-48914004-1', 'twendfinder.com');
         ga('send', 'pageview');
     </script>
-    
+
   </head>
   <body ng-view>
-    
-
   </body>
 </html>
