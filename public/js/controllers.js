@@ -76,12 +76,12 @@ angular.module('twendfinderApp').controller('StatsCtrl', function ($scope, $inte
 
             // get data for row
             for (var y = 0; y < statsData[i].counterData.length; y++) {
+                console.log(statsData[i].counterData.length)
+                // if (rows.statsData[i].counterData[y].time === undefined) {
+                //     rows.statsData[i].counterData[y].time = [];
+                // }
 
-                if (rows.statsData[i].counterData[y].time === undefined) {
-                    rows.statsData[i].counterData[y].time = [];
-                }
-
-                rows.statsData[i].counterData[y].time.push(rows.statsData[i].counterData[y].value);
+                // rows.statsData[i].counterData[y].time.push(rows.statsData[i].counterData[y].value);
 
                 // statsData[i].counterData[y]
             }
