@@ -14,3 +14,7 @@ angular.module('twendfinderApp').config(['$routeProvider', function($routeProvid
 	});
 }]);
 
+google.load('visualization', '1.1', {packages: ['line']});
+google.setOnLoadCallback(function() {
+	angular.bootstrap(document.body, ['twendfinderApp']);
+});
