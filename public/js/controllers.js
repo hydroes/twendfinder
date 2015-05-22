@@ -1,4 +1,4 @@
-twendfinderApp.controller('TweetsCtrl', function ($scope, socket)
+angular.module('twendfinderApp').controller('TweetsCtrl', function ($scope, socket)
 {
     $scope.statuses = [];
 
@@ -19,7 +19,7 @@ twendfinderApp.controller('TweetsCtrl', function ($scope, socket)
     };
 });
 
-twendfinderApp.controller('StatsCtrl', function ($scope, $interval, socket)
+angular.module('twendfinderApp').controller('StatsCtrl', function ($scope, $interval, socket)
 {
     $scope.initialize = function()
     {
