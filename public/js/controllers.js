@@ -51,9 +51,9 @@ angular.module('twendfinderApp').controller('StatsCtrl', function ($scope, $inte
             socket.emit('get-current-stats-data');
         }, 60000);
 
-        socket.on('stats-for-last', function(data)
+        socket.on('stats-for-last', function(statsData)
         {
-            console.log('stats-for-last', data);
+            console.log('stats-for-last', statsData);
             $scope.drawChart();
         }).bindTo($scope);
 
