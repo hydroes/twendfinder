@@ -1,3 +1,5 @@
+'use strict';
+
 angular.module('twendfinderApp').controller('TweetsCtrl', function ($scope, socket)
 {
     $scope.statuses = [];
@@ -54,7 +56,10 @@ angular.module('twendfinderApp').controller('StatsCtrl', function ($scope, $inte
         socket.on('stats-for-last', function(statsData)
         {
             console.log('stats-for-last', statsData);
-            $scope.drawChart();
+            
+            google.load('visualization', '1.1', {packages: ['line']});
+            google.setOnLoadCallback($scope.drawChart());
+
         }).bindTo($scope);
 
     };
@@ -85,15 +90,15 @@ angular.module('twendfinderApp').controller('StatsCtrl', function ($scope, $inte
 
         var options = {
             chart: {
-            title: 'Box Office Earnings in First Two Weeks of Opening',
-            subtitle: 'in millions of dollars (USD)'
+                title: 'Box Office Earnings in First Two Weeks of Opening',
+                subtitle: 'in millions of dollars (USD)'
             },
             width: 900,
             height: 500,
             axes: {
-            x: {
-                0: {side: 'top'}
-            }
+                x: {
+                    0: {side: 'top'}
+                }
             }
         };
 
