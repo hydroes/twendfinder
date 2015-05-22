@@ -90,10 +90,10 @@ angular.module('twendfinderApp').controller('StatsCtrl', function ($scope, $inte
 
         var options = {
             chart: {
-                title: 'Box Office Earnings in First Two Weeks of Opening',
-                subtitle: 'in millions of dollars (USD)'
+                title: 'Emotional chart',
+                subtitle: 'Twitter emotions'
             },
-            width: 900,
+            width: '100%',
             height: 500,
             axes: {
                 x: {
