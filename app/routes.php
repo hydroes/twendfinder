@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function() {
-	return '';
-});
+Route::get('/', 'HomeController@showWelcome');
 
 Route::get('/showSnapShot', 'HomeController@showSnapShot');
 

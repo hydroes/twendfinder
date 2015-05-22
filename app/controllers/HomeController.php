@@ -17,7 +17,7 @@ class HomeController extends BaseController {
 
 	public function showWelcome()
 	{
-            return View::make('demo.page');
+            return View::make('master');
 	}
 
         public function showSnapShot()
