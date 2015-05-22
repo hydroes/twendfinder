@@ -76,7 +76,10 @@ angular.module('twendfinderApp').controller('StatsCtrl', function ($scope, $inte
 
             // get data for row
             for (var y = 0; y < statsData[i].counterData.length; y++) {
-                console.log(statsData[i].counterData[y])
+                
+                var counterTime = statsData[i].counterData[y].time;
+                var counterValue = statsData[i].counterData[y].value;
+                console.log(counterTime)
                 // if (rows.statsData[i].counterData[y].time === undefined) {
                 //     rows.statsData[i].counterData[y].time = [];
                 // }
