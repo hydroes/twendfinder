@@ -65,13 +65,21 @@ angular.module('twendfinderApp').controller('StatsCtrl', function ($scope, $inte
 
     $scope.drawChart = function(statsData) {
         console.log('statsData', statsData)
-        var data = new google.visualization.DataTable();
-        data.addColumn('number', 'Day');
-        data.addColumn('number', 'Guardians of the Galaxy');
-        data.addColumn('number', 'The Avengers');
-        data.addColumn('number', 'Transformers: Age of Extinction');
+        var graph = new google.visualization.DataTable();
 
-        data.addRows([
+        // add the data to the graph
+        for (var i = 0; i; i < statsData.length; i++) {
+            var counterName = statsData[i].counterName;
+            console.log('counterName', counterName)
+        }
+
+
+        graph.addColumn('number', 'Day');
+        graph.addColumn('number', 'Guardians of the Galaxy');
+        graph.addColumn('number', 'The Avengers');
+        graph.addColumn('number', 'Transformers: Age of Extinction');
+
+        graph.addRows([
             [1,  37.8, 80.8, 41.8],
             [2,  30.9, 69.5, 32.4],
             [3,  25.4,   57, 25.7],
@@ -104,7 +112,7 @@ angular.module('twendfinderApp').controller('StatsCtrl', function ($scope, $inte
 
         var chart = new google.charts.Line(document.getElementById('line_top_x'));
 
-        chart.draw(data, options);
+        chart.draw(graph, options);
     };
 
 });
