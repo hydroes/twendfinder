@@ -57,14 +57,14 @@ angular.module('twendfinderApp').controller('StatsCtrl', function ($scope, $inte
         socket.emit('stats-for-last');
         socket.on('stats-for-last', function(statsData)
         {
-            console.log('stats-for-last', statsData);
-            $scope.drawChart();
+            $scope.drawChart(statsData);
 
         }).bindTo($scope);
 
     };
 
-    $scope.drawChart = function() {
+    $scope.drawChart = function(statsData) {
+        console.log('statsData', statsData)
         var data = new google.visualization.DataTable();
         data.addColumn('number', 'Day');
         data.addColumn('number', 'Guardians of the Galaxy');
