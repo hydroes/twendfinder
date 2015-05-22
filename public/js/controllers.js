@@ -68,7 +68,7 @@ angular.module('twendfinderApp').controller('StatsCtrl', function ($scope, $inte
         var graph = new google.visualization.DataTable();
 
         // add the data to the graph
-        for (var i = 0; i; i < statsData.length; i++) {
+        for (var i = 0; i < statsData.length; i++) {
             var counterName = statsData[i].counterName;
             console.log('counterName', counterName)
         }
