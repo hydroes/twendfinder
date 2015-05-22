@@ -1,4 +1,4 @@
-angular.module('twendfinderApp', ['ngSanitize', 'socket-io']);
+angular.module('twendfinderApp', ['ngSanitize', 'ngRoute', 'socket-io']);
 
 // define routes
 angular.module('twendfinderApp').config(['$routeProvider', function($routeProvider){  
@@ -13,3 +13,4 @@ angular.module('twendfinderApp').config(['$routeProvider', function($routeProvid
 		redirectTo: '/'
 	});
 }]);
+
