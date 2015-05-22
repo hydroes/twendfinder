@@ -104,7 +104,7 @@ angular.module('twendfinderApp').controller('StatsCtrl', function ($scope, $inte
 
         console.log('rows', rowNames)
 
-        graph.addRows(rows);
+        // graph.addRows(rows);
 
 
         // graph.addColumn('number', 'Day');
