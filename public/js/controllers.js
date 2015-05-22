@@ -98,6 +98,10 @@ angular.module('twendfinderApp').controller('StatsCtrl', function ($scope, $inte
 
         }
 
+        for (var i = 0; i < rowNames.length; i++) {
+            graph.addRow(rows[rowNames[i]]);
+        }
+
         console.log('rows', rowNames)
 
         graph.addRows(rows);
