@@ -21,7 +21,7 @@ angular.module('twendfinderApp').controller('TweetsCtrl', function ($scope, sock
     };
 });
 
-angular.module('twendfinderApp').controller('StatsCtrl', function ($scope, $interval, socket)
+angular.module('twendfinderApp').controller('StatsCtrl', function ($scope, $interval, $window, socket)
 {
     $scope.initialize = function()
     {
@@ -75,6 +75,7 @@ angular.module('twendfinderApp').controller('StatsCtrl', function ($scope, $inte
             
             if (i === 0) {
                 var dateColumn = moment(statsData[i].counterData[0].time).format('HH:mm:ss');
+                console.log('dateColumn', dateColumn)
                 graph.addColumn('number', dateColumn);
             }
 
