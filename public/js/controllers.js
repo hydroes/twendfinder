@@ -87,6 +87,9 @@ angular.module('twendfinderApp').controller('StatsCtrl', function ($scope, $inte
                 if (rows[counterTime] === undefined) {
                     rows[counterTime] = [];
                     rowNames.push(counterTime);
+
+                    // first row column must be time:
+                    rows[counterTime].push(counterTime);
                 }
 
                 rows[counterTime].push(counterValue);
