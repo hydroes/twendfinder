@@ -64,7 +64,7 @@ angular.module('twendfinderApp').controller('StatsCtrl', function ($scope, $inte
     };
 
     $scope.drawChart = function(statsData) {
-        // console.log('statsData', statsData)
+        console.log('statsData', statsData)
         var graph = new google.visualization.DataTable();
 
         var rows = [];
@@ -100,7 +100,7 @@ angular.module('twendfinderApp').controller('StatsCtrl', function ($scope, $inte
 
         for (var i = 0; i < rowNames.length; i++) {
             graph.addRow(rows[rowNames[i]]);
-            console.log('row', rows[rowNames[i]])
+            // console.log('row', rows[rowNames[i]])
         }
 
         // console.log('rows', rowNames)
