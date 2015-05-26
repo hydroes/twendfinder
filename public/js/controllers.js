@@ -74,7 +74,14 @@ angular.module('twendfinderApp').controller('StatsCtrl', function ($scope, $inte
         for (var i = 0; i < statsData.length; i++) {
             var counterName = statsData[i].counterName;
             // console.log('counterName', counterName)
+            
+            if (i === 0) {
+                var dateColumn = moment(statsData[i].counterData[0].time).format('HH:mm:ss');
+                graph.addColumn('string', dateColumn);
+            }
+
             graph.addColumn('number', counterName);
+
 
             // get data for row
             for (var y = 0; y < statsData[i].counterData.length; y++) {
@@ -87,6 +94,9 @@ angular.module('twendfinderApp').controller('StatsCtrl', function ($scope, $inte
                 if (rows[counterTime] === undefined) {
                     rows[counterTime] = [];
                     rowNames.push(counterTime);
+
+                    // first row column must be time:
+                    rows[counterTime].push(counterTime);
                 }
 
                 rows[counterTime].push(counterValue);
