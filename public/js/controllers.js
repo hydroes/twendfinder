@@ -78,7 +78,7 @@ angular.module('twendfinderApp').controller('StatsCtrl', function ($scope, $inte
             if (i === 0) {
                 var dateColumn = moment(statsData[i].counterData[0].time).format('HH:mm:ss');
                 console.log('time', dateColumn)
-                graph.addColumn('string', dateColumn);
+                graph.addColumn('number', dateColumn);
             }
 
             graph.addColumn('number', counterName);
