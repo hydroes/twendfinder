@@ -73,7 +73,7 @@ angular.module('twendfinderApp').controller('StatsCtrl', function ($scope, $inte
         // add the data to the graph
         for (var i = 0; i < statsData.length; i++) {
             var counterName = statsData[i].counterName;
-            // console.log('counterName', counterName)
+            console.log('counterName', counterName)
             graph.addColumn('number', counterName);
 
             // get data for row
