@@ -73,7 +73,7 @@ angular.module('twendfinderApp').controller('StatsCtrl', function ($scope, $inte
         // add the data to the graph
         for (var i = 0; i < statsData.length; i++) {
             var counterName = statsData[i].counterName;
-            console.log('counterName', counterName)
+            // console.log('counterName', counterName)
             graph.addColumn('number', counterName);
 
             // get data for row
@@ -87,9 +87,6 @@ angular.module('twendfinderApp').controller('StatsCtrl', function ($scope, $inte
                 if (rows[counterTime] === undefined) {
                     rows[counterTime] = [];
                     rowNames.push(counterTime);
-
-                    // first row column must be time:
-                    rows[counterTime].push(counterTime);
                 }
 
                 rows[counterTime].push(counterValue);
